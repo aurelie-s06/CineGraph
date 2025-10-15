@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Trial VAR";
+  src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
+  font-weight: 200;
+  font-style: bold;
+}
+
+body {
+    background-image: url("background.jpg");
+    background-size: 100% 40%;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    color: white;
+}
+
+.titre {
+    font-family: "Trial VAR", sans-serif;
+    font-size: 6rem;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main {
+    text-align: center;
+    margin-bottom: 20px;
+    height: 100vh;
+    width: 100%; 
+}
