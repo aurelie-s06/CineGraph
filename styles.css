@@ -11,14 +11,6 @@ body {
     color: white;
 }
 
-.titre {
-    font-family: "Trial VAR", sans-serif;
-    font-size: 6rem;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .main {
     background-image: url("background.jpg");
@@ -30,30 +22,33 @@ body {
     width: 100%; 
 }
 
-.compositeurs {
-    font-family: "Trial VAR", sans-serif;
-    font-size: 1.5rem;
-    position: absolute;
-    color: #FFD700;
-    z-index: 3;
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.premier {
-    top: 50%;
+.titre {
+    font-family: "Trial VAR", sans-serif;
+    font-size: 6rem;
+    position: absolute;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
-.deuxieme {
-    top: 60%;
-    left: 35%;
-    transform: translate(-50%, -50%);
-}
 
-.troisieme {
-    top: 63%;
-    left: 65%;
+
+.clap {
+    position: absolute;
+    top: 13%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    width: 27%;
+    z-index: 2;
 }
 
 .podium {
@@ -90,4 +85,41 @@ body {
     transform: translate(-50%, -50%);
     width: 12%;
     z-index: 2;
+}
+
+.compositeurs {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Trial VAR", sans-serif;
+  text-align: center;
+  color: #FFD700;
+  z-index: 3;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.compositeurs span{
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  letter-spacing: 1px;
+}
+
+.premier {
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.deuxieme {
+  top: 61%;
+  left: 36.5%;
+  transform: translate(-50%, -50%);
+}
+
+.troisieme {
+  top: 64%;
+  left: 63.5%;
+  transform: translate(-50%, -50%);
 }
