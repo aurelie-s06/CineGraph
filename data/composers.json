@@ -1,0 +1,103 @@
+{
+    "Podium": [
+        {
+            "Nom": "Hans Zimmer",
+            "Affichage": {
+                "Prénom": "Hans",
+                "Nom": "Zimmer",
+                "Tronche": "hanszimmer.jpg",
+                "Nombre_de_nominations": 12,
+                "Nominations": [
+                    {
+                        "Film": "Gladiator",
+                        "Affiche": "films/gladiator.jpg",
+                        "Oscar": "2001"
+                    },
+                    {
+                        "Film": "Inception",
+                        "Affiche": "films/inception.jpg",
+                        "Oscar": "2011"
+                    },
+                    {
+                        "Film": "The Lion King",
+                        "Affiche": "films/lionking.jpg",
+                        "Oscar": "1994"
+                    }
+                ],
+                "Pays_d_origine": "Allemagne",
+                "Description": "Compositeur célèbre pour ses bandes originales épiques, mélangeant orchestration classique et électronique.",
+                "Musique_la_plus_connue": {
+                    "Film": "Inception",
+                    "Réalisateur": "Christopher Nolan",
+                    "Date": 2010
+                }
+            }
+        },
+        {
+            "Nom": "John Williams",
+            "Affichage": {
+                "Prénom": "John",
+                "Nom": "Williams",
+                "Tronche": "johnwilliams.jpg",
+                "Nombre_de_nominations": 52,
+                "Nominations": [
+                    {
+                        "Film": "Star Wars",
+                        "Affiche": "films/starwars.jpg",
+                        "Oscar": "1977"
+                    },
+                    {
+                        "Film": "Jurassic Park",
+                        "Affiche": "films/jurassicpark.jpg",
+                        "Oscar": "1993"
+                    },
+                    {
+                        "Film": "Harry Potter à l'école des sorciers",
+                        "Affiche": "films/harrypotter.jpg",
+                        "Oscar": "2001"
+                    }
+                ],
+                "Pays_d_origine": "États-Unis",
+                "Description": "Légende vivante de la musique de film, célèbre pour ses thèmes iconiques et reconnaissables immédiatement.",
+                "Musique_la_plus_connue": {
+                    "Film": "Star Wars",
+                    "Réalisateur": "George Lucas",
+                    "Date": 1977
+                }
+            }
+        },
+        {
+            "Nom": "Ennio Morricone",
+            "Affichage": {
+                "Prénom": "Ennio",
+                "Nom": "Morricone",
+                "Tronche": "morricone.jpg",
+                "Nombre_de_nominations": 6,
+                "Nominations": [
+                    {
+                        "Film": "Le Bon, la Brute et le Truand",
+                        "Affiche": "films/thegood.jpg",
+                        "Oscar": "1966"
+                    },
+                    {
+                        "Film": "Cinema Paradiso",
+                        "Affiche": "films/cinemaparadiso.jpg",
+                        "Oscar": "1988"
+                    },
+                    {
+                        "Film": "Les Huit Salopards",
+                        "Affiche": "films/leshuit.jpg",
+                        "Oscar": "2015"
+                    }
+                ],
+                "Pays_d_origine": "Italie",
+                "Description": "Compositeur italien légendaire, connu pour ses musiques de western spaghetti et ses compositions dramatiques et émouvantes.",
+                "Musique_la_plus_connue": {
+                    "Film": "Le Bon, la Brute et le Truand",
+                    "Réalisateur": "Sergio Leone",
+                    "Date": 1966
+                }
+            }
+        }
+    ]
+}

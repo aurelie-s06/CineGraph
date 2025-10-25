@@ -1,234 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>CineGraph</title>
-  </head>
-  <body>
-    <div class="main">
-      <img src="accent.png" alt="" class="clap" />
-      <h1 class="titre">CineGraph</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>CineGraph</title>
+</head>
+<body>
+  <div class="main">
+    <img src="accent.png" alt="" class="clap" />
+    <h1 class="titre">CineGraph</h1>
 
-      <div class="scroll-down" aria-label="Découvrir la suite">
-        <span class="arrow" aria-hidden="true"></span>
+    <div class="scroll-down" aria-label="Découvrir la suite">
+      <span class="arrow" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <!-- Podium -->
+  <section class="podium-section">
+    <div class="podium-container">
+      <div class="podium-text">
+        <h2 class="podium-title">
+          The 3 composers with the highest number of nominations
+        </h2>
+        <p class="podium-description">
+          From sweeping orchestral themes to subtle emotional undertones,
+          these legendary composers have defined the sound of cinema. Their
+          melodies transcend the screen — turning stories into unforgettable
+          experiences, and emotions into timeless works of art. This podium
+          celebrates the masters whose music continues to echo through
+          generations of film lovers.
+        </p>
+      </div>
+
+      <div class="couronne-compo">
+        <img src="couronne.png" alt="" class="couronne1" />
+        <img src="couronne.png" alt="" class="couronne2" />
+        <img src="couronne.png" alt="" class="couronne3" />
+        <img src="podium.png" alt="" class="podium" />
       </div>
     </div>
+  </section>
 
-    <section class="podium-section">
-      <div class="podium-container">
-        <div class="podium-text">
-          <h2 class="podium-title">
-            The 3 composers with the highest number of nominations
-          </h2>
-          <p class="podium-description">
-            From sweeping orchestral themes to subtle emotional undertones,
-            these legendary composers have defined the sound of cinema. Their
-            melodies transcend the screen — turning stories into unforgettable
-            experiences, and emotions into timeless works of art. This podium
-            celebrates the masters whose music continues to echo through
-            generations of film lovers.
-          </p>
-        </div>
-
-        <div class="couronne-compo">
-          <p class="compositeurs premier">
-            <span>John</span> <span>WILLIAMS</span>
-          </p>
-          <p class="compositeurs deuxieme">
-            <span>Hans</span> <span>ZIMMER</span>
-          </p>
-          <p class="compositeurs troisieme">
-            <span>Ennio</span> <span>MORRICONE</span>
-          </p>
-          <img src="couronne.png" alt="" class="couronne1" />
-          <img src="couronne.png" alt="" class="couronne2" />
-          <img src="couronne.png" alt="" class="couronne3" />
-          <img src="podium.png" alt="" class="podium" />
-        </div>
+  <!-- Carousel -->
+  <section class="carousel-section">
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" aria-label="Previous composers">&#10094;</button>
+      <div class="carousel full">
       </div>
-    </section>
+      <button class="carousel-btn right" aria-label="Next composers">&#10095;</button>
+    </div>
+  </section>
 
-    <section class="carousel-section">
-      <div class="carousel-wrapper">
-        <button class="carousel-btn left" aria-label="Previous composers">
-          &#10094;
-        </button>
+<!--   <!-- Graphique
+  <section class="graphique-section">
+    <canvas id="myChart" width="1200" height="600"></canvas>
+  </section> -->
 
-        <div class="carousel full">
-          <!-- 1 -->
-          <div class="slide full">
-            <h3>John Williams</h3>
-            <div class="slide-content">
-              <div class="slide-left">
-                <img
-                src="johnwilliams.jpg"
-                alt="John Williams"
-                class="image-compo"
-              />
-                <p>
-                  John Williams’ sweeping orchestral themes have shaped the
-                  sound of modern cinema. His ability to turn emotion into
-                  melody makes his work instantly recognizable worldwide.
-                </p>
-              </div>
-              <div class="slide-right">
-                <div class="film_description">
-                  <img
-                    src="films/starwars.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>Star Wars</em>
-                </div>
-                <div class="film_description">
-                  <img
-                    src="films/jurassicpark.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>Jurassic Park</em>
-                </div>
-                <div class="film_description">
-                  <img
-                    src="films/harrypotter.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>Harry Potter</em>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2 -->
-          <div class="slide full">
-            <h3>Hans Zimmer</h3>
-            <div class="slide-content">
-              <div class="slide-left">
-                <img
-                  src="hanszimmer.jpg"
-                  alt="Hans Zimmer"
-                  class="image-compo"
-                />
-                <p>
-                  Dès son plus jeune âge, Hans Florian Zimmer est un musicien
-                  autodidacte qui apprend le solfège et le piano en à peine deux
-                  semaines. Il commence alors sa carrière musicale à Londres en
-                  tant que compositeur de jingles et rejoint le groupe The
-                  Buggles. Leur chanson Video Killed the Radio Star devient le
-                  premier clip musical diffusé sur MTV en 1982.
-                </p>
-              </div>
-              <div class="slide-right">
-                <div class="film_description">
-                  <img
-                    src="films/inception.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>Inception</em>
-                </div>
-                <div class="film_description">
-                  <img
-                    src="films/interstellar.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>Interstellar</em>
-                </div>
-                <div class="film_description">
-                  <img
-                    src="films/gladiator.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>Gladiator</em>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3 -->
-           <div class="slide full">
-            <h3>Ennio Morricone</h3>
-            <div class="slide-content">
-              <div class="slide-left">
-                <img
-                src="morricone.jpg"
-                alt="Ennio Morricone"
-                class="image-compo"
-              />
-                <p>
-                  A master of melody and emotion, Ennio Morricone’s soundtracks
-                  transcend time, blending classical beauty with cinematic
-                  storytelling.
-                </p>
-              </div>
-              <div class="slide-right">
-                <div class="film_description">
-                  <img
-                    src="films/thegood.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>The Good, the Bad and the Ugly</em>
-                </div>
-                <div class="film_description">
-                  <img
-                    src="films/cinemaparadiso.jpg"
-                    alt=""
-                    class="affiche_film"
-                  /><em>Cinema Paradiso</em>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          </div>
-        </div>
-
-        <button class="carousel-btn right" aria-label="Next composers">
-          &#10095;
-        </button>
-      </div>
-    </section>
-
-    <section class="graphique-section">
-      <canvas id="myChart" width="1200" height="600"></canvas>
-    </section>
-
-    <script src="javascript.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const btn = document.querySelector(".scroll-down");
-        if (!btn) return;
-        btn.addEventListener("click", function () {
-          window.scrollTo({
-            top: window.innerHeight,
-            behavior: "smooth",
-          });
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const carousel = document.querySelector(".carousel.full");
-        const slides = document.querySelectorAll(".slide.full");
-        const btnLeft = document.querySelector(".carousel-btn.left");
-        const btnRight = document.querySelector(".carousel-btn.right");
-
-        let currentIndex = 0;
-
-        function showSlide(index) {
-          const total = slides.length;
-          if (index < 0) index = total - 1;
-          if (index >= total) index = 0;
-          carousel.style.transform = `translateX(-${index * 100}%)`;
-          currentIndex = index;
-        }
-
-        btnLeft.addEventListener("click", () => {
-          showSlide(currentIndex - 1);
-        });
-
-        btnRight.addEventListener("click", () => {
-          showSlide(currentIndex + 1);
-        });
-      });
-    </script>
-  </body>
+  <script src="javascript.js"></script>
+</body>
 </html>
+

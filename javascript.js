@@ -1,4 +1,88 @@
-fetch("DataFilm_40000.json")
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btnScroll = document.querySelector(".scroll-down");
+  if (btnScroll) {
+    btnScroll.addEventListener("click", function () {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  fetch("data/composers.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const podiumContainer = document.querySelector(".couronne-compo");
+      const carousel = document.querySelector(".carousel.full");
+      const podiumOrder = ["John Williams", "Hans Zimmer", "Ennio Morricone"];
+      podiumOrder.forEach((name, index) => {
+        const composer = data.Podium.find(
+          (c) => `${c.Affichage.Prénom} ${c.Affichage.Nom}` === name
+        );
+        if (!composer) return;
+
+        const p = document.createElement("p");
+        p.classList.add("compositeurs");
+        if (index === 0) p.classList.add("premier");
+        if (index === 1) p.classList.add("deuxieme");
+        if (index === 2) p.classList.add("troisieme");
+        p.innerHTML = `<span>${composer.Affichage.Prénom}</span> <span>${composer.Affichage.Nom.toUpperCase()}</span>`;
+        podiumContainer.appendChild(p);
+      });
+
+      data.Podium.forEach((composer) => {
+        const slide = document.createElement("div");
+        slide.classList.add("slide", "full");
+
+        slide.innerHTML = `
+          <h3>${composer.Affichage.Prénom} ${composer.Affichage.Nom}</h3>
+          <div class="slide-content">
+            <div class="slide-left">
+              <img src="${composer.Affichage.Tronche}" alt="${composer.Affichage.Nom}" class="image-compo"/>
+              <p>${composer.Affichage.Description}</p>
+            </div>
+            <div class="slide-right">
+              ${composer.Affichage.Nominations.map(
+                (nom) => `
+                  <div class="film_description">
+                    <img src="${nom.Affiche}" alt="${nom.Film}" class="affiche_film"/>
+                    <em>${nom.Film} (${nom.Oscar})</em>
+                  </div>
+                `
+              ).join('')}
+            </div>
+          </div>
+        `;
+        carousel.appendChild(slide);
+      });
+
+
+      const slides = document.querySelectorAll(".slide.full");
+      const btnLeft = document.querySelector(".carousel-btn.left");
+      const btnRight = document.querySelector(".carousel-btn.right");
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        const total = slides.length;
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+      }
+
+      btnLeft.addEventListener("click", () => showSlide(currentIndex - 1));
+      btnRight.addEventListener("click", () => showSlide(currentIndex + 1));
+
+      showSlide(0);
+    });
+});
+
+
+
+
+
+/* fetch("DataFilm_40000.json")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -67,7 +151,7 @@ fetch("DataFilm_40000.json")
     [0, Math.ceil(maxVal / 2), maxVal].forEach((v) => {
       const y = canvas.height - padding - (v / maxVal) * height;
       ctx.fillText(v, padding - 10, y);
-      /* ctx.strokeText("Films", 50, 50); */
+      /* ctx.strokeText("Films", 50, 50); 
       ctx.beginPath();
       ctx.moveTo(padding - 5, y);
       ctx.lineTo(padding, y);
@@ -134,3 +218,4 @@ fetch("DataFilm_40000.json")
 
     });
   });
+ */
