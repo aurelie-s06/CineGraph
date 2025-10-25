@@ -5,22 +5,22 @@
             "Affichage": {
                 "Prénom": "Hans",
                 "Nom": "Zimmer",
-                "Tronche": "hanszimmer.jpg",
+                "Tronche": "images/compositeurs/hanszimmer.jpg",
                 "Nombre_de_nominations": 12,
                 "Nominations": [
                     {
                         "Film": "Gladiator",
-                        "Affiche": "films/gladiator.jpg",
+                        "Affiche": "images/films/gladiator.jpg",
                         "Oscar": "2001"
                     },
                     {
                         "Film": "Inception",
-                        "Affiche": "films/inception.jpg",
+                        "Affiche": "images/films/inception.jpg",
                         "Oscar": "2011"
                     },
                     {
                         "Film": "The Lion King",
-                        "Affiche": "films/lionking.jpg",
+                        "Affiche": "images/films/lionking.jpg",
                         "Oscar": "1994"
                     }
                 ],
@@ -38,22 +38,22 @@
             "Affichage": {
                 "Prénom": "John",
                 "Nom": "Williams",
-                "Tronche": "johnwilliams.jpg",
+                "Tronche": "images/compositeurs/johnwilliams.jpg",
                 "Nombre_de_nominations": 52,
                 "Nominations": [
                     {
                         "Film": "Star Wars",
-                        "Affiche": "films/starwars.jpg",
+                        "Affiche": "images/films/starwars.jpg",
                         "Oscar": "1977"
                     },
                     {
                         "Film": "Jurassic Park",
-                        "Affiche": "films/jurassicpark.jpg",
+                        "Affiche": "images/films/jurassicpark.jpg",
                         "Oscar": "1993"
                     },
                     {
                         "Film": "Harry Potter à l'école des sorciers",
-                        "Affiche": "films/harrypotter.jpg",
+                        "Affiche": "images/films/harrypotter.jpg",
                         "Oscar": "2001"
                     }
                 ],
@@ -71,22 +71,22 @@
             "Affichage": {
                 "Prénom": "Ennio",
                 "Nom": "Morricone",
-                "Tronche": "morricone.jpg",
+                "Tronche": "images/compositeurs/morricone.jpg",
                 "Nombre_de_nominations": 6,
                 "Nominations": [
                     {
                         "Film": "Le Bon, la Brute et le Truand",
-                        "Affiche": "films/thegood.jpg",
+                        "Affiche": "images/films/thegood.jpg",
                         "Oscar": "1966"
                     },
                     {
                         "Film": "Cinema Paradiso",
-                        "Affiche": "films/cinemaparadiso.jpg",
+                        "Affiche": "images/films/cinemaparadiso.jpg",
                         "Oscar": "1988"
                     },
                     {
                         "Film": "Les Huit Salopards",
-                        "Affiche": "films/leshuit.jpg",
+                        "Affiche": "images/films/leshuit.jpg",
                         "Oscar": "2015"
                     }
                 ],
