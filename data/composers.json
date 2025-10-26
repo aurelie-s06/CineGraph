@@ -1,39 +1,6 @@
 {
     "Podium": [
         {
-            "Nom": "Hans Zimmer",
-            "Affichage": {
-                "Prénom": "Hans",
-                "Nom": "Zimmer",
-                "Tronche": "images/compositeurs/hanszimmer.jpg",
-                "Nombre_de_nominations": 12,
-                "Nominations": [
-                    {
-                        "Film": "Gladiator",
-                        "Affiche": "images/films/gladiator.jpg",
-                        "Oscar": "2001"
-                    },
-                    {
-                        "Film": "Inception",
-                        "Affiche": "images/films/inception.jpg",
-                        "Oscar": "2011"
-                    },
-                    {
-                        "Film": "The Lion King",
-                        "Affiche": "images/films/lionking.jpg",
-                        "Oscar": "1994"
-                    }
-                ],
-                "Pays_d_origine": "Allemagne",
-                "Description": "Compositeur célèbre pour ses bandes originales épiques, mélangeant orchestration classique et électronique.",
-                "Musique_la_plus_connue": {
-                    "Film": "Inception",
-                    "Réalisateur": "Christopher Nolan",
-                    "Date": 2010
-                }
-            }
-        },
-        {
             "Nom": "John Williams",
             "Affichage": {
                 "Prénom": "John",
@@ -62,7 +29,42 @@
                 "Musique_la_plus_connue": {
                     "Film": "Star Wars",
                     "Réalisateur": "George Lucas",
+                    "Musique":"musiques/johnwilliams_starwars_excerpt.mp3",
                     "Date": 1977
+                }
+            }
+        },
+        {
+            "Nom": "Hans Zimmer",
+            "Affichage": {
+                "Prénom": "Hans",
+                "Nom": "Zimmer",
+                "Tronche": "images/compositeurs/hanszimmer.jpg",
+                "Nombre_de_nominations": 12,
+                "Nominations": [
+                    {
+                        "Film": "Gladiator",
+                        "Affiche": "images/films/gladiator.jpg",
+                        "Oscar": "2001"
+                    },
+                    {
+                        "Film": "Inception",
+                        "Affiche": "images/films/inception.jpg",
+                        "Oscar": "2011"
+                    },
+                    {
+                        "Film": "The Lion King",
+                        "Affiche": "images/films/thelionking.jpg",
+                        "Oscar": "1994"
+                    }
+                ],
+                "Pays_d_origine": "Allemagne",
+                "Description": "Compositeur célèbre pour ses bandes originales épiques, mélangeant orchestration classique et électronique.",
+                "Musique_la_plus_connue": {
+                    "Film": "Inception",
+                    "Réalisateur": "Christopher Nolan",
+                    "Musique":"musiques/hanszimmer_time_excerpt.mp3",
+                    "Date": 2010
                 }
             }
         },
@@ -86,7 +88,7 @@
                     },
                     {
                         "Film": "Les Huit Salopards",
-                        "Affiche": "images/films/leshuit.jpg",
+                        "Affiche": "images/films/leshuitsalopards.jpg",
                         "Oscar": "2015"
                     }
                 ],
@@ -95,6 +97,7 @@
                 "Musique_la_plus_connue": {
                     "Film": "Le Bon, la Brute et le Truand",
                     "Réalisateur": "Sergio Leone",
+                    "Musique":"musiques/ennio_ecstasyofgold_excerpt.mp3",
                     "Date": 1966
                 }
             }

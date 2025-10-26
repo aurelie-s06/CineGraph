@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   const btnScroll = document.querySelector(".scroll-down");
   if (btnScroll) {
     btnScroll.addEventListener("click", function () {
@@ -27,36 +26,57 @@ document.addEventListener("DOMContentLoaded", function () {
         if (index === 0) p.classList.add("premier");
         if (index === 1) p.classList.add("deuxieme");
         if (index === 2) p.classList.add("troisieme");
-        p.innerHTML = `<span>${composer.Affichage.Prénom}</span> <span>${composer.Affichage.Nom.toUpperCase()}</span>`;
+        p.innerHTML = `<span>${
+          composer.Affichage.Prénom
+        }</span> <span>${composer.Affichage.Nom.toUpperCase()}</span>`;
         podiumContainer.appendChild(p);
       });
 
       data.Podium.forEach((composer) => {
+        const info = composer.Affichage;
         const slide = document.createElement("div");
         slide.classList.add("slide", "full");
 
         slide.innerHTML = `
-          <h3>${composer.Affichage.Prénom} ${composer.Affichage.Nom}</h3>
-          <div class="slide-content">
-            <div class="slide-left">
-              <img src="${composer.Affichage.Tronche}" alt="${composer.Affichage.Nom}" class="image-compo"/>
-              <p>${composer.Affichage.Description}</p>
+        <h3 class="nom-compositeur">${info.Prénom} ${info.Nom}</h3>
+        <div class="slide-content">
+          <div class="slide-left">
+            <div class="info-compositeur">
+              <img src="${info.Tronche}" alt="${info.Nom}" class="image-compo"/>
+              <p class="description">${info.Description}</p>
             </div>
-            <div class="slide-right">
-              ${composer.Affichage.Nominations.map(
-                (nom) => `
-                  <div class="film_description">
-                    <img src="${nom.Affiche}" alt="${nom.Film}" class="affiche_film"/>
-                    <em>${nom.Film} (${nom.Oscar})</em>
-                  </div>
-                `
-              ).join('')}
+            <div class="musique-connue">
+              <h4>Musique la plus connue :</h4>
+              <p><strong>${info.Musique_la_plus_connue.Film}</strong> (${
+          info.Musique_la_plus_connue.Date
+        })<br>
+              Réalisateur : ${info.Musique_la_plus_connue.Réalisateur}</p>
+              <audio controls class="audio-player">
+              <source src="${
+                info.Musique_la_plus_connue.Musique
+              }" type="audio/mp3" />
+              </audio>
             </div>
           </div>
-        `;
+
+          <div class="slide-right">
+            <h4>Nominations (${info.Nombre_de_nominations})</h4>
+            ${info.Nominations.map(
+              (nom) => `
+                <div class="film_description">
+                  <img src="${nom.Affiche}" alt="${nom.Film}" class="affiche_film"/>
+                  <div class="film-info">
+                    <h5>${nom.Film}</h5>
+                    <p>${nom.Oscar}</p>
+                  </div>
+                </div>
+              `
+            ).join("")}
+          </div>
+        </div>
+      `;
         carousel.appendChild(slide);
       });
-
 
       const slides = document.querySelectorAll(".slide.full");
       const btnLeft = document.querySelector(".carousel-btn.left");
@@ -77,10 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
       showSlide(0);
     });
 });
-
-
-
-
 
 /* fetch("DataFilm_40000.json")
   .then((response) => response.json())
