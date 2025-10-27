@@ -96,142 +96,107 @@ document.addEventListener("DOMContentLoaded", function () {
 
       showSlide(0);
     });
+
+  fetch("data/genres_musiques.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const genreContainer = document.querySelector(".legendes");
+      console.log(data);
+      const ctx = document.getElementById("myChart");
+
+      // --- Extraire toutes les années présentes dans le JSON ---
+      const allYears = new Set();
+      data.forEach((genreObj) => {
+        Object.keys(genreObj).forEach((key) => {
+          if (key !== "Column1") allYears.add(key);
+        });
+      });
+      const years = Array.from(allYears).sort();
+
+      // --- Couleurs pour les genres ---
+      const colors = [
+        "#1f77b4",
+        "#ff7f0e",
+        "#2ca02c",
+        "#d62728",
+        "#9467bd",
+        "#8c564b",
+        "#e377c2",
+      ];
+
+      // --- Créer un dataset par genre ---
+      const datasets = data.map((genreObj, index) => {
+        const genre = genreObj["Column1"];
+        const values = years.map((year) => genreObj[year] || 0);
+        const color = colors[index % colors.length];
+
+        return {
+          label: genre,
+          data: values,
+          borderColor: color,
+          backgroundColor: color,
+          borderWidth: 2,
+          fill: false,
+          tension: 0.2,
+        };
+      });
+
+      // --- graphique ---
+      const chart = new Chart(ctx, {
+        type: "line",
+        data: { labels: years, datasets },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { title: { display: true, text: "Année" } },
+            y: {
+              beginAtZero: true,
+              title: { display: true, text: "Nombre de musiques" },
+            },
+          },
+        },
+      });
+      // --- légende ---
+      genreContainer.style.display = "flex";
+      genreContainer.style.flexDirection = "column";
+      genreContainer.style.gap = "6px";
+      genreContainer.style.marginLeft = "20px";
+
+      data.forEach((genreObj, index) => {
+        const color = colors[index % colors.length];
+        const btn = document.createElement("button");
+        btn.textContent = genreObj["Column1"];
+        btn.style.background = color;
+        btn.style.border = "none";
+        btn.style.color = "white";
+        btn.style.padding = "5px 10px";
+        btn.style.cursor = "pointer";
+        btn.style.borderRadius = "6px";
+        btn.style.opacity = "1";
+
+        btn.addEventListener("click", () => {
+          const isOnlyThisVisible =
+            chart.isDatasetVisible(index) &&
+            chart.data.datasets.filter((_, i) => chart.isDatasetVisible(i))
+              .length === 1;
+
+          if (isOnlyThisVisible) {
+            // afficher toutes les courbes à nouveau
+            chart.data.datasets.forEach((_, i) => {
+              chart.setDatasetVisibility(i, true);
+            });
+            btn.style.opacity = "1";
+          } else {
+            // afficher uniquement la courbe sélectionnée
+            chart.data.datasets.forEach((_, i) => {
+              chart.setDatasetVisibility(i, i === index);
+            });
+            btn.style.opacity = "0.5";
+          }
+          chart.update();
+        });
+
+        genreContainer.appendChild(btn);
+      });
+    });
 });
-
-/* fetch("DataFilm_40000.json")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-
-
-    data.forEach((d) => {
-      if (d.genres_list) {
-        d.genres = JSON.parse(d.genres_list.replace(/'/g, '"'));
-      } else {
-        d.genres = [];
-      }
-    });
-
-    // fréquence genre
-    const genreCounts = {};
-    data.forEach((d) => {
-      d.genres.forEach((g) => {
-        genreCounts[g] = (genreCounts[g] || 0) + 1;
-      });
-    });
-
-
-    const topGenres = Object.entries(genreCounts)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 5)
-      .map((g) => g[0]);
-
-    // 2000
-    const years = [
-      ...new Set(data.map((d) => d.release_year).filter((y) => y >= 2000)),
-    ].sort((a, b) => a - b);
-
-    // datasets
-    const dataset = {};
-    topGenres.forEach((genre) => {
-      dataset[genre] = years.map(
-        (year) =>
-          data.filter(
-            (d) => d.release_year === year && d.genres.includes(genre)
-          ).length
-      );
-    });
-
-
-    const canvas = document.getElementById("myChart");
-    const ctx = canvas.getContext("2d");
-
-    const padding = 60;
-    const width = canvas.width - 2 * padding;
-    const height = canvas.height - 2 * padding;
-    const maxVal = Math.max(...Object.values(dataset).flat());
-
-    // axes
-    ctx.font = "14px Arial";
-    ctx.strokeStyle = "white";
-    ctx.beginPath();
-    ctx.moveTo(padding, padding);
-    ctx.lineTo(padding, canvas.height - padding);
-    ctx.lineTo(canvas.width - padding, canvas.height - padding);
-    ctx.stroke();
-
-    // y
-    ctx.fillStyle = "white";
-    ctx.textAlign = "right";
-    ctx.textBaseline = "middle";
-    [0, Math.ceil(maxVal / 2), maxVal].forEach((v) => {
-      const y = canvas.height - padding - (v / maxVal) * height;
-      ctx.fillText(v, padding - 10, y);
-      /* ctx.strokeText("Films", 50, 50); 
-      ctx.beginPath();
-      ctx.moveTo(padding - 5, y);
-      ctx.lineTo(padding, y);
-      ctx.stroke();
-    });
-
-    // x
-    ctx.textAlign = "center";
-    ctx.textBaseline = "top";
-    years.forEach((y, i) => {
-      const x = padding + i * (width / (years.length - 1));
-      ctx.fillText(y, x, canvas.height - padding + 10);
-    });
-
-
-    const colors = [
-  "#AC0302",
-  "#E85C0D",
-  "#fbe281ff", 
-  "#D4A017",
-  "#A64D79"
-];
-
-    topGenres.forEach((genre, idx) => {
-      ctx.beginPath();
-      ctx.strokeStyle = colors[idx];
-      ctx.lineWidth = 3;
-
-      dataset[genre].forEach((val, i) => {
-        const x = padding + i * (width / (years.length - 1));
-        const y = canvas.height - padding - (val / maxVal) * height;
-
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      });
-
-      ctx.stroke();
-
-      // points
-      ctx.fillStyle = colors[idx];
-      dataset[genre].forEach((val, i) => {
-        const x = padding + i * (width / (years.length - 1));
-        const y = canvas.height - padding - (val / maxVal) * height;
-        ctx.beginPath();
-        ctx.arc(x, y, 4, 0, 2 * Math.PI);
-        ctx.fill();
-      });
-    });
-
-    // légende
-    const legendY = canvas.height - 20; 
-    const legendXStart = padding;
-    const spacing = 150;
-    ctx.font = "14px Arial";
-
-    topGenres.forEach((genre, i) => {
-      const x = legendXStart + i * spacing;
-      ctx.fillStyle = colors[i];
-      ctx.fillRect(x, legendY - 10, 12, 12);
-      ctx.fillStyle = "White";
-      ctx.textAlign = "left";
-      ctx.textBaseline = "middle";
-      ctx.fillText(genre, x + 18, legendY - 4);
-
-    });
-  });
- */

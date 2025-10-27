@@ -429,6 +429,36 @@ body {
 
 
 
+/* Graphique des genres musiques */
+.musiques-section {
+  padding: 40px 20px 50px 20px;
+  text-align: center;
+}
+.musiques-section h2 {
+  font-size: 2.2rem;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: goldShine 6s linear infinite, fadeInText 2s ease forwards;
+}
+
+.musiques-genres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.musiques-genres canvas {
+  max-width: 1000px;
+  max-height: 500px;
+}
+
 
 @keyframes titleFade {
   0% {

@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>CineGraph</title>
-</head>
-<body>
-  <div class="main">
-    <img src="images/accent.png" alt="" class="clap" />
-    <h1 class="titre">CineGraph</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CineGraph</title>
+  </head>
+  <body>
+    <div class="main">
+      <img src="images/accent.png" alt="" class="clap" />
+      <h1 class="titre">CineGraph</h1>
 
-    <div class="scroll-down" aria-label="Découvrir la suite">
-      <span class="arrow" aria-hidden="true"></span>
-    </div>
-  </div>
-
-  <!-- Podium -->
-  <section class="podium-section">
-    <div class="podium-container">
-      <div class="podium-text">
-        <h2 class="podium-title">
-          The 3 composers with the highest number of nominations
-        </h2>
-        <p class="podium-description">
-          From sweeping orchestral themes to subtle emotional undertones,
-          these legendary composers have defined the sound of cinema. Their
-          melodies transcend the screen — turning stories into unforgettable
-          experiences, and emotions into timeless works of art. This podium
-          celebrates the masters whose music continues to echo through
-          generations of film lovers.
-        </p>
-      </div>
-
-      <div class="couronne-compo">
-        <img src="images/couronne.png" alt="" class="couronne1" />
-        <img src="images/couronne.png" alt="" class="couronne2" />
-        <img src="images/couronne.png" alt="" class="couronne3" />
-        <img src="images/podium.png" alt="" class="podium" />
+      <div class="scroll-down" aria-label="Découvrir la suite">
+        <span class="arrow" aria-hidden="true"></span>
       </div>
     </div>
-  </section>
 
-  <!-- Carousel -->
-  <section class="carousel-section">
-    <div class="carousel-wrapper">
-      <button class="carousel-btn left" aria-label="Previous composers">&#10094;</button>
-      <div class="carousel full">
+    <!-- Podium -->
+    <section class="podium-section">
+      <div class="podium-container">
+        <div class="podium-text">
+          <h2 class="podium-title">
+            The 3 composers with the highest number of nominations
+          </h2>
+          <p class="podium-description">
+            From sweeping orchestral themes to subtle emotional undertones,
+            these legendary composers have defined the sound of cinema. Their
+            melodies transcend the screen — turning stories into unforgettable
+            experiences, and emotions into timeless works of art. This podium
+            celebrates the masters whose music continues to echo through
+            generations of film lovers.
+          </p>
+        </div>
+
+        <div class="couronne-compo">
+          <img src="images/couronne.png" alt="" class="couronne1" />
+          <img src="images/couronne.png" alt="" class="couronne2" />
+          <img src="images/couronne.png" alt="" class="couronne3" />
+          <img src="images/podium.png" alt="" class="podium" />
+        </div>
       </div>
-      <button class="carousel-btn right" aria-label="Next composers">&#10095;</button>
-    </div>
-  </section>
+    </section>
 
-<!--   <!-- Graphique
+    <!-- Carousel -->
+    <section class="carousel-section">
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left" aria-label="Previous composers">
+          &#10094;
+        </button>
+        <div class="carousel full"></div>
+        <button class="carousel-btn right" aria-label="Next composers">
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <!-- Genres musiques -->
+    <section class="musiques-section">
+      <h2>Genres des musiques</h2>
+      <div class="musiques-genres">
+        <canvas id="myChart"></canvas>
+        <div class="legendes"></div>
+      </div>
+    </section>
+
+    <!-- Graphique
   <section class="graphique-section">
     <canvas id="myChart" width="1200" height="600"></canvas>
   </section> -->
 
-  <script src="javascript.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="javascript.js"></script>
+  </body>
 </html>
-
