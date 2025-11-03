@@ -6,7 +6,7 @@
                 "Prénom": "John",
                 "Nom": "Williams",
                 "Tronche": "images/compositeurs/johnwilliams.jpg",
-                "Nombre_de_nominations": 52,
+                "Nombre_de_nominations": 54,
                 "Nominations": [
                     {
                         "Film": "Star Wars",
@@ -74,7 +74,7 @@
                 "Prénom": "Ennio",
                 "Nom": "Morricone",
                 "Tronche": "images/compositeurs/morricone.jpg",
-                "Nombre_de_nominations": 6,
+                "Nombre_de_nominations": 7,
                 "Nominations": [
                     {
                         "Film": "Le Bon, la Brute et le Truand",
