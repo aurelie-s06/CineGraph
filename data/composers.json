@@ -9,27 +9,60 @@
                 "Nombre_de_nominations": 54,
                 "Nominations": [
                     {
-                        "Film": "Star Wars",
+                        "Film": [
+                            {
+                                "en": "Star Wars",
+                                "fr": "Star Wars"
+                            }
+                        ],
                         "Affiche": "images/films/starwars.jpg",
-                        "Oscar": "1977"
+                        "Oscar": "1977",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=25801.html"
                     },
                     {
-                        "Film": "Jurassic Park",
+                        "Film": [
+                            {
+                                "en": "Jurassic Park",
+                                "fr": "Jurassic Park"
+                            }
+                        ],
                         "Affiche": "images/films/jurassicpark.jpg",
-                        "Oscar": "1993"
+                        "Oscar": "1993",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=8488.html"
                     },
                     {
-                        "Film": "Harry Potter",
+                        "Film": [
+                            {
+                                "en": "Harry Potter",
+                                "fr": "Harry Potter"
+                            }
+                        ],
                         "Affiche": "images/films/harrypotter.jpg",
-                        "Oscar": "2001"
+                        "Oscar": "2001",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=29276.html"
                     }
                 ],
-                "Pays_d_origine": "États-Unis",
-                "Description": "Légende vivante de la musique de film, célèbre pour ses thèmes iconiques et reconnaissables immédiatement.",
+                "Pays_d_origine": "us",
+                "Description": [
+                    {
+                        "en": "An American composer and conductor renowned for his powerful and iconic film scores, he has created unforgettable themes that have moved audiences for decades and deeply influenced the world of modern cinema.",
+                        "fr": "Compositeur et chef d’orchestre américain reconnu pour ses musiques de film puissantes et emblématiques, il a su créer des thèmes inoubliables qui accompagnent les émotions du public depuis des décennies et ont profondément influencé l’univers du cinéma moderne."
+                    }
+                ],
                 "Musique_la_plus_connue": {
-                    "Film": "Star Wars",
-                    "Réalisateur": "George Lucas",
-                    "Musique":"musiques/johnwilliams_starwars_excerpt.mp3",
+                    "Film": [
+                        {
+                            "en": "Star Wars",
+                            "fr": "Star Wars"
+                        }
+                    ],
+                    "Réalisateur": [
+                        {
+                            "en": "Director : Georges Lucas",
+                            "fr": "Réalisateur : Georges Lucas"
+                        }
+                    ],
+                    "Musique": "musiques/johnwilliams_starwars_excerpt.mp3",
                     "Date": 1977
                 }
             }
@@ -43,27 +76,60 @@
                 "Nombre_de_nominations": 12,
                 "Nominations": [
                     {
-                        "Film": "Gladiator",
+                        "Film": [
+                            {
+                                "en": "Gladiator",
+                                "fr": "Gladiator"
+                            }
+                        ],
                         "Affiche": "images/films/gladiator.jpg",
-                        "Oscar": "2001"
+                        "Oscar": "2000",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=24944.html"
                     },
                     {
-                        "Film": "Inception",
+                        "Film": [
+                            {
+                                "en": "Inception",
+                                "fr": "Inception"
+                            }
+                        ],
                         "Affiche": "images/films/inception.jpg",
-                        "Oscar": "2011"
+                        "Oscar": "2011",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=143692.html"
                     },
                     {
-                        "Film": "The Lion King",
+                        "Film": [
+                            {
+                                "en": "The Lion King",
+                                "fr": "Le Roi Lion"
+                            }
+                        ],
                         "Affiche": "images/films/thelionking.jpg",
-                        "Oscar": "1994"
+                        "Oscar": "1994",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=10862.html"
                     }
                 ],
-                "Pays_d_origine": "Allemagne",
-                "Description": "Compositeur célèbre pour ses bandes originales épiques, mélangeant orchestration classique et électronique.",
+                "Pays_d_origine": "de",
+                "Description": [
+                    {
+                        "en": "A German composer and producer renowned for his intense and innovative film scores, he has blended electronic and orchestral sounds to create unique atmospheres that have transformed contemporary film music.",
+                        "fr": "Compositeur et producteur allemand reconnu pour ses musiques de film intenses et innovantes, il a su mêler sons électroniques et orchestraux pour créer des ambiances uniques qui ont transformé la musique de cinéma contemporaine."
+                    }
+                ],
                 "Musique_la_plus_connue": {
-                    "Film": "Inception",
-                    "Réalisateur": "Christopher Nolan",
-                    "Musique":"musiques/hanszimmer_time_excerpt.mp3",
+                    "Film": [
+                        {
+                            "en": "Inception",
+                            "fr": "Inception"
+                        }
+                    ],
+                    "Réalisateur": [
+                        {
+                            "en": "Director : Christopher Nolan",
+                            "fr": "Réalisateur : Christopher Nolan"
+                        }
+                    ],
+                    "Musique": "musiques/hanszimmer_time_excerpt.mp3",
                     "Date": 2010
                 }
             }
@@ -77,27 +143,60 @@
                 "Nombre_de_nominations": 7,
                 "Nominations": [
                     {
-                        "Film": "Le Bon, la Brute et le Truand",
+                        "Film": [
+                            {
+                                "en": "The Good, the Bad and the Ugly",
+                                "fr": "Le Bon, la Brute et le Truand"
+                            }
+                        ],
                         "Affiche": "images/films/thegood.jpg",
-                        "Oscar": "1966"
+                        "Oscar": "1966",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=19395.html"
                     },
                     {
-                        "Film": "Cinema Paradiso",
+                        "Film": [
+                            {
+                                "en": "Cinema Paradiso",
+                                "fr": "Cinema Paradiso"
+                            }
+                        ],
                         "Affiche": "images/films/cinemaparadiso.jpg",
-                        "Oscar": "1988"
+                        "Oscar": "1988",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=4989.html"
                     },
                     {
-                        "Film": "Les Huit Salopards",
+                        "Film": [
+                            {
+                                "en": "The Hateful Eight",
+                                "fr": "Les Huit Salopards"
+                            }
+                        ],
                         "Affiche": "images/films/leshuitsalopards.jpg",
-                        "Oscar": "2015"
+                        "Oscar": "2015",
+                        "Lien": "https://www.allocine.fr/film/fichefilm_gen_cfilm=225571.html"
                     }
                 ],
-                "Pays_d_origine": "Italie",
-                "Description": "Compositeur italien légendaire, connu pour ses musiques de western spaghetti et ses compositions dramatiques et émouvantes.",
+                "Pays_d_origine": "it",
+                "Description": [
+                    {
+                        "en": "An Italian composer and conductor renowned for his expressive and original film scores, he masterfully combined moving melodies with bold orchestrations, leaving a lasting mark on the history of world cinema.",
+                        "fr": "Compositeur et chef d’orchestre italien reconnu pour ses musiques de film expressives et originales, il a su allier mélodies poignantes et orchestrations audacieuses, laissant une empreinte durable sur l’histoire du cinéma mondial."
+                    }
+                ],
                 "Musique_la_plus_connue": {
-                    "Film": "Le Bon, la Brute et le Truand",
-                    "Réalisateur": "Sergio Leone",
-                    "Musique":"musiques/ennio_ecstasyofgold_excerpt.mp3",
+                    "Film": [
+                        {
+                            "en": "The Good, the Bad and the Ugly",
+                            "fr": "Le Bon, la Brute et le Truand"
+                        }
+                    ],
+                    "Réalisateur": [
+                        {
+                            "en": "Director : Sergio Leone",
+                            "fr": "Réalisateur : Sergio Leone"
+                        }
+                    ],
+                    "Musique": "musiques/ennio_ecstasyofgold_excerpt.mp3",
                     "Date": 1966
                 }
             }

@@ -1,0 +1,30 @@
+{
+    "en" : [
+        {
+            "titre2-graph" : "When music hits the big screen: which genres shine at the Oscars?",
+            "paragraph-graph" : "This graph illustrates the distribution of film genres nominated in the Oscar music categories. It highlights trends over the years and allows us to observe the evolution of the film styles promoted by the Academy. We can thus identify which genres are gaining popularity, which are fading away, and how the musical landscape of cinema is changing over time.",
+            
+            "titre2-podium" : "They make the best film music",
+            "paragraph-podium" : "",
+            "titre4-slider-music" : "The theme music for",
+            "titre4-slider-film" : "Some films with",
+            
+            "titre2-music" :"",
+            "paragraph-music" : ""
+        }
+    ],
+    "fr" : [
+        {
+            "titre2-graph" : "Quand la musique fait son cinéma : quels genres brillent aux Oscars ?",
+            "paragraph-graph" : "Ce graphique illustre la répartition des genres de films nommés dans les catégories musicales des Oscars. Il met en lumière les tendances au fil des années et permet d’observer l’évolution des styles cinématographiques mis en avant par l’Académie. On peut ainsi identifier quels genres gagnent en popularité, lesquels s’effacent, et comment le paysage musical du cinéma se transforme au gré des époques.",
+            
+            "titre2-podium" : "Ils font les meilleurs musiques de film",
+            "paragraph-podium" : "",
+            "titre4-slider-music" : "La musique phare de",
+            "titre4-slider-film" : "Quelques films avec",
+            
+            "titre2-music" :"",
+            "paragraph-music" : ""
+        }
+    ]
+}
