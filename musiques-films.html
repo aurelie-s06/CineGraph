@@ -6,14 +6,19 @@
             allowfullscreen>
         </iframe>
 
-        <h3><span id="st-title">TITRE</span> - <span id="st-singer">Artiste</span></h3>
-        <p><span id="st-film-title">Titre du film</span> - <span id="st-film-director">Réalisateur</span> (<span
-                id="st-film-date">Date de sortie</span>)</p>
-        <p>vendu à environ <span id="st-sold">nombre de ventes</span> d'exemplaires.</p>
-        <p id="st-description">description du film</p>
-        <a href="" id="yt-link">lien yt</a>
-        <a href="" id="film-link">lien allociné</a>
-        <a href="" id="music-link">lien spotify</a>
+        <div class="contents">
+            <h3><span id="st-title">TITRE</span> - <span id="st-singer">Artiste</span></h3>
+            <p><span id="st-film-title">Titre du film</span> - <span id="st-film-director">Réalisateur</span> (<span
+                    id="st-film-date">Date de sortie</span>)</p>
+            <em>vendu à environ <span id="st-sold">nombre de ventes</span> millions d'exemplaires.</em>
+            <hr>
+            <p id="st-description">description du film</p>
+            <div class="boutons">
+                <a href="" id="music-link" target="_blank" title="Écouter sur spotify (Nouvel onglet)"><img src="images/logo-spotify-blanc.png" alt=""><span class="sr-only">lien spotify</span></a>
+                <a href="" id="film-link" title="En savoir plus sur le film - Allociné (Nouvel onglet)" target="_blank"><img src="images/lien-externe (1).png" alt="">Voir le film</a>
+            
+            </div>
+        </div>
     </div>
     <div class="sts-list">
         <h2>On les connaîts par coeur</h2>
@@ -26,9 +31,22 @@
 </section>
 
 <style>
-    
+    .sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+			clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
     * {
         /* border: gray dotted 1px; */
+        padding: 0;
+        margin: 0;
     }
     body {
         margin: 0;
@@ -36,28 +54,58 @@
         align-items: center;        
         background-color: #640C19;
         color: white;
+        font-family: sans-serif;
+        max-width: 1200px;
+        margin: auto;
     }
 h2 {
     color: #F6D758;
 }
-
+p{
+    max-width: 600px;
+}
+iframe {
+    border-radius: 20px;
+    box-shadow: 0 0 20px #000000b0;
+}
+hr {
+    width: 50px;
+    border: solid 2px #ffffff;
+    border-radius: 50px;
+    margin: 10px 15px;
+}
     .soundtrack-section {
         display: flex;
         align-items: center;
         gap: 80px;
+        width: 100%;
         height: 100vh;
     }
     .soundtrack-section>div {
         width: 100%;
+        display:flex ;
+        flex-direction: column;
     }
     .sts-info {
         transition: opacity 0.3s ease;
+        gap: 30px;
+    }
+    .sts-info .contents {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 5px;
+    }
+    .sts-list {
+        gap: 10px;
     }
     .sts-list ol {
         list-style-type: none;
         display: flex;
         padding: 0;
+        padding-left: 10px;
         flex-direction: column;
+        margin-top: 10px;
         gap: 5px; 
     }
     .sts-list li {
@@ -74,6 +122,7 @@ h2 {
     .sts-list li:hover:not(.active) {
         background-color: rgba(0, 0, 0, 0.6);
         border-color: black;
+        transform: translateX(-10px);
     }
     .sts-list li p {
         margin: 0;
@@ -82,6 +131,7 @@ h2 {
         border-color : #F6D758;
         background-color: #231C0C;
         box-shadow: 0 0 10px #f6d6581e;
+        transform: translateX(-10px);
     }
     .st-range {
         width: 25px;
@@ -93,6 +143,41 @@ h2 {
         color : #F6D758;
         font-weight: 500;
         border-radius: 50%;
+    }
+    .boutons {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    #film-link {
+        border : solid 2px white;
+        color: white;
+        padding: 8px 15px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: fit-content;
+        transition: all 0.3s ease;
+    }
+    #film-link img {
+        width: 12px;
+    }
+    #film-link:hover {
+        border-color: #F6D758;
+        box-shadow: 0 0 10px #f6d6581e;
+        transform: scale(1.02);
+    }
+    #music-link img{
+        width: 40px;
+        padding: 5px;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+    #music-link:hover img{
+        opacity: 1;
+        transform: scale(1.05);
     }
 </style>
 
@@ -135,7 +220,6 @@ h2 {
             document.getElementById('st-film-date').innerText = allsts[index].film_date;
             document.getElementById('st-sold').innerText = allsts[index].sold;
             document.getElementById('st-description').innerText = allsts[index].music_description[0].fr;
-            document.getElementById('yt-link').href = allsts[index].yt_link;
             document.getElementById('film-link').href = allsts[index].film_link;
             document.getElementById('music-link').href = allsts[index].music_link;
         }
