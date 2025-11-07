@@ -1,10 +1,11 @@
-<div>
+<section class="soundtrack-section">
     <div class="sts-info">
-        <iframe id="st-iframe" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        <iframe id="st-iframe" width="560" height="315" src=""
+            title="Rick Astley - Never Gonna Give You Up" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
+
         <h3><span id="st-title">TITRE</span> - <span id="st-singer">Artiste</span></h3>
         <p><span id="st-film-title">Titre du film</span> - <span id="st-film-director">Réalisateur</span> (<span
                 id="st-film-date">Date de sortie</span>)</p>
@@ -14,34 +15,113 @@
         <a href="" id="film-link">lien allociné</a>
         <a href="" id="music-link">lien spotify</a>
     </div>
-    <hr>
     <div class="sts-list">
+        <h2>On les connaîts par coeur</h2>
+        <p>Découvrez le top 10 des bandes originales de films les plus vendues de l'histoire.</p>
+        <ol>
+            <!-- Filled by JS -->
+        </ol>
 
     </div>
-</div>
+</section>
+
+<style>
+    
+    * {
+        /* border: gray dotted 1px; */
+    }
+    body {
+        margin: 0;
+        display: flex;
+        align-items: center;        
+        background-color: #640C19;
+        color: white;
+    }
+h2 {
+    color: #F6D758;
+}
+
+    .soundtrack-section {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        height: 100vh;
+    }
+    .soundtrack-section>div {
+        width: 100%;
+    }
+    .sts-info {
+        transition: opacity 0.3s ease;
+    }
+    .sts-list ol {
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        gap: 5px; 
+    }
+    .sts-list li {
+        padding: 10px;
+        border-radius: 5px;
+        border : transparent solid 2px;
+        background-color: rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+    }
+    .sts-list li:hover:not(.active) {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-color: black;
+    }
+    .sts-list li p {
+        margin: 0;
+    }
+    .sts-list .active {
+        border-color : #F6D758;
+        background-color: #231C0C;
+        box-shadow: 0 0 10px #f6d6581e;
+    }
+    .st-range {
+        width: 25px;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color : #F6D758;
+        font-weight: 500;
+        border-radius: 50%;
+    }
+</style>
 
 <script>
-    fetch('/data/music_film.json').then(response => response.json()).then(allsts => {
+    fetch('data/music_film.json').then(response => response.json()).then(allsts => {
         console.log(allsts);
 
-        const sts_listdiv = document.querySelector('.sts-list');
+        const sts_listdiv = document.querySelector('.sts-list ol');
         const sts_infodiv = document.querySelector('.sts-info');
 
         sts_listdiv.innerHTML = ''
 
         allsts.forEach((st) => {
-            let element_list = '<div id="st' + st.range + '"><p><span class = "st-range">' + st.range + '</span>' + st.music_title + ' - ' + st.film_title + '</p></div>';
+            let element_list = '<li id="st' + st.range + '"><p class = "st-range">' + st.range + '</p><p>' + st.music_title + ' - ' + st.film_title + '</p></li>';
             sts_listdiv.innerHTML += element_list;
         })
 
 
         function setActiveClass(id) {
             document.getElementById(id).classList.add('active');
-            document.querySelectorAll('.sts-list div').forEach((div) => {
+            document.querySelectorAll('.sts-list li').forEach((div) => {
                 if (div.id !== id) {
                     div.classList.remove('active');
                 }
             });
+        }
+
+        function transitionInfo(value) {
+            sts_infodiv.style.opacity = value;
         }
 
         function displaystInfo(id) {
@@ -60,13 +140,22 @@
             document.getElementById('music-link').href = allsts[index].music_link;
         }
 
-        sts_listdiv.querySelectorAll('div').forEach((div) => {
-            div.addEventListener('click', () => {
-                const stId = div.id;
+        function displayST(stId){
                 setActiveClass(stId);
-                displaystInfo(stId)
+                transitionInfo(0);
+                setTimeout(() => displaystInfo(stId), 300);
+                setTimeout(() => transitionInfo(1), 300);
+        }
+
+        sts_listdiv.querySelectorAll('li').forEach((li) => {
+            li.addEventListener('click', () => {
+                const stId = li.id;
+                displayST(stId);
             });
         });
+
+        // Display the first soundtrack info at load
+        displayST('st1');
     });
 
 
