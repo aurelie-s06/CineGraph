@@ -1,172 +1,182 @@
 [
     {
-        "Rang": 1,
-        "Film": "The Bodyguard",
-        "Realisateur": "Mick Jackson",
-        "Musique": "I Will Always Love You",
-        "Artiste": "Whitney Houston",
-        "Description": [
+        "range": 1,
+        "film_title": "The Bodyguard",
+        "film_director": "Mick Jackson",
+        "film_date": "1992",
+        "music_title": "I Will Always Love You",
+        "music_singer": "Whitney Houston",
+        "music_description": [
             {
                 "fr": "Portée par la magnifique voix de Whitney Houston avec le titre \"I Will Always Love You\", la bande originale du film avec Kevin Costner incarnant le garde du corps de la célèbre chanteuse arrive en tête de ce palmarès. Sortie en 1992, l’album s’est écoulé à plus de 42 millions d’exemplaires, et caracole en tête du classement des musiques de films ayant obtenu le plus de succès dans les bacs.",
                 "en": "Carried by Whitney Houston's magnificent voice with the song \"I Will Always Love You\", the soundtrack of the film starring Kevin Costner as the bodyguard of the famous singer tops this chart. Released in 1992, the album has sold over 42 million copies and tops the charts for the most successful film soundtracks ever."
             }
         ],
-        "Ventes": 42,
-        "lien_youtube": "https://youtu.be/3JWTaaS7LdU",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=60065.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/4eHbdreAnSOrDDsFfc4Fpm?si=30b0717e9e2f45d2"
+        "sold": 42,
+        "yt_link": "https://youtu.be/3JWTaaS7LdU",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=60065.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/4eHbdreAnSOrDDsFfc4Fpm?si=30b0717e9e2f45d2"
     },
     {
-        "Rang": 2,
-        "Film": "Dirty Dancing",
-        "Réalisateur": "Emile Ardolino",
-        "Musique": "The Time of My Life",
-        "Artiste": "Bill Medley & Jennifer Warnes",
-        "Description": [
+        "range": 2,
+        "film_title": "Dirty Dancing",
+        "film_director": "Emile Ardolino",
+        "film_date": "1987",
+        "music_title": "The Time of My Life",
+        "music_singer": "Bill Medley & Jennifer Warnes",
+        "music_description": [
             {
                 "fr": "Le film mettant en scène les amours de Bébé et de Johnny, son professeur de danse, n’aurait certainement pas été le même sans ses chansons inoubliables. La chanson \"The Time Of My Life\" pendant laquelle les deux acteurs réalisent le fameux porté a reçu en 1988 l’Oscar de la meilleure chanson de film. Au total, le disque paru en 1987 a été vendu à 42 millions d’exemplaires.",
                 "en": "The film depicting the love story between Baby and Johnny, her dance teacher, would certainly not have been the same without its unforgettable songs. The song \"The Time Of My Life\", during which the two actors perform the famous lift, won the Oscar for Best Original Song in 1988. In total, the album, released in 1987, sold 42 million copies."
             }
         ],
-        "Ventes": 42,
-        "lien_youtube": "https://youtu.be/4BQLE_RrTSU",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=39225.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/6W7ztLBiRzBN46ZaPAcQ0F?si=98ce7d615e0b47d7"
+        "sold": 42,
+        "yt_link": "https://youtu.be/4BQLE_RrTSU",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=39225.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/6W7ztLBiRzBN46ZaPAcQ0F?si=98ce7d615e0b47d7"
     },
     {
-        "Rang": 3,
-        "Film": "Saturday Night Fever",
-        "Réalisateur": "John Badham",
-        "Musique": "Saturday Night Fever",
-        "Artiste": "Bee Gees & divers",
-        "Description": [
+        "range": 3,
+        "film_title": "Saturday Night Fever",
+        "film_director": "John Badham",
+        "film_date": "1977",
+        "music_title": "Saturday Night Fever",
+        "music_singer": "Bee Gees & divers",
+        "music_description": [
             {
                 "fr": "Thanks to the original music by the Bee Gees, \"Saturday Night Fever\" was for a long time the best-selling soundtrack with 40 million albums sold. Having helped to popularise disco, the record received the Grammy Award for Best Album of the Year in 1979.",
                 "en": ""
             }
         ],
-        "Ventes": 40,
-        "lien_youtube": "https://youtu.be/u1qN6gLbUMw",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=608.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/3SueZGP9qEymzxlKroTnMc?si=45a3ebd64d574818"
+        "sold": 40,
+        "yt_link": "https://youtu.be/u1qN6gLbUMw",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=608.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/3SueZGP9qEymzxlKroTnMc?si=45a3ebd64d574818"
     },
     {
-        "Rang": 4,
-        "Film": "Titanic",
-        "Réalisateur": "James Cameron",
-        "Musique": "My Heart Will Go On",
-        "Artiste": "Céline Dion",
-        "Description": [
+        "range": 4,
+        "film_title": "Titanic",
+        "film_director": "James Cameron",
+        "film_date": "1997",
+        "music_title": "My Heart Will Go On",
+        "music_singer": "Céline Dion",
+        "music_description": [
             {
                 "fr": "Sortie en 1997, la BO du film de James Cameron est la plus récente de notre classement. Composée par James Horner, la musique de \"Titanic\" a remporté de nombreux prix. On peut notamment citer quatre trophées aux Grammy Awards, le Golden Globe et l’Oscar de la meilleure chanson pour \"My Heart Will Go On\" interprétée par Céline Dion.",
                 "en": ""
             }
         ],
-        "Ventes": 31,
-        "lien_youtube": "https://youtu.be/EcU0qbV70rU",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=5818.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/33LC84JgLvK2KuW43MfaNq?si=aaca600c8d4e41d0"
+        "sold": 31,
+        "yt_link": "https://youtu.be/EcU0qbV70rU",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=5818.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/33LC84JgLvK2KuW43MfaNq?si=aaca600c8d4e41d0"
     },
     {
-        "Rang": 5,
-        "Film": "Grease",
-        "Réalisateur": "Randal Kleiser",
-        "Musique": "You’re the One That I Want",
-        "Artiste": "John Travolta & Olivia Newton‑John",
-        "Description": [
+        "range": 5,
+        "film_title": "Grease",
+        "film_director": "Randal Kleiser",
+        "film_date": "1978",
+        "music_title": "You’re the One That I Want",
+        "music_singer": "John Travolta & Olivia Newton‑John",
+        "music_description": [
             {
                 "fr": "Qui n’a pas dansé sur \"The One That I Want\", chanté par John Travolta et Olivia Newton-John ? Si elle met particulièrement en valeur les deux acteurs du film, la bande originale est également interprétée par les autres comédiens de la mythique comédie musicale, ainsi que par le groupe Sha Na Na. Véritable succès commercial, le disque regroupant les chansons du film s’est écoulé à 28 millions d’exemplaires. Le titre \"Hopelessly Devoted To You\" a été nommé aux Oscars 1979 dans la catégorie meilleure chanson originale.",
                 "en": ""
             }
         ],
-        "Ventes": 28,
-        "lien_youtube": "https://youtu.be/itRFjzQICJU",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=579.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/0B9x2BRHqj3Qer7biM3pU3?si=0e135c4893114862"
+        "sold": 28,
+        "yt_link": "https://youtu.be/itRFjzQICJU",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=579.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/0B9x2BRHqj3Qer7biM3pU3?si=0e135c4893114862"
     },
     {
-        "Rang": 6,
-        "Film": "The Lion King",
-        "Réalisateur": "Roger Allers & Rob Minkoff",
-        "Musique": "Can You Feel the Love Tonight",
-        "Artiste": "Elton John",
-        "Description": [
+        "range": 6,
+        "film_title": "The Lion King",
+        "film_director": "Roger Allers & Rob Minkoff",
+        "film_date": "1994",
+        "music_title": "Can You Feel the Love Tonight",
+        "music_singer": "Elton John",
+        "music_description": [
             {
                 "fr": "Le film des studios Disney est le seul dessin animé présent dans ce classement. Si la partition orchestrale est signée Hans Zimmer, c’est surtout le titre d’Elton John qui est resté dans les mémoires. \"Can You Feel The Love Tonight\" a reçu l’Oscar de la meilleure chanson originale. Fait unique dans l’histoire de la cérémonie, deux autres chansons concouraient également pour le titre : \"Circle Of Life\" et \"Hakuna Matata\". Sorti en 1994, le disque atteint 22 millions d’exemplaires vendus.",
                 "en": ""
             }
         ],
-        "Ventes": 22,
-        "lien_youtube": "https://youtu.be/KjgWWjkNbhU",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=10862.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/32RxZnEk5KyWUTZR4azxbD?si=5e6a133623454e22"
+        "sold": 22,
+        "yt_link": "https://youtu.be/KjgWWjkNbhU",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=10862.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/32RxZnEk5KyWUTZR4azxbD?si=5e6a133623454e22"
     },
     {
-        "Rang": 7,
-        "Film": "Purple Rain",
-        "Réalisateur": "Albert Magnoli",
-        "Musique": "Purple Rain",
-        "Artiste": "Prince & the Revolution",
-        "Description": [
+        "range": 7,
+        "film_title": "Purple Rain",
+        "film_director": "Albert Magnoli",
+        "film_date": "1984",
+        "music_title": "Purple Rain",
+        "music_singer": "Prince & the Revolution",
+        "music_description": [
             {
                 "fr": "Mettant en scène Prince dans le rôle principal, le disque regroupant les chansons du film paru en 1984 a permis de propulser sur le devant de la scène l’immense artiste qu’était le Kid de Minneapolis. Plus de 20 millions de disques ont été vendus, contribuant à faire entrer Prince dans la légende. Lors de la disparition du chanteur en 2016, de nombreux lieux emblématiques de sa carrière ont été illuminés en violet pour lui rendre hommage.",
                 "en": ""
             }
         ],
-        "Ventes": 20,
-        "lien_youtube": "https://youtu.be/TvnYmWpD_T8",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=2438.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/1uvyZBs4IZYRebHIB1747m?si=d4b97789c07b4086"
+        "sold": 20,
+        "yt_link": "https://youtu.be/TvnYmWpD_T8",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=2438.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/1uvyZBs4IZYRebHIB1747m?si=d4b97789c07b4086"
     },
     {
-        "Rang": 8,
-        "Film": "Forrest Gump",
-        "Réalisateur": "Robert Zemeckis",
-        "Musique": "I'm Forrest...",
-        "Artiste": "Alan Silvestri",
-        "Description ": [
+        "range": 8,
+        "film_title": "Forrest Gump",
+        "film_director": "Robert Zemeckis",
+        "film_date": "1994",
+        "music_title": "I'm Forrest...",
+        "music_singer": "Alan Silvestri",
+        "music_description": [
             {
                 "fr": "En plus des titres originaux composés par Alan Silvestri, avec lequel le réalisateur Robert Zemeckis avait déjà collaboré pour \"À la poursuite du diamant vert\" ou \"Qui veut la peau de Roger Rabbit\", la bande originale de \"Forrest Gump\" est un condensé des titres mythiques de la culture américaine. On peut ainsi y écouter \"Hound Dog\" d’Elvis Presley, \"Respect\" d’Aretha Franklin, \"Sloop John B\" des Beach Boys, ou encore \"Break on Through\" des Doors. Éditée en 1994, la BO du film avec Tom Hanks atteint les 14 millions de disques vendus.",
                 "en": ""
             }
         ],
-        "Ventes": 14,
-        "lien_youtube": "Forrest Gump - Music - Forrest Gump Score",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=10568.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/1ijrMIqQvZNsnoqGukPzFD?si=20bfe89238e1488c"
+        "sold": 14,
+        "yt_link": "Forrest Gump - Music - Forrest Gump Score",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=10568.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/1ijrMIqQvZNsnoqGukPzFD?si=20bfe89238e1488c"
     },
     {
-        "Rang": 9,
-        "Film": "Footloose",
-        "Réalisateur": "Herbert Ross",
-        "Musique": "Footloose",
-        "Artiste": "Kenny Loggins",
-        "Description": [
+        "range": 9,
+        "film_title": "Footloose",
+        "film_director": "Herbert Ross",
+        "film_date": "1984",
+        "music_title": "Footloose",
+        "music_singer": "Kenny Loggins",
+        "music_description": [
             {
                 "fr": "Mettant en scène la jeunesse américaine d’une petite ville qui décide de se révolter contre l’autorité de l’Église, le film avec Kevin Bacon doit une large partie de son succès aux musiques qui le ponctuent. La chanson éponyme interprétée par Kenny Loggins a été nommée comme meilleure chanson de l’année dans de nombreuses cérémonies, et a connu un vif succès à travers le monde. L’album est typique des années 1980, avec des titres signés Bonnie Tyler, \"Holding Out For A Hero\", ou encore Shalamar avec \"Dancing In The Sheets\". Il s’est écoulé à plus de 12 millions d’exemplaires.",
                 "en": ""
             }
         ],
-        "Ventes": 12,
-        "lien_youtube": "https://youtu.be/ltrMfT4Qz5Y",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=2704.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/2vz1CsL5WBsbpBcwgboTAw?si=8a9ca11072944fde"
+        "sold": 12,
+        "yt_link": "https://youtu.be/ltrMfT4Qz5Y",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=2704.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/2vz1CsL5WBsbpBcwgboTAw?si=8a9ca11072944fde"
     },
     {
-        "Rang": 10,
-        "Film": "Top Gun",
-        "Réalisateur": "Tony Scott",
-        "Musique": "Top Gun Anthem",
-        "Artiste": "Graham Reynolds",
-        "Description": [
+        "range": 10,
+        "film_title": "Top Gun",
+        "film_director": "Tony Scott",
+        "film_date": "1986",
+        "music_title": "Top Gun Anthem",
+        "music_singer": "Graham Reynolds",
+        "music_description": [
             {
                 "fr": "Bande originale du film culte avec Tom Cruise, qui a permis à ce dernier d’accéder au rang de star mondiale, les chansons extraites de \"Top Gun\" ont marqué toute une génération. Enchaînant les titres d’artistes majeurs de l’époque, le disque a connu un énorme succès en atteignant plus de 10 millions d’albums vendus. Proposant une pop rock et électronique emblématique des années 1980, la BO de \"Top Gun\" a bénéficié du succès planétaire de la chanson \"Take My Breath Away\" du groupe Berlin.",
                 "en": ""
             }
         ],
-        "Ventes": 10,
-        "lien_youtube": "https://youtu.be/Bx51eegLTY8",
-        "lien_film": "https://www.allocine.fr/film/fichefilm_gen_cfilm=186636.html",
-        "lien_musique": "https://open.spotify.com/intl-fr/track/1ZkmPku85veww4fF66aUFF?si=a34b419033814c7a"
+        "sold": 10,
+        "yt_link": "https://youtu.be/Bx51eegLTY8",
+        "film_link": "https://www.allocine.fr/film/fichefilm_gen_cfilm=186636.html",
+        "music_link": "https://open.spotify.com/intl-fr/track/1ZkmPku85veww4fF66aUFF?si=a34b419033814c7a"
     }
 ]

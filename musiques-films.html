@@ -1,0 +1,74 @@
+<div>
+    <div class="sts-info">
+        <iframe id="st-iframe" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+        <h3><span id="st-title">TITRE</span> - <span id="st-singer">Artiste</span></h3>
+        <p><span id="st-film-title">Titre du film</span> - <span id="st-film-director">Réalisateur</span> (<span
+                id="st-film-date">Date de sortie</span>)</p>
+        <p>vendu à environ <span id="st-sold">nombre de ventes</span> d'exemplaires.</p>
+        <p id="st-description">description du film</p>
+        <a href="" id="yt-link">lien yt</a>
+        <a href="" id="film-link">lien allociné</a>
+        <a href="" id="music-link">lien spotify</a>
+    </div>
+    <hr>
+    <div class="sts-list">
+
+    </div>
+</div>
+
+<script>
+    fetch('/data/music_film.json').then(response => response.json()).then(allsts => {
+        console.log(allsts);
+
+        const sts_listdiv = document.querySelector('.sts-list');
+        const sts_infodiv = document.querySelector('.sts-info');
+
+        sts_listdiv.innerHTML = ''
+
+        allsts.forEach((st) => {
+            let element_list = '<div id="st' + st.range + '"><p><span class = "st-range">' + st.range + '</span>' + st.music_title + ' - ' + st.film_title + '</p></div>';
+            sts_listdiv.innerHTML += element_list;
+        })
+
+
+        function setActiveClass(id) {
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.sts-list div').forEach((div) => {
+                if (div.id !== id) {
+                    div.classList.remove('active');
+                }
+            });
+        }
+
+        function displaystInfo(id) {
+            let index = id.replace('st', '') - 1;
+            console.log(index)
+            document.getElementById('st-iframe').src = allsts[index].yt_link;
+            document.getElementById('st-title').innerText = allsts[index].music_title;
+            document.getElementById('st-singer').innerText = allsts[index].music_singer;
+            document.getElementById('st-film-title').innerText = allsts[index].film_title;
+            document.getElementById('st-film-director').innerText = allsts[index].film_director;
+            document.getElementById('st-film-date').innerText = allsts[index].film_date;
+            document.getElementById('st-sold').innerText = allsts[index].sold;
+            document.getElementById('st-description').innerText = allsts[index].music_description[0].fr;
+            document.getElementById('yt-link').href = allsts[index].yt_link;
+            document.getElementById('film-link').href = allsts[index].film_link;
+            document.getElementById('music-link').href = allsts[index].music_link;
+        }
+
+        sts_listdiv.querySelectorAll('div').forEach((div) => {
+            div.addEventListener('click', () => {
+                const stId = div.id;
+                setActiveClass(stId);
+                displaystInfo(stId)
+            });
+        });
+    });
+
+
+
+</script>
