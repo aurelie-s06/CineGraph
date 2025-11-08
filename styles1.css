@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "Trial VAR";
+    src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
+}
+
+* {
+    border: red 2px solid;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    margin: 0;
+    font-family: "Trial VAR", sans-serif;
+}
+
+.podium-title {
+    font-size: 2rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
+    -webkit-background-clip: text;
+}
+
+.podium-description {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.15);
+    font-family: "Poppins", sans-serif;
+}
+
+
+.podium-container {
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.podium-text {
+    background-color: aquamarine;
+    flex: 1;
+    max-width: 45%;
+    text-align: left;
+}
+
+.podium-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.couronne-compo {
+    background-color: #4dff00;
+    flex: 1;
+    position: relative;
+    height: 50%;
+    width: 100%;
+}
+
+.podium {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 1;
+}
+
+.couronne1 {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    z-index: 2;
+}
+
+.couronne2 {
+    position: absolute;
+    top: 64%;
+    left: 27.5%;
+    transform: translate(-50%, -50%);
+    width: 23%;
+    z-index: 2;
+}
+
+.couronne3 {
+    position: absolute;
+    top: 67%;
+    left: 72.5%;
+    transform: translate(-50%, -50%);
+    width: 23%;
+    z-index: 2;
+}
+
+.compositeurs {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFD700;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+    z-index: 3;
+}
+
+.premier {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.premier span {
+    font-size: 1.5rem;
+}
+
+.deuxieme {
+    top: 61%;
+    left: 27.5%;
+    transform: translate(-50%, -50%);
+}
+
+.deuxieme span {
+    font-size: 1.3rem;
+}
+
+.troisieme {
+    top: 64%;
+    left: 72.5%;
+    transform: translate(-50%, -50%);
+}
+
+.troisieme span {
+    font-size: 1.1rem;
+}
+
+
+.slider {
+    background-color: red;
+    flex: 1;
+    max-width: 45%;
+    text-align: right;
+    padding-right: 2rem;
+}

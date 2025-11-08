@@ -14,23 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       const podiumContainer = document.querySelector(".couronne-compo");
       const carousel = document.querySelector(".carousel.full");
-      const podiumOrder = ["John Williams", "Hans Zimmer", "Ennio Morricone"];
-      podiumOrder.forEach((name, index) => {
-        const composer = data.Podium.find(
-          (c) => `${c.Affichage.Prénom} ${c.Affichage.Nom}` === name
-        );
-        if (!composer) return;
 
-        const p = document.createElement("p");
-        p.classList.add("compositeurs");
-        if (index === 0) p.classList.add("premier");
-        if (index === 1) p.classList.add("deuxieme");
-        if (index === 2) p.classList.add("troisieme");
-        p.innerHTML = `<span>${
-          composer.Affichage.Prénom
-        }</span> <span>${composer.Affichage.Nom.toUpperCase()}</span>`;
-        podiumContainer.appendChild(p);
-      });
+
 
       data.Podium.forEach((composer) => {
         const info = composer.Affichage;
