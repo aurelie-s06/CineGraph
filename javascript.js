@@ -1,88 +1,178 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const btnScroll = document.querySelector(".scroll-down");
-  if (btnScroll) {
-    btnScroll.addEventListener("click", function () {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth",
-      });
-    });
+document.addEventListener("DOMContentLoaded", async () => {
+  const carousel = document.querySelector(".carousel");
+  const btnLeft = document.querySelector(".carousel-btn.left");
+  const btnRight = document.querySelector(".carousel-btn.right");
+
+  // Charger le JSON
+  const response = await fetch("data/composers.json");
+  const data = await response.json();
+  const composers = data.Podium;
+
+
+  composers.forEach((composer) => {
+    const info = composer.Affichage;
+    const slide = document.createElement("div");
+    slide.classList.add("slide");
+
+    slide.innerHTML = `
+  <div class="container-info-compo">
+    <img src="${info.Tronche}" alt="${info.Nom}" class="image-compo"/>
+    <div class="info-compo">
+      <h3 class="nom-compositeur">${info.Prénom} ${info.Nom}</h3>
+      <p>${info.Description[0].fr}</p>
+    </div>
+  </div>
+
+  <div class="container-info-music">
+    <h4>Musique la plus connue :</h4>
+    <div class="info-music">
+      <div class="music-text">
+        <p>
+          <strong>${info.Musique_la_plus_connue.Film[0].fr}</strong> (${
+      info.Musique_la_plus_connue.Date
+    })<br>
+          ${info.Musique_la_plus_connue.Réalisateur[0].fr}
+        </p>
+      </div>
+      <div class="music-actions">
+        <button class="btn-play" data-src="${
+          info.Musique_la_plus_connue.Musique
+        }">
+          <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg class="icon-pause hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
+            <path d="M6 19h4V5H6zm8-14v14h4V5h-4z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-info-film">
+    <h4>Nominations (${info.Nombre_de_nominations})</h4>
+    <div class="info-film">
+      ${info.Nominations.map(
+        (nom) => `
+          <div class="film-item">
+            <img src="${nom.Affiche}" alt="${nom.Film[0].fr}" class="affiche_film"/>
+            <div class="text-film">
+              <h5>${nom.Film[0].fr}</h5>
+              <p>${nom.Oscar}</p>
+            </div>
+          </div>
+        `
+      ).join("")}
+    </div>
+  </div>
+`;
+
+    carousel.appendChild(slide);
+  });
+
+  // === Création dynamique des boutons de navigation avec noms ===
+  const navContainer = document.createElement("div");
+  navContainer.classList.add("carousel-nav");
+
+  btnLeft.innerHTML = `
+  <div class="nav-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+    </svg>
+    <span class="nav-name left-name"></span>
+  </div>
+`;
+
+  btnRight.innerHTML = `
+  <div class="nav-btn">
+    <span class="nav-name right-name"></span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+    </svg>
+  </div>
+`;
+
+
+  const wrapper = document.querySelector(".carousel-wrapper");
+  navContainer.appendChild(btnLeft);
+  navContainer.appendChild(btnRight);
+  wrapper.appendChild(navContainer);
+
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function updateNavNames(index) {
+    const leftName = document.querySelector(".left-name");
+    const rightName = document.querySelector(".right-name");
+
+    const prevIndex = (index - 1 + composers.length) % composers.length;
+    const nextIndex = (index + 1) % composers.length;
+
+    leftName.textContent = composers[prevIndex].Affichage.Nom;
+    rightName.textContent = composers[nextIndex].Affichage.Nom;
   }
 
-  fetch("data/composers.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const podiumContainer = document.querySelector(".couronne-compo");
-      const carousel = document.querySelector(".carousel.full");
+  function showSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+    currentIndex = index;
+    updateNavNames(currentIndex);
+  }
 
+  btnLeft.addEventListener("click", () => showSlide(currentIndex - 1));
+  btnRight.addEventListener("click", () => showSlide(currentIndex + 1));
 
+  showSlide(0);
 
-      data.Podium.forEach((composer) => {
-        const info = composer.Affichage;
-        const slide = document.createElement("div");
-        slide.classList.add("slide", "full");
+  let currentAudio = new Audio();
+  let currentButton = null;
 
-        slide.innerHTML = `
-        <h3 class="nom-compositeur">${info.Prénom} ${info.Nom}</h3>
-        <div class="slide-content">
-          <div class="slide-left">
-            <div class="info-compositeur">
-              <img src="${info.Tronche}" alt="${info.Nom}" class="image-compo"/>
-              <p class="description">${info.Description}</p>
-            </div>
-            <div class="musique-connue">
-              <h4>Musique la plus connue :</h4>
-              <p><strong>${info.Musique_la_plus_connue.Film}</strong> (${
-          info.Musique_la_plus_connue.Date
-        })<br>
-              Réalisateur : ${info.Musique_la_plus_connue.Réalisateur}</p>
-              <audio controls class="audio-player">
-              <source src="${
-                info.Musique_la_plus_connue.Musique
-              }" type="audio/mp3" />
-              </audio>
-            </div>
-          </div>
+  document.querySelectorAll(".btn-play").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const src = btn.getAttribute("data-src");
+      const iconPlay = btn.querySelector(".icon-play");
+      const iconPause = btn.querySelector(".icon-pause");
 
-          <div class="slide-right">
-            <h4>Nominations (${info.Nombre_de_nominations})</h4>
-            ${info.Nominations.map(
-              (nom) => `
-                <div class="film_description">
-                  <img src="${nom.Affiche}" alt="${nom.Film}" class="affiche_film"/>
-                  <div class="film-info">
-                    <h5>${nom.Film}</h5>
-                    <p>${nom.Oscar}</p>
-                  </div>
-                </div>
-              `
-            ).join("")}
-          </div>
-        </div>
-      `;
-        carousel.appendChild(slide);
-      });
-
-      const slides = document.querySelectorAll(".slide.full");
-      const btnLeft = document.querySelector(".carousel-btn.left");
-      const btnRight = document.querySelector(".carousel-btn.right");
-      let currentIndex = 0;
-
-      function showSlide(index) {
-        const total = slides.length;
-        if (index < 0) index = total - 1;
-        if (index >= total) index = 0;
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-        currentIndex = index;
+      if (currentButton === btn) {
+        if (currentAudio.paused) {
+          currentAudio.play();
+          iconPlay.classList.add("hidden");
+          iconPause.classList.remove("hidden");
+        } else {
+          currentAudio.pause();
+          iconPlay.classList.remove("hidden");
+          iconPause.classList.add("hidden");
+        }
+        return;
       }
 
-      btnLeft.addEventListener("click", () => showSlide(currentIndex - 1));
-      btnRight.addEventListener("click", () => showSlide(currentIndex + 1));
+      if (currentButton) {
+        const prevPlay = currentButton.querySelector(".icon-play");
+        const prevPause = currentButton.querySelector(".icon-pause");
+        prevPlay.classList.remove("hidden");
+        prevPause.classList.add("hidden");
+      }
 
-      showSlide(0);
+      currentAudio.src = src;
+      currentAudio.play();
+
+      iconPlay.classList.add("hidden");
+      iconPause.classList.remove("hidden");
+      currentButton = btn;
     });
+  });
 
-  fetch("data/genres_musiques.json")
+  currentAudio.addEventListener("ended", () => {
+    if (currentButton) {
+      const iconPlay = currentButton.querySelector(".icon-play");
+      const iconPause = currentButton.querySelector(".icon-pause");
+      iconPlay.classList.remove("hidden");
+      iconPause.classList.add("hidden");
+    }
+  });
+});
+/*   fetch("data/genres_musiques.json")
     .then((response) => response.json())
     .then((data) => {
       const genreContainer = document.querySelector(".legendes");
@@ -183,36 +273,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         genreContainer.appendChild(btn);
       });
-    });
-
-  /* test  */
-  console.clear();
-
-  class musicPlayer {
-    constructor() {
-      this.play = this.play.bind(this);
-      this.playBtn = document.getElementById("play");
-      this.playBtn.addEventListener("click", this.play);
-      this.controlPanel = document.getElementById("control-panel");
-      this.infoBar = document.getElementById("info");
-    }
-
-    play() {
-      let controlPanelObj = this.controlPanel,
-        infoBarObj = this.infoBar;
-      Array.from(controlPanelObj.classList).find(function (element) {
-        return element !== "active"
-          ? controlPanelObj.classList.add("active")
-          : controlPanelObj.classList.remove("active");
-      });
-
-      Array.from(infoBarObj.classList).find(function (element) {
-        return element !== "active"
-          ? infoBarObj.classList.add("active")
-          : infoBarObj.classList.remove("active");
-      });
-    }
-  }
-
-  const newMusicplayer = new musicPlayer();
-});
+    });*/
