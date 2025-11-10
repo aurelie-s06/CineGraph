@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   <div class="container-info-compo">
     <img src="${info.Tronche}" alt="${info.Nom}" class="image-compo"/>
     <div class="info-compo">
-      <h3 class="nom-compositeur">${info.Prénom} ${info.Nom}</h3>
-      <p>${info.Description[0].fr}</p>
+      <h3 class="nom-compositeur">${info.Prénom} ${info.Nom} <span class="fi fi-${info.Pays_d_origine}"></span></h3>
+      <p>${info.Description[0].en}</p>
     </div>
   </div>
 
@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     <div class="info-music">
       <div class="music-text">
         <p>
-          <strong>${info.Musique_la_plus_connue.Film[0].fr}</strong> (${
+          <strong>${info.Musique_la_plus_connue.Film[0].en}</strong> (${
       info.Musique_la_plus_connue.Date
     })<br>
-          ${info.Musique_la_plus_connue.Réalisateur[0].fr}
+          ${info.Musique_la_plus_connue.Réalisateur[0].en}
         </p>
       </div>
       <div class="music-actions">
@@ -55,10 +55,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       ${info.Nominations.map(
         (nom) => `
           <div class="film-item">
-            <img src="${nom.Affiche}" alt="${nom.Film[0].fr}" class="affiche_film"/>
+            <img src="${nom.Affiche}" alt="${nom.Film[0].en}" class="affiche_film"/>
             <div class="text-film">
-              <h5>${nom.Film[0].fr}</h5>
+              <h5>${nom.Film[0].en}</h5>
               <p>${nom.Oscar}</p>
+              <a href="${nom.Lien}" class="icone_lien"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
         `
