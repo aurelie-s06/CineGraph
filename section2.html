@@ -19,10 +19,10 @@
     <section class="podium-section">
       <div class="podium-container">
         <div class="podium-text">
-          <h2 class="podium-title">
-            The 3 composers with the highest number of nominations
+          <h2 class="podium-title" id="titre2-podium">
+            They make the best film music
           </h2>
-          <p class="podium-description">
+          <p class="podium-description" id="paragraph-podium">
             From sweeping orchestral themes to subtle emotional undertones,
             these legendary composers have defined the sound of cinema. Their
             melodies transcend the screen — turning stories into unforgettable
@@ -58,5 +58,25 @@
       </div>
     </section>
     <script src="javascript.js"></script>
+    <script>
+      window.addEventListener("message", (event) => {
+        const lang = event.data.lang?.toLowerCase();
+        if (lang === "en" || lang === "fr") {
+          updateLanguage(lang);
+        }
+      });
+
+      function updateLanguage(lang) {
+        fetch("data/contenuLangue.json")
+          .then((res) => res.json())
+          .then((data) => {
+            const t = data[lang][0];
+            document.getElementById("titre2-podium").textContent =
+              t["titre2-podium"];
+            document.getElementById("paragraph-podium").textContent =
+              t["paragraph-podium"];
+          })
+      }
+    </script>
   </body>
 </html>

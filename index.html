@@ -8,6 +8,13 @@
     <title>CineGraph</title>
   </head>
   <body>
+    <div class="lang-select" id="langSelect">
+      <button class="lang-btn" id="langBtn">EN <span>▾</span></button>
+      <div class="lang-menu" id="traduire">
+        <button data-lang="en" value="en">EN</button>
+        <button data-lang="fr" value="fr">FR</button>
+      </div>
+    </div>
     <div class="main">
       <img src="images/accent.png" alt="" class="clap" />
       <h1 class="titre">CineGraph</h1>
@@ -22,18 +29,45 @@
       src="section2.html"
       style="width: 100%; height: 100vh; border: none"
       id="section2-iframe"
-    >
-    </iframe>
+    ></iframe>
 
     <!-- Genres musiques -->
     <iframe
       src="musiques-films.html"
       style="width: 100%; height: 100vh; border: none"
       id="musiques-films-iframe"
-    >
-    </iframe>
+    ></iframe>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="javascript.js"></script>
+    <script>
+      /* Fleche */
+      const scrollBtn = document.querySelector(".scroll-down");
+      scrollBtn.addEventListener("click", () => {
+        const section2 = document.getElementById("section2-iframe");
+        if (section2) {
+          section2.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+
+      // --- Sélecteur de langue ---
+      const langSelect = document.getElementById("langSelect");
+      const langBtn = document.getElementById("langBtn");
+
+      langBtn.addEventListener("click", () => {
+        langSelect.classList.toggle("open");
+      });
+
+      document.querySelectorAll(".lang-menu button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const lang = btn.dataset.lang.toUpperCase();
+          langBtn.innerHTML = `${lang} <span>▾</span>`;
+          langSelect.classList.remove("open");
+
+          const section2Iframe = document.getElementById("section2-iframe");
+          section2Iframe.contentWindow.postMessage({ lang }, "*");
+        });
+      });
+    </script>
   </body>
 </html>
