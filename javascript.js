@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const data = await response.json();
   const composers = data.Podium;
 
-
   composers.forEach((composer) => {
     const info = composer.Affichage;
     const slide = document.createElement("div");
@@ -18,7 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   <div class="container-info-compo">
     <img src="${info.Tronche}" alt="${info.Nom}" class="image-compo"/>
     <div class="info-compo">
-      <h3 class="nom-compositeur">${info.Prénom} ${info.Nom} <span class="fi fi-${info.Pays_d_origine}"></span></h3>
+      <h3 class="nom-compositeur">${info.Prénom} ${
+      info.Nom
+    } <span class="fi fi-${info.Pays_d_origine}"></span></h3>
       <p>${info.Description[0].en}</p>
     </div>
   </div>
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     carousel.appendChild(slide);
   });
 
-  // === Création dynamique des boutons de navigation avec noms ===
+  // === Boutons noms ===
   const navContainer = document.createElement("div");
   navContainer.classList.add("carousel-nav");
 
@@ -92,7 +93,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     </svg>
   </div>
 `;
-
 
   const wrapper = document.querySelector(".carousel-wrapper");
   navContainer.appendChild(btnLeft);
@@ -172,7 +172,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       iconPause.classList.add("hidden");
     }
   });
+
 });
+
+
+
 /*   fetch("data/genres_musiques.json")
     .then((response) => response.json())
     .then((data) => {
