@@ -1250,13 +1250,13 @@ let imdbIDs = ["tt0025164",
 let genres = []
 
 // variable film en cours de traitement
-let filmIndex = 943
+let filmIndex = 944
 
 // fonction pour obtenir le genre d'un film à partir de son id IMDB
 function getGenre() {
     let filmID = imdbIDs[filmIndex]
     // chargement des données JSON avec fetch
-    fetch("https://www.omdbapi.com/?i=" + filmID + "&apikey=a463fcd6")
+    fetch("https://www.omdbapi.com/?i=" + filmID + "&apikey=f99a50e0")
         .then(response => response.json())
         .then(data => {
             console.log('récupération des informations...')
