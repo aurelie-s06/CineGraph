@@ -53,19 +53,13 @@ body {
     overflow: hidden;
 }
 
-.couronne-compo {
-    flex: 1;
-    position: relative;
-    height: 50%;
-    width: 100%;
-}
 
 .podium {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 90%;
     z-index: 1;
 }
 
@@ -79,60 +73,6 @@ body {
     z-index: 3;
 }
 
-.container-premier {
-    position: absolute;
-    left: 278px;
-    top: 60px;
-}
-
-.couronne1 {
-    width: 200px;
-}
-
-.premier {
-    position: absolute;
-    top: 37.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-}
-
-
-.container-deuxieme {
-    position: absolute;
-    left: 95px;
-    top: 110px;
-}
-
-.couronne2 {
-    width: 180px;
-}
-
-.deuxieme {
-    position: absolute;
-    top: 37.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.3rem;
-}
-
-.container-troisieme {
-    position: absolute;
-    left: 483px;
-    top: 130px;
-}
-
-.couronne3 {
-    width: 180px;
-}
-
-.troisieme {
-    position: absolute;
-    top: 37.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.1rem;
-}
 
 .carousel-wrapper {
     position: relative;
@@ -154,7 +94,7 @@ body {
 .slider {
     flex: 1;
     max-width: 45%;
-/*     margin-top: 50px; */
+    /*     margin-top: 50px; */
     padding-right: 2rem;
 }
 
@@ -163,6 +103,7 @@ body {
     color: #FFD700;
     margin: 15px 0;
 }
+
 .container-info-compo {
     display: flex;
     align-items: center;
@@ -328,4 +269,113 @@ body {
 
 .hidden {
     display: none;
+}
+
+
+
+
+/* test  */
+
+.couronne-compo {
+    flex: 1;
+    position: relative;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.container-premier,
+.container-deuxieme,
+.container-troisieme {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+
+.container-premier {
+    position: absolute;
+    left: 182px;
+    top: 70px;
+}
+
+.couronne1 {
+    width: 190px;
+}
+
+.premier {
+    position: absolute;
+    top: 37.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+.container-deuxieme {
+    position: absolute;
+    left: 40px;
+    top: 130px;
+}
+
+.couronne2 {
+    width: 160px;
+}
+
+.deuxieme {
+    position: absolute;
+    top: 37.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+}
+
+.container-troisieme {
+    position: absolute;
+    left: 353px;
+    top: 140px;
+}
+
+.couronne3 {
+    width: 160px;
+}
+
+.troisieme {
+    position: absolute;
+    top: 37.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+}
+
+
+
+/* === Projecteur éteint (base) === */
+.container-premier::before,
+.container-deuxieme::before,
+.container-troisieme::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 90px;
+    transform: translateX(-50%) scaleY(0.8);
+    width: 150px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    filter: blur(3px);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    transition: opacity 0.8s ease, transform 1s ease;
+    z-index: -1;
+}
+
+/* === Projecteur allumé === */
+.container-premier.active::before,
+.container-deuxieme.active::before,
+.container-troisieme.active::before {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
 }

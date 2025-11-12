@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupNavigation();
     setupAudio();
-    traduction(currentLang)
+    traduction(currentLang);
   }
 
   // === Navigation ===
@@ -215,6 +215,20 @@ document.addEventListener("DOMContentLoaded", () => {
           t["titre4-slider-music"];
       });
   }
+
+  const containers = document.querySelectorAll(
+    ".container-premier, .container-deuxieme, .container-troisieme"
+  );
+
+  if (containers[0]) containers[0].classList.add("active");
+
+  containers.forEach((container, index) => {
+    container.addEventListener("click", () => {
+      containers.forEach((c) => c.classList.remove("active"));
+      container.classList.add("active");
+    });
+  });
+
 });
 
 /*   fetch("data/genres_musiques.json")
