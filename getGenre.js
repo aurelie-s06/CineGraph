@@ -941,7 +941,7 @@ let imdbIDs = ["tt0025164",
     "tt0099785",
     "tt0100994",
     "tt0100395",
-    "nm1874068",
+    "tt1874068",
     "tt0099785",
     "tt0099422",
     "tt0101414",
@@ -1250,11 +1250,12 @@ let imdbIDs = ["tt0025164",
 let genres = []
 
 // variable film en cours de traitement
-let filmIndex = 944
+let filmIndex = 943
 
 // fonction pour obtenir le genre d'un film à partir de son id IMDB
 function getGenre() {
     let filmID = imdbIDs[filmIndex]
+    console.log(filmID)
     // chargement des données JSON avec fetch
     fetch("https://www.omdbapi.com/?i=" + filmID + "&apikey=f99a50e0")
         .then(response => response.json())
@@ -1268,16 +1269,16 @@ function getGenre() {
             }
             genres.push(filmInfo)
             // passer au film suivant
-            filmIndex++
+            //filmIndex++
             // poursuivre si on est pas à la fin du tableau
-            if (filmIndex < imdbIDs.length) {
-                setTimeout(() => {
-                    getGenre()
-                }, 1000)
+            // if (filmIndex < imdbIDs.length) {
+            //     setTimeout(() => {
+            //         getGenre()
+            //     }, 1000)
 
-            } else {
-                console.log(genres)
-            }
+            // } else {
+            //     console.log(genres)
+            // }
 
         })
 }
