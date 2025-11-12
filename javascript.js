@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupNavigation();
     setupAudio();
+    traduction(currentLang)
   }
 
   // === Navigation ===
@@ -203,6 +204,16 @@ document.addEventListener("DOMContentLoaded", () => {
         iconPause.classList.add("hidden");
       }
     };
+  }
+
+  function traduction(lang) {
+    fetch("data/contenuLangue.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const t = data[lang][0];
+        document.getElementById("titre4-slider-music").textContent =
+          t["titre4-slider-music"];
+      });
   }
 });
 
