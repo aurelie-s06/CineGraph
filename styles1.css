@@ -47,7 +47,7 @@ body {
 
 .podium-text {
     flex: 1;
-    max-width: 50%;
+    max-width: 45%;
     text-align: left;
 }
 
@@ -87,7 +87,7 @@ body {
 
 .slider {
     flex: 1;
-    max-width: 45%;
+    max-width: 50%;
     /*     margin-top: 50px; */
     padding-right: 2rem;
 }
@@ -136,6 +136,7 @@ body {
     border-radius: 10px;
 }
 
+
 .music-text {
     flex: 1;
 }
@@ -171,7 +172,7 @@ body {
 
 .film-item {
     display: flex;
-    width: 30%;
+    width: 45%;
     background: rgba(255, 255, 255, 0.1);
     padding: 8px;
     border-radius: 8px;
@@ -204,6 +205,11 @@ body {
     color: #ffffff;
     margin: 0px;
     margin-bottom: 5px;
+}
+
+.descriptioon-compo {
+    line-height: 1.6 !important;
+    color: pink !important;
 }
 
 .icone_lien {
@@ -414,3 +420,5 @@ body {
     opacity: 1;
     transform: translateX(-50%) scaleY(1);
 } */
+
+
