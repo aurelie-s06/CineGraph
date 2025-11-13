@@ -330,3 +330,18 @@ fetch("graphTablev2.json")
       },
     });
   });
+
+  //activer les projecteurs
+
+  document.getElementById('light1').addEventListener('click', function(){
+    this.classList.add('active')
+    console.log('caca')
+  })
+  document.getElementById('light2').addEventListener('click', function(){
+    this.classList.add('active')
+    console.log('caca')
+  })
+  document.getElementById('light3').addEventListener('click', function(){
+    this.classList.add('active')
+    console.log('caca')
+  })

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="globalstyles.css" />
+  <link rel="stylesheet" href="section3styles.css">
+  <link rel="stylesheet" href="styles1.css">
   <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
   <title>CineGraph</title>
 </head>
@@ -28,70 +30,137 @@
       </div>
     </div>
     <!-- Podium -->
-    <iframe src="section2.html" style="width: 100%; height: 100vh; border: none" id="section2-iframe"></iframe>
+    <section class="podium-section">
+      <div class="podium-text">
+        <h2 class="podium-title" id="titre2-podium">
+          They make the best film music
+        </h2>
+        <p class="podium-description" id="paragraph-podium">
+          Discover the podium of the three composers most nominated for
+          Oscars. True legends of film music, they have shaped the history of
+          cinema with soundtracks that stand the test of time. Their melodies
+          heighten emotions, bring images to life and leave a lasting
+          impression on viewers' imaginations. Through their works, they prove
+          that music is the soul of the seventh art.
+        </p>
+        <div class="couronne-compo">
+          <div class="light1" id="light1"></div>
+          <div class="light2" id="light2"></div>
+          <div class="light3" id="light3"></div>
+          <img class="podium-img" src="images/podium-full.png" alt="">
+        </div>
+      </div>
+      <!-- Partie droite : Slider -->
+      <div class="slider">
+        <div class="carousel-wrapper">
+          <button class="carousel-btn left">&#10094;</button>
+          <div class="carousel"></div>
+          <button class="carousel-btn right">&#10095;</button>
+        </div>
+      </div>
+    </section>
     <!-- Genres musiques -->
-    <iframe src="musiques-films.html" id="musiques-films-iframe"></iframe>
+    <section class="soundtrack-section">
+      <div class="sts-info">
+        <iframe id="st-iframe" src="" title="Rick Astley - Never Gonna Give You Up" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
 
-          <canvas id="oscarsChart" width="1200" height="600"></canvas>
+        <div class="contents">
+          <h3>
+            <span id="st-title">TITRE</span> - <span id="st-singer">Artiste</span>
+          </h3>
+          <p>
+            <span id="st-film-title">Titre du film</span> -
+            <span id="st-film-director">Réalisateur</span> (<span id="st-film-date">Date de sortie</span>)
+          </p>
+          <em>vendu à environ <span id="st-sold">nombre de ventes</span> millions
+            d'exemplaires.</em>
+          <hr />
+          <p id="st-description">description du film</p>
+          <div class="boutons">
+            <a href="" id="music-link" target="_blank" title="Écouter sur spotify (Nouvel onglet)"><img
+                src="images/logo-spotify-blanc.png" alt="" /><span class="sr-only">lien spotify</span></a>
+            <a href="" id="film-link" title="En savoir plus sur le film - Allociné (Nouvel onglet)" target="_blank"><img
+                src="images/lien-externe (1).png" alt="" />Voir le film</a>
+          </div>
+        </div>
+      </div>
+      <div class="sts-list">
+        <h2>On les connaîts par coeur</h2>
+        <p>
+          Découvrez le top 10 des bandes originales de films les plus vendues de
+          l'histoire.
+        </p>
+        <ol>
+          <!-- Filled by JS -->
+        </ol>
+      </div>
+    </section>
+
+    <canvas id="oscarsChart" width="1200" height="600"></canvas>
   </main>
 
-    <footer>
-      <a href="mentionslegales.html" id="mentionslegales">Legal Notices</a>
-      <br>
-      <br>
-      <a href="credits.html" id="credits">Credits</a>
-      <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
-    </footer>
+  <footer>
+    <a href="mentionslegales.html" id="mentionslegales">Legal Notices</a>
+    <br>
+    <br>
+    <a href="credits.html" id="credits">Credits</a>
+    <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="javascript.js"></script>
-    <script>
-      /* Fleche */
-      const scrollBtn = document.querySelector(".scroll-down");
-      scrollBtn.addEventListener("click", () => {
-        const section2 = document.getElementById("section2-iframe");
-        if (section2) {
-          section2.scrollIntoView({ behavior: "smooth" });
-        }
-      });
-      // --- Sélecteur de langue ---
-      const langSelect = document.getElementById("langSelect");
-      const langBtn = document.getElementById("langBtn");
-
-      langBtn.addEventListener("click", () => {
-        langSelect.classList.toggle("open");
-      });
-
-      document.querySelectorAll(".lang-menu button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const lang = btn.dataset.lang.toUpperCase();
-          langBtn.innerHTML = `${lang} <span>▾</span>`;
-          langSelect.classList.remove("open");
-
-          const section2Iframe = document.getElementById("section2-iframe");
-          section2Iframe.contentWindow.postMessage({ lang }, "*");
-              const musiquesIframe = document.getElementById("musiques-films-iframe");
-              if (musiquesIframe && musiquesIframe.contentWindow) {
-                musiquesIframe.contentWindow.postMessage({ lang }, "*");
-              }
-
-          if (lang === "EN" || lang === "FR") {
-          updateLanguage(lang.toLowerCase());
-          };
-        });
-      });
-
-      function updateLanguage(lang) {
-        fetch("data/contenuLangue.json")
-          .then((res) => res.json())
-          .then((data) => {
-            const t = data[lang][0];
-            document.getElementById("mentionslegales").textContent =
-              t["mentionslegales"];
-            document.getElementById("credits").textContent = t["credits"];
-            document.getElementById("piedpage").textContent = t["piedpage"];
-          });
+  <script src="section3script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="javascript.js"></script>
+  <script>
+    /* Fleche */
+    const scrollBtn = document.querySelector(".scroll-down");
+    scrollBtn.addEventListener("click", () => {
+      const section2 = document.getElementById("section2-iframe");
+      if (section2) {
+        section2.scrollIntoView({ behavior: "smooth" });
       }
-    </script>
-  </body>
+    });
+    // --- Sélecteur de langue ---
+    const langSelect = document.getElementById("langSelect");
+    const langBtn = document.getElementById("langBtn");
+
+    langBtn.addEventListener("click", () => {
+      langSelect.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".lang-menu button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang.toUpperCase();
+        langBtn.innerHTML = `${lang} <span>▾</span>`;
+        langSelect.classList.remove("open");
+
+        const section2Iframe = document.getElementById("section2-iframe");
+        section2Iframe.contentWindow.postMessage({ lang }, "*");
+        const musiquesIframe = document.getElementById("musiques-films-iframe");
+        if (musiquesIframe && musiquesIframe.contentWindow) {
+          musiquesIframe.contentWindow.postMessage({ lang }, "*");
+        }
+
+        if (lang === "EN" || lang === "FR") {
+          updateLanguage(lang.toLowerCase());
+        };
+      });
+    });
+
+    function updateLanguage(lang) {
+      fetch("data/contenuLangue.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const t = data[lang][0];
+          document.getElementById("mentionslegales").textContent =
+            t["mentionslegales"];
+          document.getElementById("credits").textContent = t["credits"];
+          document.getElementById("piedpage").textContent = t["piedpage"];
+        });
+    }
+  </script>
+</body>
+
 </html>

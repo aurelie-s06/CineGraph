@@ -17,13 +17,9 @@
     font-family: "Poppins", sans-serif;
 }
 .podium-text {
-<<<<<<< HEAD
     flex: 1;
     max-width: 45%;
     text-align: left;
-=======
-    max-width: 40%;
->>>>>>> aab1cae03fab1881942bd0ef48cb042e049cfe0d
 }
 
 .podium-section {
@@ -63,14 +59,8 @@
 }
 
 .slider {
-<<<<<<< HEAD
     flex: 1;
     max-width: 50%;
-    /*     margin-top: 50px; */
-    padding-right: 2rem;
-=======
-    max-width: 50%;
->>>>>>> aab1cae03fab1881942bd0ef48cb042e049cfe0d
 }
 
 .slide h4 {
@@ -343,13 +333,18 @@
 .podium {
     width: 100%;
 }
-.couronne1, .couronne2, .couronne3 {
-    width: 11vw;
+/* .couronne1, .couronne2, .couronne3 {
+    width: 100%;
+} */
+.couronne-compo {
+    position: relative;
 }
-.couronne-compo div {
+/* .couronne-compo div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 15px;
     align-items: end;
+    transform: translateY(10%);
 }
 .couronne-compo div div {
     position: relative;
@@ -373,6 +368,10 @@
 }
 .couronne-compo .container-premier {
     margin-bottom: 50px;
+} */
+
+.podium-img {
+    width: 100%;
 }
 /* === Projecteur éteint (base) === */
 /* .container-premier::before,
@@ -402,4 +401,31 @@
     transform: translateX(-50%) scaleY(1);
 } */
 
+.light1, .light2, .light3 {
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to top,rgba(250, 208, 196, 0), #ffe65b,rgba(250, 208, 196, 0));
+  -webkit-clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+  clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.light1 {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10%;
+}
+.light2 {
+    left: 0;
+}
+.light3 {
+    right: 0;
+}
+.light1:hover, .light2:hover, .light3:hover {
+    opacity: 0.2;
+}
+ .couronne-compo .active {
+    opacity: 0.4;
+ }
 

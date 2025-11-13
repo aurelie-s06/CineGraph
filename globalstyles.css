@@ -24,7 +24,10 @@
 
 /* CORPS DE PAGE */
 .body {
-    background-image: linear-gradient(to top, #640C19, #640c1900 50%);
+    background-image: linear-gradient(to top, #640C19 30%, #640c1900 60%);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 main {
@@ -32,17 +35,13 @@ main {
     margin: auto;
 }
 
-.body iframe {
-    width: 100%;
-    height: 100vh;
-    border: none;
-}
-
 /* STYLES DE TITRES */
 
 h2,
 h3 {
     font-family: 'Trial VAR';
+    margin: 0;
+    margin-bottom: 15px;
 }
 
 h2 {
@@ -52,4 +51,6 @@ h2 {
 p {
     max-width: 600px;
     color: white;
+    margin: 0;
+    margin-bottom: 10px;
 }
