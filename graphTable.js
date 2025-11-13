@@ -1,4 +1,13 @@
 let graphTable = []
+let yearsTable = []
+let somme = 0
+fetch("genresv1.json")
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(element => {
+            yearsTable.push(element.year)
+        })
+    })
 fetch("formattedGenres.json")
     .then(response => response.json())
     .then(data => {
@@ -45,7 +54,16 @@ fetch("formattedGenres.json")
             //ajouter les valeurs pour la bonne année
             let yearvalueobj = genreobj.years.find((obj) => obj.year === year);
 
-            yearvalueobj.value+=element.value 
+            yearvalueobj.value += element.value
+
+            let occurrences = 0
+            yearsTable.forEach(el => {
+                if (el == year) {
+                    occurrences += 1
+                }
+            })
+
+            yearvalueobj.value = element.value/occurrences * 100
 
         });
     })
