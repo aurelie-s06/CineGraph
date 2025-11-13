@@ -1,22 +1,3 @@
-@font-face {
-    font-family: "Trial VAR";
-    src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
-}
-
-*, *::after, *::before {
-    box-sizing: border-box;
-}
-
-/* * {
-    border: red 0.5px solid;
-} */
-
-body {
-    background-color: #000;
-    color: white;
-    margin: 0;
-    font-family: "Trial VAR", sans-serif;
-}
 
 .podium-title {
     font-size: 2rem;
@@ -35,26 +16,22 @@ body {
     text-shadow: 0 0 6px rgba(255, 215, 0, 0.15);
     font-family: "Poppins", sans-serif;
 }
-
-
-.podium-container {
-    display: flex;
-    justify-content: space-between;
-    height: 100vh;
-    padding: 0 5%;
-    box-sizing: border-box;
-}
-
 .podium-text {
+<<<<<<< HEAD
     flex: 1;
     max-width: 45%;
     text-align: left;
+=======
+    max-width: 40%;
+>>>>>>> aab1cae03fab1881942bd0ef48cb042e049cfe0d
 }
 
 .podium-section {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
 }
 
 .compositeurs {
@@ -86,10 +63,14 @@ body {
 }
 
 .slider {
+<<<<<<< HEAD
     flex: 1;
     max-width: 50%;
     /*     margin-top: 50px; */
     padding-right: 2rem;
+=======
+    max-width: 50%;
+>>>>>>> aab1cae03fab1881942bd0ef48cb042e049cfe0d
 }
 
 .slide h4 {
