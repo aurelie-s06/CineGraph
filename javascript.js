@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3 class="nom-compositeur">${info.Prénom} ${
         info.Nom
       } <span class="fi fi-${info.Pays_d_origine}"></span></h3>
-            <p>${info.Description[0][currentLang]}</p>
+            <p class="description-compo">${info.Description[0][currentLang]}</p>
           </div>
         </div>
 
