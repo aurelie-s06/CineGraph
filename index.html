@@ -74,6 +74,10 @@
 
           const section2Iframe = document.getElementById("section2-iframe");
           section2Iframe.contentWindow.postMessage({ lang }, "*");
+              const musiquesIframe = document.getElementById("musiques-films-iframe");
+              if (musiquesIframe && musiquesIframe.contentWindow) {
+                musiquesIframe.contentWindow.postMessage({ lang }, "*");
+              }
 
           if (lang === "EN" || lang === "FR") {
           updateLanguage(lang.toLowerCase());
