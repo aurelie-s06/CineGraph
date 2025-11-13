@@ -11,7 +11,11 @@
             "titre4-slider-film" : "Some films with",
             
             "titre2-music" :"",
-            "paragraph-music" : ""
+            "paragraph-music" : "",
+
+            "mentionslegales" : "Legal Notices",
+            "credits" : "Credits",
+            "piedpage" : "2025 - CINEGRAPH All rights reserved"
         }
     ],
     "fr" : [
@@ -26,7 +30,11 @@
             "titre4-slider-film" : "Quelques films avec",
             
             "titre2-music" :"On les connait par coeur",
-            "paragraph-music" : ""
+            "paragraph-music" : "",
+
+            "mentionslegales" : "Mentions Légales",
+            "credits" : "Crédits",
+            "piedpage" : "2025 - CINEGRAPH Tous droits réservés"
         }
     ]
 }

@@ -38,6 +38,14 @@
       id="musiques-films-iframe"
     ></iframe>
 
+    <footer>
+      <a href="mentionslegales.html" id="mentionslegales">Legal Notices</a>
+      <br>
+      <br>
+      <a href="credits.html" id="credits">Credits</a>
+      <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="javascript.js"></script>
     <script>
@@ -66,8 +74,24 @@
 
           const section2Iframe = document.getElementById("section2-iframe");
           section2Iframe.contentWindow.postMessage({ lang }, "*");
+
+          if (lang === "EN" || lang === "FR") {
+          updateLanguage(lang.toLowerCase());
+          };
         });
       });
+
+      function updateLanguage(lang) {
+        fetch("data/contenuLangue.json")
+          .then((res) => res.json())
+          .then((data) => {
+            const t = data[lang][0];
+            document.getElementById("mentionslegales").textContent =
+              t["mentionslegales"];
+            document.getElementById("credits").textContent = t["credits"];
+            document.getElementById("piedpage").textContent = t["piedpage"];
+          });
+      }
     </script>
   </body>
 </html>

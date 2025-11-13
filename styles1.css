@@ -43,7 +43,7 @@ body {
 
 .podium-text {
     flex: 1;
-    max-width: 40%;
+    max-width: 50%;
     text-align: left;
 }
 
@@ -51,16 +51,6 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-}
-
-
-.podium {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    z-index: 1;
 }
 
 .compositeurs {
@@ -286,6 +276,15 @@ body {
     align-items: flex-end;
 }
 
+.podium {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 1;
+}
+
 .container-premier,
 .container-deuxieme,
 .container-troisieme {
@@ -298,12 +297,12 @@ body {
 
 .container-premier {
     position: absolute;
-    left: 182px;
+    left: 12px;
     top: 70px;
 }
 
 .couronne1 {
-    width: 190px;
+    width: 35%;
 }
 
 .premier {
@@ -358,8 +357,8 @@ body {
 .container-troisieme::before {
     content: "";
     position: absolute;
-    top: -20px;
-    left: 90px;
+    top: 0px;
+    left: 0px;
     transform: translateX(-50%) scaleY(0.8);
     width: 150px;
     height: 300px;
