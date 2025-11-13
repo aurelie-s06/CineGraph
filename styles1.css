@@ -3,6 +3,10 @@
     src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
 }
 
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
 /* * {
     border: red 0.5px solid;
 } */
@@ -266,7 +270,7 @@ body {
 
 /* test  */
 
-.couronne-compo {
+/* .couronne-compo {
     flex: 1;
     position: relative;
     height: 60%;
@@ -347,12 +351,44 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1.1rem;
+} */
+
+.podium {
+    width: 100%;
 }
-
-
-
+.couronne1, .couronne2, .couronne3 {
+    width: 11vw;
+}
+.couronne-compo div {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+.couronne-compo div div {
+    position: relative;
+    width: fit-content;
+}
+.couronne-compo img {
+    
+    border: solid red;
+}
+.couronne-compo .compositeurs {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    color: #FFD700;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+    z-index: 3;
+    text-align: center;
+}
+.couronne-compo .container-premier {
+    margin-bottom: 50px;
+}
 /* === Projecteur éteint (base) === */
-.container-premier::before,
+/* .container-premier::before,
 .container-deuxieme::before,
 .container-troisieme::before {
     content: "";
@@ -372,9 +408,9 @@ body {
 }
 
 /* === Projecteur allumé === */
-.container-premier.active::before,
+/* .container-premier.active::before,
 .container-deuxieme.active::before,
 .container-troisieme.active::before {
     opacity: 1;
     transform: translateX(-50%) scaleY(1);
-}
+} */ */
