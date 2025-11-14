@@ -156,11 +156,12 @@
       /* Fleche */
       const scrollBtn = document.querySelector(".scroll-down");
       scrollBtn.addEventListener("click", () => {
-        const section2 = document.getElementById("section2-iframe");
+        const section2 = document.getElementById("oscarsChart");
         if (section2) {
           section2.scrollIntoView({ behavior: "smooth" });
         }
       });
+
       // --- Sélecteur de langue ---
       const langSelect = document.getElementById("langSelect");
       const langBtn = document.getElementById("langBtn");

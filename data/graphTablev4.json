@@ -233,47 +233,6 @@
     ]
   },
   {
-    "genre": "Fantasy",
-    "decades": [
-      {
-        "decade": "1930",
-        "value": 7.7249
-      },
-      {
-        "decade": "1940",
-        "value": 10.3051
-      },
-      {
-        "decade": "1950",
-        "value": 7.9754
-      },
-      {
-        "decade": "1960",
-        "value": 6.6994
-      },
-      {
-        "decade": "1970",
-        "value": 15.2869
-      },
-      {
-        "decade": "1980",
-        "value": 22.9878
-      },
-      {
-        "decade": "1990",
-        "value": 18.4259
-      },
-      {
-        "decade": "2000",
-        "value": 19.9242
-      },
-      {
-        "decade": "2010",
-        "value": 6.6667
-      }
-    ]
-  },
-  {
     "genre": "Animation",
     "decades": [
       {
@@ -311,47 +270,6 @@
       {
         "decade": "2010",
         "value": 40.968
-      },
-      {
-        "decade": "2020",
-        "value": 5.5556
-      }
-    ]
-  },
-  {
-    "genre": "Thriller",
-    "decades": [
-      {
-        "decade": "1940",
-        "value": 5.1867
-      },
-      {
-        "decade": "1950",
-        "value": 4.3417
-      },
-      {
-        "decade": "1960",
-        "value": 3.5714
-      },
-      {
-        "decade": "1970",
-        "value": 22.7961
-      },
-      {
-        "decade": "1980",
-        "value": 13.931
-      },
-      {
-        "decade": "1990",
-        "value": 14.6759
-      },
-      {
-        "decade": "2000",
-        "value": 14.4589
-      },
-      {
-        "decade": "2010",
-        "value": 17.5673
       },
       {
         "decade": "2020",

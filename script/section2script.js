@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       composers = data.Podium;
       Carousel();
+      changeLanguage(currentLang);
     });
-
-  Carousel();
 
   // === Fonction Carousel ===
   function Carousel() {
@@ -199,7 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-
   const containers = document.querySelectorAll(
     ".container-premier, .container-deuxieme, .container-troisieme"
   );
@@ -212,4 +210,22 @@ document.addEventListener("DOMContentLoaded", () => {
       container.classList.add("active");
     });
   });
+
+  function changeLanguage(lang) {
+  currentLang = lang;
+
+  const textes = contenuLangue[lang][0]; // récupérer l'objet pour la langue choisie
+
+  // Mettre à jour les titres fixes
+  document.querySelectorAll("#titre4-slider-music").forEach((el) => {
+    el.textContent = textes["titre4-slider-music"];
+  });
+
+  document.querySelectorAll("#titre4-slider-film").forEach((el) => {
+    el.textContent = textes["titre4-slider-film"];
+  });
+
+
+}
+
 });

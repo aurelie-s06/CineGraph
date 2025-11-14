@@ -1,3 +1,5 @@
+/* Ce code permet de regrouper les années en décennies, il aditionne donc les valeurs de chaque année pour en avoir une seule par decennies */
+
 fetch("data/graphTablev3.json")
     .then(response => response.json())
     .then(data => {
@@ -14,7 +16,7 @@ function groupByDecade(data) {
             const year = parseInt(entry.year, 10);
             const value = entry.value;
 
-            // Décennie (ex : 1934 → 1930)
+            // Décennie
             const decade = Math.floor(year / 10) * 10;
 
             if (!decadeMap[decade]) {
@@ -23,7 +25,7 @@ function groupByDecade(data) {
             decadeMap[decade] += value;
         });
 
-        // Conversion en tableau trié
+        // Conversion en tableau 
         const decadesArray = Object.keys(decadeMap)
             .sort((a, b) => a - b)
             .map(decade => ({
