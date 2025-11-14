@@ -1,6 +1,6 @@
 /* Graphique */
 
-fetch("data/graphTablev2.json")
+fetch("data/graphTablev3.json")
   .then((response) => response.json())
   .then((data) => {
     const allYears = [

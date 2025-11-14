@@ -1,181 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link rel="stylesheet" href="style/globalstyles.css" />
+    <link rel="stylesheet" href="style/section3styles.css" />
+    <link rel="stylesheet" href="style/section2styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+    />
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+    <title>CineGraph</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style/styles.css" />
-  <link rel="stylesheet" href="style/globalstyles.css" />
-  <link rel="stylesheet" href="style/section3styles.css">
-  <link rel="stylesheet" href="style/section2styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
-  <title>CineGraph</title>
-</head>
-
-<body class="body">
-  <main>
-    <div class="lang-select" id="langSelect">
-      <button class="lang-btn" id="langBtn">EN <span>▾</span></button>
-      <div class="lang-menu" id="traduire">
-        <button data-lang="en" value="en">EN</button>
-        <button data-lang="fr" value="fr">FR</button>
-      </div>
-    </div>
-    <div class="main">
-
-      <img src="images/accent.png" alt="" class="clap" />
-      <h1 class="titre">CineGraph</h1>
-      <div class="scroll-down" aria-label="Découvrir la suite">
-        <span class="arrow" aria-hidden="true"></span>
-      </div>
-    </div>
-
-    <!-- ===== SECTION 1 : GRAPHIQUE ===== -->
-
-    <section>
-      <canvas id="oscarsChart" width="1200" height="600"></canvas>
-    </section>
-
-    <!-- ===== SECTION 2 : PODIUM ===== -->
-
-    <section class="podium-section">
-      <div class="podium-text">
-        <h2 class="podium-title" id="titre2-podium">
-          They make the best film music
-        </h2>
-        <p class="podium-description" id="paragraph-podium">
-          Discover the podium of the three composers most nominated for
-          Oscars. True legends of film music, they have shaped the history of
-          cinema with soundtracks that stand the test of time. Their melodies
-          heighten emotions, bring images to life and leave a lasting
-          impression on viewers' imaginations. Through their works, they prove
-          that music is the soul of the seventh art.
-        </p>
-        <div class="couronne-compo">
-          <div class="light1" id="light1"></div>
-          <div class="light2" id="light2"></div>
-          <div class="light3" id="light3"></div>
-          <img class="podium-img" src="images/podium-full.png" alt="">
+  <body class="body">
+    <main>
+      <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn">EN <span>▾</span></button>
+        <div class="lang-menu" id="traduire">
+          <button data-lang="en" value="en">EN</button>
+          <button data-lang="fr" value="fr">FR</button>
         </div>
       </div>
-      <!-- Partie droite : Slider -->
-      <div class="slider">
-        <div class="carousel-wrapper">
-          <button class="carousel-btn left">&#10094;</button>
-          <div class="carousel"></div>
-          <button class="carousel-btn right">&#10095;</button>
+      <div class="main">
+        <img src="images/accent.png" alt="" class="clap" />
+        <h1 class="titre">CineGraph</h1>
+        <div class="scroll-down" aria-label="Découvrir la suite">
+          <span class="arrow" aria-hidden="true"></span>
         </div>
       </div>
-    </section>
 
-    <!-- ===== SECTION 3 : LES MUSIQUES DE FILM -->
+      <!-- ===== SECTION 1 : GRAPHIQUE ===== -->
 
-    <section class="soundtrack-section">
-      <div class="sts-info">
-        <iframe id="st-iframe" src="" title="Rick Astley - Never Gonna Give You Up" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <section>
+        <canvas id="oscarsChart" width="1200" height="600"></canvas>
+      </section>
 
-        <div class="contents">
-          <h3>
-            <span id="st-title">TITRE</span> - <span id="st-singer">Artiste</span>
-          </h3>
-          <p>
-            <span id="st-film-title">Titre du film</span> -
-            <span id="st-film-director">Réalisateur</span> (<span id="st-film-date">Date de sortie</span>)
+      <!-- ===== SECTION 2 : PODIUM ===== -->
+
+      <section class="podium-section">
+        <div class="podium-text">
+          <h2 class="podium-title" id="titre2-podium">
+            They make the best film music
+          </h2>
+          <p class="podium-description" id="paragraph-podium">
+            Discover the podium of the three composers most nominated for
+            Oscars. True legends of film music, they have shaped the history of
+            cinema with soundtracks that stand the test of time. Their melodies
+            heighten emotions, bring images to life and leave a lasting
+            impression on viewers' imaginations. Through their works, they prove
+            that music is the soul of the seventh art.
           </p>
-          <em>vendu à environ <span id="st-sold">nombre de ventes</span> millions
-            d'exemplaires.</em>
-          <hr />
-          <p id="st-description">description du film</p>
-          <div class="boutons">
-            <a href="" id="music-link" target="_blank" title="Écouter sur spotify (Nouvel onglet)"><img
-                src="images/logo-spotify-blanc.png" alt="" /><span class="sr-only">lien spotify</span></a>
-            <a href="" id="film-link" title="En savoir plus sur le film - Allociné (Nouvel onglet)" target="_blank"><img
-                src="images/lien-externe (1).png" alt="" />Voir le film</a>
+          <div class="couronne-compo">
+            <div class="light1" id="light1"></div>
+            <div class="light2" id="light2"></div>
+            <div class="light3" id="light3"></div>
+            <img class="podium-img" src="images/podium-full.png" alt="" />
           </div>
         </div>
-      </div>
-      <div class="sts-list">
-        <h2>On les connaîts par coeur</h2>
-        <p>
-          Découvrez le top 10 des bandes originales de films les plus vendues de
-          l'histoire.
-        </p>
-        <ol>
-          <!-- Filled by JS -->
-        </ol>
-      </div>
-    </section>
+        <!-- Partie droite : Slider -->
+        <div class="slider">
+          <div class="carousel-wrapper">
+            <button class="carousel-btn left">&#10094;</button>
+            <div class="carousel"></div>
+            <button class="carousel-btn right">&#10095;</button>
+          </div>
+        </div>
+      </section>
 
+      <!-- ===== SECTION 3 : LES MUSIQUES DE FILM -->
 
-  </main>
+      <section class="soundtrack-section">
+        <div class="sts-info">
+          <iframe
+            id="st-iframe"
+            src=""
+            title="Rick Astley - Never Gonna Give You Up"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
 
-  <footer>
-    <a href="mentionslegales.html" id="mentionslegales">Legal Notices</a>
-    <br>
-    <a href="credits.html" id="credits">Credits</a>
-    <br>
-    <br>
-    <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
-  </footer>
+          <div class="contents">
+            <h3>
+              <span id="st-title">TITRE</span> -
+              <span id="st-singer">Artiste</span>
+            </h3>
+            <p>
+              <span id="st-film-title">Titre du film</span> -
+              <span id="st-film-director">Réalisateur</span> (<span
+                id="st-film-date"
+                >Date de sortie</span
+              >)
+            </p>
+            <em
+              >vendu à environ
+              <span id="st-sold">nombre de ventes</span> millions
+              d'exemplaires.</em
+            >
+            <hr />
+            <p id="st-description">description du film</p>
+            <div class="boutons">
+              <a
+                href=""
+                id="music-link"
+                target="_blank"
+                title="Écouter sur spotify (Nouvel onglet)"
+                ><img src="images/logo-spotify-blanc.png" alt="" /><span
+                  class="sr-only"
+                  >lien spotify</span
+                ></a
+              >
+              <a
+                href=""
+                id="film-link"
+                title="En savoir plus sur le film - Allociné (Nouvel onglet)"
+                target="_blank"
+                ><img src="images/lien-externe (1).png" alt="" />Voir le film</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="sts-list">
+          <h2 id="titre2-music">We know them by heart</h2>
+          <p id="paragraph-music">
+            Discover the top 10 best-selling film soundtracks in history.
+          </p>
+          <ol>
+            <!-- Filled by JS -->
+          </ol>
+        </div>
+      </section>
+    </main>
 
-  <script src="script/section3script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script/javascript.js"></script>
-  <script src="script/section1script.js"></script>
-  <script src="script/section2script.js"></script>
-  <script>
-    /* Fleche */
-    const scrollBtn = document.querySelector(".scroll-down");
-    scrollBtn.addEventListener("click", () => {
-      const section2 = document.getElementById("section2-iframe");
-      if (section2) {
-        section2.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-    // --- Sélecteur de langue ---
-    const langSelect = document.getElementById("langSelect");
-    const langBtn = document.getElementById("langBtn");
+    <footer>
+      <a href="mentionslegales.html" id="mentionslegales">Legal Notices</a>
+      <br />
+      <a href="credits.html" id="credits">Credits</a>
+      <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
+    </footer>
 
-    langBtn.addEventListener("click", () => {
-      langSelect.classList.toggle("open");
-    });
-
-    document.querySelectorAll(".lang-menu button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const lang = btn.dataset.lang.toUpperCase();
-        langBtn.innerHTML = `${lang} <span>▾</span>`;
-        langSelect.classList.remove("open");
-
-        const section2Iframe = document.getElementById("section2-iframe");
-        section2Iframe.contentWindow.postMessage({ lang }, "*");
-        const musiquesIframe = document.getElementById("musiques-films-iframe");
-        if (musiquesIframe && musiquesIframe.contentWindow) {
-          musiquesIframe.contentWindow.postMessage({ lang }, "*");
+    <script src="script/section3script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script/javascript.js"></script>
+    <script src="script/section1script.js"></script>
+    <script src="script/section2script.js"></script>
+    <script>
+      /* Fleche */
+      const scrollBtn = document.querySelector(".scroll-down");
+      scrollBtn.addEventListener("click", () => {
+        const section2 = document.getElementById("section2-iframe");
+        if (section2) {
+          section2.scrollIntoView({ behavior: "smooth" });
         }
-
-        if (lang === "EN" || lang === "FR") {
-          updateLanguage(lang.toLowerCase());
-        };
       });
-    });
+      // --- Sélecteur de langue ---
+      const langSelect = document.getElementById("langSelect");
+      const langBtn = document.getElementById("langBtn");
 
-    function updateLanguage(lang) {
-      fetch("data/contenuLangue.json")
-        .then((res) => res.json())
-        .then((data) => {
-          const t = data[lang][0];
-          document.getElementById("mentionslegales").textContent =
-            t["mentionslegales"];
-          document.getElementById("credits").textContent = t["credits"];
-          document.getElementById("piedpage").textContent = t["piedpage"];
+      langBtn.addEventListener("click", () => {
+        langSelect.classList.toggle("open");
+      });
+
+      document.querySelectorAll(".lang-menu button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const lang = btn.dataset.lang.toUpperCase();
+          langBtn.innerHTML = `${lang} <span>▾</span>`;
+          langSelect.classList.remove("open");
+          if (lang === "EN" || lang === "FR") {
+            updateLanguage(lang.toLowerCase());
+          }
         });
-    }
-  </script>
-</body>
+      });
 
+      function updateLanguage(lang) {
+        fetch("data/contenuLangue.json")
+          .then((res) => res.json())
+          .then((data) => {
+            const t = data[lang][0];
+
+            /* Traduction section 2 */
+            document.getElementById("titre2-podium").textContent =
+              t["titre2-podium"];
+            document.getElementById("paragraph-podium").textContent =
+              t["paragraph-podium"];
+            document.getElementById("titre4-slider-music").textContent =
+              t["titre4-slider-music"];
+            document.getElementById("titre4-slider-film").textContent =
+              t["titre4-slider-film"];
+
+            /* Traduction section 3 */
+            document.getElementById("titre2-music").textContent =
+              t["titre2-music"];
+            document.getElementById("paragraph-music").textContent =
+              t["paragraph-music"];
+
+            /* Traduction footer */
+            document.getElementById("mentionslegales").textContent =
+              t["mentionslegales"];
+            document.getElementById("credits").textContent = t["credits"];
+            document.getElementById("piedpage").textContent = t["piedpage"];
+          });
+      }
+    </script>
+  </body>
 </html>

@@ -18,13 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       Carousel();
     });
 
-  // Changer Langue -- Relier au index.html
-  window.addEventListener("message", (event) => {
-    if (event.data.lang) {
-      currentLang = event.data.lang.toLowerCase();
-      Carousel();
-    }
-  });
+  Carousel();
 
   // === Fonction Carousel ===
   function Carousel() {
@@ -47,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="container-info-music">
-          <h4 id="titre4-slider-music">Musique la plus connue :</h4>
+          <h4 id="titre4-slider-music">The theme music for</h4>
           <div class="info-music">
             <div class="music-text">
               <p>
@@ -73,9 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="container-info-film">
-          <h4 id="titre4-slider-film">Nominations (${
-            info.Nombre_de_nominations
-          })</h4>
+          <h4 id="titre4-slider-film">Some films with ${info.Prénom} ${
+        info.Nom
+      }</h4>
           <div class="info-film">
             ${info.Nominations.map(
               (nom) => `
@@ -98,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupNavigation();
     setupAudio();
-    traduction(currentLang);
   }
 
   // === Navigation ===
@@ -206,15 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  function traduction(lang) {
-    fetch("data/contenuLangue.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const t = data[lang][0];
-        document.getElementById("titre4-slider-music").textContent =
-          t["titre4-slider-music"];
-      });
-  }
 
   const containers = document.querySelectorAll(
     ".container-premier, .container-deuxieme, .container-troisieme"

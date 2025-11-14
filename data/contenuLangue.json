@@ -10,14 +10,12 @@
             "titre4-slider-music" : "The theme music for",
             "titre4-slider-film" : "Some films with",
             
-            "titre2-music" :"",
-            "paragraph-music" : "",
+            "titre2-music" :"We know them by heart",
+            "paragraph-music" : "Discover the top 10 best-selling film soundtracks in history.",
 
             "mentionslegales" : "Legal Notices",
             "credits" : "Credits",
-            "piedpage" : "2025 - CINEGRAPH All rights reserved",
-
-            "caca": ""
+            "piedpage" : "2025 - CINEGRAPH All rights reserved"
         }
     ],
     "fr" : [
@@ -32,7 +30,7 @@
             "titre4-slider-film" : "Quelques films avec",
             
             "titre2-music" :"On les connait par coeur",
-            "paragraph-music" : "",
+            "paragraph-music" : "Découvrez le top 10 des bandes originales de films les plus vendues de l'histoire.",
 
             "mentionslegales" : "Mentions Légales",
             "credits" : "Crédits",

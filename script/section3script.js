@@ -71,34 +71,5 @@
         });
       });
 
-      // language switch helpers (no library)
-      function updateLangButtons() {
-        document.querySelectorAll(".lang-btn").forEach((b) => {
-          b.classList.toggle("active", b.id === "lang-" + currentLang);
-        });
-      }
-
-      function setLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem("lang", lang);
-        updateLangButtons();
-        const activeLi = document.querySelector(".sts-list li.active");
-        const id = activeLi ? activeLi.id : "st1";
-        // update displayed info to reflect new language
-        displaystInfo(id);
-      }
-
-      // set initial language UI
-      updateLangButtons();
-
-      // Listen for messages from parent window (index.html) to change language
-      window.addEventListener("message", (e) => {
-        if (e && e.data && e.data.lang) {
-          const incoming = String(e.data.lang).toLowerCase();
-          setLanguage(incoming);
-        }
-      });
-
-      // Display the first soundtrack info at load
       displayST("st1");
     });
