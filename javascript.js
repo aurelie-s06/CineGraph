@@ -271,7 +271,7 @@ fetch("graphTablev2.json")
     const ctx = document.getElementById("oscarsChart").getContext("2d");
     const chart = new Chart(ctx, {
       type: "line",
-      data: {
+      data: { 
         labels: allYears,
         datasets: datasets,
       },
