@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="globalstyles.css" />
-  <link rel="stylesheet" href="section3styles.css">
-  <link rel="stylesheet" href="styles1.css">
+  <link rel="stylesheet" href="style/styles.css" />
+  <link rel="stylesheet" href="style/globalstyles.css" />
+  <link rel="stylesheet" href="style/section3styles.css">
+  <link rel="stylesheet" href="style/section2styles.css">
   <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
   <title>CineGraph</title>
 </head>
@@ -29,7 +29,15 @@
         <span class="arrow" aria-hidden="true"></span>
       </div>
     </div>
-    <!-- Podium -->
+    
+    <!-- ===== SECTION 1 : GRAPHIQUE ===== -->
+
+    <section>
+      <canvas id="oscarsChart" width="1200" height="600"></canvas>
+    </section>
+
+    <!-- ===== SECTION 2 : PODIUM ===== -->
+
     <section class="podium-section">
       <div class="podium-text">
         <h2 class="podium-title" id="titre2-podium">
@@ -59,7 +67,9 @@
         </div>
       </div>
     </section>
-    <!-- Genres musiques -->
+
+    <!-- ===== SECTION 3 : LES MUSIQUES DE FILM -->
+
     <section class="soundtrack-section">
       <div class="sts-info">
         <iframe id="st-iframe" src="" title="Rick Astley - Never Gonna Give You Up" frameborder="0"
@@ -99,20 +109,20 @@
       </div>
     </section>
 
-    <canvas id="oscarsChart" width="1200" height="600"></canvas>
+    
   </main>
 
   <footer>
     <a href="mentionslegales.html" id="mentionslegales">Legal Notices</a>
     <br>
-    <br>
     <a href="credits.html" id="credits">Credits</a>
     <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
   </footer>
 
-  <script src="section3script.js"></script>
+  <script src="script/section3script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="javascript.js"></script>
+  <script src="script/javascript.js"></script>
+  <script src="script/section1script.js"></script>
   <script>
     /* Fleche */
     const scrollBtn = document.querySelector(".scroll-down");

@@ -5,7 +5,7 @@
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     letter-spacing: 1px;
     background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
-    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .podium-description {
