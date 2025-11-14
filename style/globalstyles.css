@@ -18,25 +18,27 @@
 }
 
 @font-face {
-  font-family: "Trial VAR";
-  src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
+    font-family: "Trial VAR";
+    src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
 }
 
 /* CORPS DE PAGE */
+
 .body {
-    background-image: linear-gradient(to top, #640C19 30%, #640c1900 60%);
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+    background-image: linear-gradient(to top, #640C19 30%, #000000 60%);
 }
 
 main {
     max-width: 1200px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
 }
 
 /* STYLES DE TITRES */
 
+h1,
 h2,
 h3 {
     font-family: 'Trial VAR';

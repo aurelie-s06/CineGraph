@@ -167,6 +167,8 @@ footer a {
   display: flex;
 }
 
+/* ----- Animations ----- */
+
 @keyframes titleFade {
   0% {
     opacity: 0;
