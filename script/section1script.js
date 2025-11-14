@@ -1,5 +1,3 @@
-titregraph = "Pourcentage de genres dans les films nominés aux Oscars par décennie";
-
 fetch("data/graphTablev4.json")
   .then((response) => response.json())
   .then((data) => {
@@ -29,9 +27,9 @@ fetch("data/graphTablev4.json")
         label: genreData.genre,
         data: values,
         borderColor: color,
-        backgroundColor: color.replace("0.7", "0.2"), // effet de remplissage léger
+        backgroundColor: color.replace("0.7", "0.2"), 
         fill: true,
-        tension: 0.4, // courbes plus douces
+        tension: 0.4,
         pointRadius: 5,
         pointHoverRadius: 8,
         pointBackgroundColor: color,
@@ -53,25 +51,28 @@ fetch("data/graphTablev4.json")
           intersect: false,
         },
         plugins: {
-          title: {
-            display: true,
-            text: titregraph,
-            color: "#FFFFFF",
-            font: {
-              size: 20,
-              weight: "bold",
-              family: "Poppins",
-            },
-          },
           legend: {
             position: "bottom",
+            align: "center",
             labels: {
               color: "#FFFFFF",
               font: {
-                family: "Poppins",
-                size: 14,
+                size: 13,
+                weight: "bold",
+                family: "Poppins, sans-serif",
+                style: "normal",
               },
+              usePointStyle: true,
+              pointStyle: "circle",
+              boxWidth: 15,
+              padding: 15,
             },
+            onHover: (event, legendItem, legend) => {
+    event.native.target.style.cursor = "pointer"; 
+  },
+  onLeave: (event, legendItem, legend) => {
+    event.native.target.style.cursor = "default";
+  },
             onClick: (e, legendItem, legend) => {
               const index = legendItem.datasetIndex;
               const chartInstance = legend.chart;
@@ -103,8 +104,10 @@ fetch("data/graphTablev4.json")
             titleColor: "#FFF",
             bodyColor: "#FFF",
             bodyFont: {
-              family: "Poppins",
-              size: 13,
+              size: 11,
+              weight: "bold",
+              family: "Poppins, sans-serif",
+              style: "normal",
             },
           },
         },
@@ -114,7 +117,12 @@ fetch("data/graphTablev4.json")
               display: true,
               text: "Pourcentage (%)",
               color: "#FFFFFF",
-              font: { size: 16, weight: "bold", family: "Poppins" },
+              font: {
+                size: 15,
+                weight: "bold",
+                family: "Poppins, sans-serif",
+                style: "normal",
+              },
             },
             ticks: { color: "#FFFFFF" },
             grid: {
@@ -128,7 +136,12 @@ fetch("data/graphTablev4.json")
               display: true,
               text: "Décennies",
               color: "#FFFFFF",
-              font: { size: 16, weight: "bold", family: "Poppins" },
+              font: {
+                size: 15,
+                weight: "bold",
+                family: "Poppins, sans-serif",
+                style: "normal",
+              },
             },
             ticks: { color: "#FFFFFF" },
             grid: {
@@ -141,4 +154,3 @@ fetch("data/graphTablev4.json")
       },
     });
   });
-

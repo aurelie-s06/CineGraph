@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/styles.css" />
     <link rel="stylesheet" href="style/globalstyles.css" />
+    <link rel="stylesheet" href="style/section1styles.css" />
     <link rel="stylesheet" href="style/section3styles.css" />
     <link rel="stylesheet" href="style/section2styles.css" />
     <link
@@ -38,8 +39,24 @@
 
       <!-- ===== SECTION 1 : GRAPHIQUE ===== -->
 
-      <section>
-        <canvas id="oscarsChart" width="1200" height="600"></canvas>
+      <section class="graph-section" id="graph-section">
+        <div class="graphique">
+          <canvas id="oscarsChart" width="700" height="500"></canvas>
+        </div>
+        <div class="chart-text">
+          <h2 class="chart-title" id="titre2-graph">
+            When music hits the big screen
+          </h2>
+          <p class="chart-sous-text" id="titre2-soustitre-graph">Which genres shine at the Oscars ?</p>
+          <p class="chart-description" id="paragraph-graph" >
+            This graph illustrates the distribution of film genres nominated in
+            the Oscar music categories. It highlights trends over the years and
+            allows us to observe the evolution of the film styles promoted by
+            the Academy. We can thus identify which genres are gaining
+            popularity, which are fading away, and how the musical landscape of
+            cinema is changing over time.
+          </p>
+        </div>
       </section>
 
       <!-- ===== SECTION 2 : PODIUM ===== -->
@@ -156,7 +173,7 @@
       /* Fleche */
       const scrollBtn = document.querySelector(".scroll-down");
       scrollBtn.addEventListener("click", () => {
-        const section2 = document.getElementById("oscarsChart");
+        const section2 = document.getElementById("graph-section");
         if (section2) {
           section2.scrollIntoView({ behavior: "smooth" });
         }
@@ -186,6 +203,14 @@
           .then((res) => res.json())
           .then((data) => {
             const t = data[lang][0];
+
+            /* Traduction section 1  */
+            document.getElementById("titre2-graph").textContent =
+              t["titre2-graph"];
+            document.getElementById("titre2-soustitre-graph").textContent =
+              t["titre2-soustitre-graph"];
+            document.getElementById("paragraph-graph").textContent =
+              t["paragraph-graph"];
 
             /* Traduction section 2 */
             document.getElementById("titre2-podium").textContent =
