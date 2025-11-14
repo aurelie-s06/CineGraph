@@ -1,62 +1,8 @@
 
 
-.main {
-  text-align: center;
-  height: 100vh;
-  position: relative;
-}
-
 
 
 .titre {
-  font-size: 6rem;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: #FFD700;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-  animation: titleFade 2.5s ease-out forwards, goldShine 5s linear infinite;
-  opacity: 0;
-  background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200%;
-}
-
-.clap {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 27%;
-  z-index: 2;
-  opacity: 0;
-  animation: float 5s ease-in-out infinite, fadeIn 1.5s ease forwards;
-  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.5));
-  overflow: hidden;
-  opacity: 0;
-}
-
-.clap::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.6) 50%,
-      rgba(255, 255, 255, 0) 100%);
-  transform: skewX(-20deg);
-  animation: shine 3s ease-in-out infinite;
-}
-
-.titre {
-  animation: titleFade 2.5s ease-out forwards, goldShine 5s linear infinite;
-  opacity: 0;
 }
 
 .scroll-down {
@@ -146,36 +92,7 @@
   display: flex;
 }
 
-/* ----- Animations ----- */
 
-@keyframes titleFade {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
-    filter: blur(5px);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.05);
-    filter: blur(0);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes goldShine {
-  0% {
-    background-position: 0%;
-  }
-
-  100% {
-    background-position: 200%;
-  }
-}
 
 @keyframes float {
 
