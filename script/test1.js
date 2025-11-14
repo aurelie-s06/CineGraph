@@ -23,12 +23,26 @@ async function getFilmsGenre(genre, annee) {
 }
 
 // Fonction principale pour afficher le résultat
-async function afficherFilms(genre, annee) {
+async function getPourcent(genre, annee) {
     const totalAnnee = await getFilmsAnnee(annee);
     const totalGenre = await getFilmsGenre(genre, annee);
-
-    console.log(`En ${annee}, il y avait ${totalGenre} films dans la catégorie ${genre} sur ${totalAnnee} films sortis cette année-là soit ${(totalGenre/totalAnnee)*100}%`);
+    const pourcent = (totalGenre/totalAnnee)*100
+    return(pourcent)
 }
+
+async function transformData() {
+    const response = await fetch('/data/graphTablev2.json');
+    const data = await response.json();
+     
+    for (const element of data) {
+        for (const el of element.years) {
+            el.value = await getPourcent(element.index, el.year);
+        }
+    }
+
+    return data; // si tu veux récupérer le tableau transformé
+}
+
 
 // Exemple d'appel
 let annee = 2016;
