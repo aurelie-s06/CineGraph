@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // titre h4 musique
           const h4Music = slide.querySelector(".titre4-slider-music");
-          h4Music.textContent = textes["titre4-slider-music"];
+          h4Music.textContent = `${textes["titre4-slider-music"]} ${info.Prénom} ${info.Nom}`;
 
           // musique
           const musicP = slide.querySelector(".music-text p");
