@@ -1,11 +1,6 @@
+/* ----- Podium ----- */
 
 .podium-title {
-    font-size: 2rem;
-    color: #FFD700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    letter-spacing: 1px;
-    background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
-    background-clip: text;
 }
 
 .podium-description {
@@ -15,7 +10,9 @@
     line-height: 1.6;
     text-shadow: 0 0 6px rgba(255, 215, 0, 0.15);
     font-family: "Poppins", sans-serif;
+    margin-bottom: 50px;
 }
+
 .podium-text {
     flex: 1;
     max-width: 45%;
@@ -23,11 +20,9 @@
 }
 
 .podium-section {
-    position: relative;
-    width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    height: 100vh;
 }
 
 .compositeurs {
@@ -40,16 +35,58 @@
     z-index: 3;
 }
 
+/* ----- Slider ----- */
+
+/* caroussel */
+
+/* nav */
+.carousel-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+}
+
+
+.carousel-btn {
+    all: unset;
+    cursor: pointer;
+}
+
+
+.slide {
+    min-width: 100%;
+    padding: 0 25px;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+}
 
 .carousel-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 85vh;
+    height: fit-content;
     background-color: #25200D;
-    margin: 20px 0;
-    padding: 15px;
     border-radius: 24px;
+    padding: 25px 0;
 }
 
 .carousel {
@@ -63,53 +100,48 @@
     max-width: 50%;
 }
 
-.slide h4 {
-    font-size: 1.2rem;
-    color: #FFD700;
-    margin: 15px 0;
-}
+/* Infos compositeur */
 
 .container-info-compo {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 20px;
 }
 
 .nom-compositeur {
     font-size: 2rem;
-    font-family: "Trial VAR", sans-serif;
     color: #FFD700;
-    margin-top: 0;
 }
 
 .nom-compositeur span {
     border-radius: 5px;
-    margin-left: 5px;
+    transform: scale(0.8);
+}
+
+.container-info-compo h3 {
+    margin-bottom: 5px;
 }
 
 .image-compo {
-    width: 200px;
+    width: 30%;
     border-radius: 10px;
 }
 
-
-.container-info-music {
-    margin: 15px 0;
-}
-
+/* musique phare */
 .info-music {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.15);
-    border-left: 4px solid #ffd700;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    border-left: #FFD700 4px solid;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
 }
 
-
-.music-text {
-    flex: 1;
+.info-music p {
+    margin: 0;
 }
 
 .music-actions {
@@ -125,6 +157,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+.btn-play:hover {
+    opacity: 1;
 }
 
 .icon-play,
@@ -135,6 +172,7 @@
     transition: opacity 0.3s;
 }
 
+/* quelques films */
 .info-film {
     display: flex;
     gap: 10px;
@@ -143,18 +181,20 @@
 
 .film-item {
     display: flex;
-    width: 45%;
+    align-items: start;
+    flex: 1;
     background: rgba(255, 255, 255, 0.1);
     padding: 8px;
-    border-radius: 8px;
+    border-radius: 10px;
     position: relative;
 }
 
 .affiche_film {
-    width: 80px;
-    height: 120px;
+    width: 45%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 4px;
 }
 
 .text-film {
@@ -162,7 +202,7 @@
 }
 
 .text-film h5 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #FFD700;
     margin: 0px;
     font-weight: bold;
@@ -170,7 +210,7 @@
 }
 
 .text-film p {
-    font-style: 0.9rem;
+    font-style: 0.6rem;
     font-style: italic;
     font-weight: 100;
     color: #ffffff;
@@ -178,9 +218,9 @@
     margin-bottom: 5px;
 }
 
-.descriptioon-compo {
-    line-height: 1.6 !important;
-    color: pink !important;
+.description-compo {
+    line-height: 1.3;
+    margin: 0;
 }
 
 .icone_lien {
@@ -188,59 +228,14 @@
     text-decoration: none;
     color: #ffffff;
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 8px;
+    right: 0;
+    opacity: 0.5;
+    transition: all 0.3s;
 }
 
-.carousel-nav {
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-}
-
-.nav-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #ffd700;
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.nav-name {
-    font-size: 1rem;
-    text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
-}
-
-.carousel-btn {
-    all: unset;
-    cursor: pointer;
-}
-
-
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 20px;
-    font-family: "Poppins", sans-serif;
-}
-
-.info-music {
-    display: flex;
-    background: rgba(255, 255, 255, 0.2);
-    border-left: #FFD700 4px solid;
-    padding: 0 10px;
-}
-
-.hidden {
-    display: none;
+.icone_lien:hover {
+    opacity: 1;
 }
 
 
@@ -334,12 +329,15 @@
 .podium {
     width: 100%;
 }
+
 /* .couronne1, .couronne2, .couronne3 {
     width: 100%;
 } */
 .couronne-compo {
     position: relative;
+    margin: auto;
 }
+
 /* .couronne-compo div {
     display: flex;
     justify-content: space-between;
@@ -374,6 +372,7 @@
 .podium-img {
     width: 100%;
 }
+
 /* === Projecteur éteint (base) === */
 /* .container-premier::before,
 .container-deuxieme::before,
@@ -402,31 +401,39 @@
     transform: translateX(-50%) scaleY(1);
 } */
 
-.light1, .light2, .light3 {
-  width: 30%;
-  height: 100%;
-  background: linear-gradient(to top,rgba(250, 208, 196, 0), #ffe65b,rgba(250, 208, 196, 0));
-  -webkit-clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-  clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.5s;
+.light1,
+.light2,
+.light3 {
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(250, 208, 196, 0), #ffe65b, rgba(250, 208, 196, 0));
+    -webkit-clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
+
 .light1 {
     left: 50%;
     transform: translateX(-50%);
     top: -10%;
 }
+
 .light2 {
     left: 0;
 }
+
 .light3 {
     right: 0;
 }
-.light1:hover, .light2:hover, .light3:hover {
+
+.light1:hover,
+.light2:hover,
+.light3:hover {
     opacity: 0.2;
 }
- .couronne-compo .active {
-    opacity: 0.4;
- }
 
+.couronne-compo .active {
+    opacity: 0.4;
+}

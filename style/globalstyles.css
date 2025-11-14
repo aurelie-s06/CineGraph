@@ -25,10 +25,8 @@
 /* CORPS DE PAGE */
 
 body {
+  
     margin: 0;
-}
-
-.body {
    
 --cinema-width: 100vw;
 --cinema-height: calc(var(--cinema-width) * 0.5625);
@@ -74,13 +72,7 @@ body {
     font-family: 'poppins', sans-serif;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 200px;
-}
-
-main,
+section,
 footer {
     max-width: 1200px;
     margin: auto;
@@ -88,6 +80,7 @@ footer {
 
 section {
     height: 100vh;
+    margin-bottom: 30vh;
 }
 
 footer hr {
@@ -103,14 +96,24 @@ h1 {
     font-family: 'Mea Culpa', cursive;
 }
 h2,
-h3 {
+h3, h4 {
     font-family: 'Trial VAR';
     margin: 0;
     margin-bottom: 15px;
 }
-
+h3 {
+  font-size: 1.5rem;
+}
 h2 {
-    color: #F6D758;
+  font-size: 2rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);    
+    background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
+    background-clip: text;
+    letter-spacing: 1px;
+
+}
+h2, h4 {
+    color: #FFD700;
 }
 
 p {
@@ -227,3 +230,19 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* ===== RESPONSIVE ===== */
+
+@media (width<950px) {
+  .podium-section, .soundtrack-section{
+    flex-direction: column;
+  }
+  .podium-section>div, .soundtrack-section>div {
+    width: 90%;
+    max-width: 600px;
+  }
+  .couronne-compo {
+    max-width: 500px;
+  }
+}
+
