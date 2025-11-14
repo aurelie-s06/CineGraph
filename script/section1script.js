@@ -1,10 +1,14 @@
 /* Graphique */
 
-fetch("data/graphTablev3.json")
+/* Graphique */
+
+fetch("data/graphTablev4.json")
   .then((response) => response.json())
   .then((data) => {
-    const allYears = [
-      ...new Set(data.flatMap((g) => g.years.map((y) => y.year))),
+
+    // Récupère toutes les décennies présentes dans le JSON
+    const allDecades = [
+      ...new Set(data.flatMap((g) => g.decades.map((d) => d.decade)))
     ].sort();
 
     const colors = [
@@ -18,9 +22,11 @@ fetch("data/graphTablev3.json")
     ];
 
     const datasets = data.map((genreData, index) => {
-      const values = allYears.map((yearObj) => {
-        const y = genreData.years.find((y) => y.year === yearObj);
-        return y ? y.value : 0;
+
+      // Valeurs triées par décennie
+      const values = allDecades.map((dec) => {
+        const d = genreData.decades.find((x) => x.decade === dec);
+        return d ? d.value : 0;
       });
 
       const color = colors[index % colors.length];
@@ -37,10 +43,11 @@ fetch("data/graphTablev3.json")
     });
 
     const ctx = document.getElementById("oscarsChart").getContext("2d");
+
     const chart = new Chart(ctx, {
       type: "line",
       data: { 
-        labels: allYears,
+        labels: allDecades,
         datasets: datasets,
       },
       options: {
@@ -53,13 +60,14 @@ fetch("data/graphTablev3.json")
         plugins: {
           title: {
             display: true,
-            text: "Pourcentage de genres dans les films nominés aux Oscars par année",
+            text: "Pourcentage de genres dans les films nominés aux Oscars par décennie",
           },
           legend: {
             onClick: (e, legendItem, legend) => {
               const index = legendItem.datasetIndex;
               const chartInstance = legend.chart;
               const meta = chartInstance.getDatasetMeta(index);
+
               const allHiddenExceptSelected = chartInstance.data.datasets.every(
                 (d, i) => {
                   if (i === index) return true;
@@ -91,10 +99,11 @@ fetch("data/graphTablev3.json")
           x: {
             title: {
               display: true,
-              text: "Année",
+              text: "Décennies",
             },
           },
         },
       },
     });
   });
+
