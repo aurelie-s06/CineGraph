@@ -1,21 +1,11 @@
 
 
 .main {
-  background-image: url("/images/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   text-align: center;
   height: 100vh;
   position: relative;
 }
 
-.main::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
 
 
 .titre {

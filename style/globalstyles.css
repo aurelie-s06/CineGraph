@@ -24,8 +24,50 @@
 
 /* CORPS DE PAGE */
 
+
 .body {
-    background-image: linear-gradient(to top, #640C19 30%, #000000 60%);
+   
+--cinema-width: 100vw;
+--cinema-height: calc(var(--cinema-width) * 0.5625);
+
+  background-image:
+    /* 1. Dégradé rouge depuis le bas */
+    linear-gradient(to top, #640C19 40%, transparent 80%),
+
+    /* 2. Dégradé d'opacité pour cinema (fondu vers le haut) */
+    linear-gradient(to top, rgba(0, 0, 0, 0.75)60%, rgb(0, 0, 0)),
+
+    /* 3. Image cinéma */
+    url("/images/cinema.webp"),
+
+    /* 4. Image background en haut */
+    url("/images/background.jpg");
+
+  background-size:
+    100% 40%,  /* dégradé rouge */
+    var(--cinema-width) var(--cinema-height),   /* dégradé cinema */
+    var(--cinema-width) var(--cinema-height),   /* image cinema */
+    contain;      /* background haut */
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+
+  background-position:
+    bottom center, /* dégradé rouge */
+    center 70%,  /* dégradé cinéma — à AJUSTER */
+    center 70%,  /* image cinéma — même position */
+    top center;    /* image top */
+
+  background-blend-mode:
+    normal,
+    normal,  /* mélange dégradé cinema + image cinema */
+    normal,
+    normal;
+
+    background-color: black;
     font-family: 'poppins', sans-serif;
 }
 
