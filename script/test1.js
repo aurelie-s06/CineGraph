@@ -10,42 +10,49 @@ async function getFilmsAnnee(annee) {
         }
     });
 
+    
+    console.log('Quantite totale film (année) : '+quantite)
     return quantite;
 }
 
-async function getFilmsGenre(genre, annee) {
-    const response = await fetch('/data/graphTablev2.json');
+async function getFilmsGenre(genreIndex, annee) {
+    const response = await fetch('/data/graphTablev1.json');
     const data = await response.json();
 
-    // On cherche l'année dans le genre
-    const found = data[genre].years.find(element => element.year == annee);
-    return found ? found.value : 0; // retourne 0 si pas trouvé
+    const genreObj = data[genreIndex];
+    if (!genreObj) return 0;
+
+    const found = genreObj.years.find(el => el.year == annee);
+    const quantite = found.value
+    console.log('Quantite film (genre) : '+quantite)
+    return quantite;
 }
 
-// Fonction principale pour afficher le résultat
-async function getPourcent(genre, annee) {
+async function getPourcent(genreIndex, annee) {
     const totalAnnee = await getFilmsAnnee(annee);
-    const totalGenre = await getFilmsGenre(genre, annee);
-    const pourcent = (totalGenre/totalAnnee)*100
-    return(pourcent)
+    const totalGenre = await getFilmsGenre(genreIndex, annee);
+    if (totalAnnee === 0) return 0;
+
+    const pourcent = (totalGenre / totalAnnee) * 100
+
+    console.log('pourcentage : '+pourcent)
+    return pourcent;
 }
 
 async function transformData() {
-    const response = await fetch('/data/graphTablev2.json');
+    const response = await fetch('/data/graphTablev1.json');
     const data = await response.json();
-     
-    for (const element of data) {
-        for (const el of element.years) {
-            el.value = await getPourcent(element.index, el.year);
+
+    for (let i = 0; i < data.length; i++) {
+        const genreBlock = data[i];
+
+        for (const yearObj of genreBlock.years) {
+            const year = yearObj.year;
+            yearObj.value = await getPourcent(i, year); // i = index du genre
         }
     }
-
-    return data; // si tu veux récupérer le tableau transformé
+    console.log(data)
+    return data;
 }
 
-
-// Exemple d'appel
-let annee = 2016;
-let genre = 0;
-
-afficherFilms(genre, annee);
+console.log(transformData())
