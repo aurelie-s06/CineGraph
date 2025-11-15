@@ -30,9 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container-info-compo">
           <img src="${info.Tronche}" alt="${info.Nom}" class="image-compo"/>
           <div class="info-compo">
-            <h3 class="nom-compositeur">${info.Prénom} ${
-        info.Nom
-      } <span class="fi fi-${info.Pays_d_origine}"></span></h3>
+            <h3 class="nom-compositeur">${info.Prénom} ${info.Nom
+        } <span class="fi fi-${info.Pays_d_origine}"></span></h3>
             <p class="description-compo"></p>
           </div>
         </div>
@@ -44,9 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
               <p></p>
             </div>
             <div class="music-actions">
-              <button class="btn-play" data-src="${
-                info.Musique_la_plus_connue.Musique
-              }">
+              <button class="btn-play" data-src="${info.Musique_la_plus_connue.Musique
+        }">
                 <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
                 <svg class="icon-pause hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M6 19h4V5H6zm8-14v14h4V5h-4z"/></svg>
               </button>
@@ -58,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h4 class="titre4-slider-film"></h4>
           <div class="info-film">
             ${info.Nominations.map(
-              (nom) => `
+          (nom) => `
               <div class="film-item">
                 <img src="${nom.Affiche}" alt="" class="affiche_film"/>
                 <div class="text-film">
@@ -68,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
               </div>
             `
-            ).join("")}
+        ).join("")}
           </div>
         </div>
       `;
@@ -155,6 +153,29 @@ document.addEventListener("DOMContentLoaded", () => {
     btnLeft.onclick = () => showSlide(currentIndex - 1);
     btnRight.onclick = () => showSlide(currentIndex + 1);
     showSlide(currentIndex);
+
+    // ----- lien interactif avec le podium ----- //
+
+    const lights = document.querySelectorAll('#light1, #light2, #light3');
+
+    function activeLight(light) {
+
+      lights.forEach(l => l.classList.remove('active'));
+
+      light.classList.add('active');
+
+      const slide = light.dataset.slide;
+      showSlide(slide);
+
+    }
+    lights.forEach(light => {
+      light.addEventListener('click', () => {
+        activeLight(light)
+      });
+    });
+
+    activeLight(document.getElementById('light1'))
+
   }
 
   function setupAudio() {
