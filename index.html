@@ -203,8 +203,9 @@
       document.querySelectorAll("#traduire button").forEach((btn) => {
         btn.addEventListener("click", () => {
           const lang = btn.dataset.lang;
+          langBtn.innerHTML = btn.textContent + ' <span>▾</span>';
           updateLanguage(lang);
-          langSelect.classList.remove("open"); // referme menu
+          langSelect.classList.remove("open"); 
         });
       });
 

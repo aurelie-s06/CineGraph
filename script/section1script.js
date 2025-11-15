@@ -1,4 +1,4 @@
-fetch("data/NewGraphDataDecenniesv2.json")
+fetch("data/GraphFinal.json")
   .then((response) => response.json())
   .then((data) => {
     const allDecades = [

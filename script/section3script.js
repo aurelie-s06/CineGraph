@@ -1,3 +1,11 @@
+let contenulangue = {};
+
+fetch("data/contenulangue.json")
+  .then((res) => res.json())
+  .then((data) => {
+    contenulangue = data;
+  });
+
 fetch("data/music_film.json")
   .then((response) => response.json())
   .then((allsts) => {
@@ -48,6 +56,12 @@ fetch("data/music_film.json")
           let index = activeLi.id.replace("st", "") - 1;
           document.getElementById("st-description").innerText =
             allsts[index].music_description[0][currentLang];
+
+          const ventesText = contenulangue[currentLang][0].ventes;
+          const soldValue = document.getElementById("st-sold").innerText;
+          document.getElementById(
+            "ventes"
+          ).innerHTML = `${ventesText.before} <span id="st-sold">${soldValue}</span> ${ventesText.after}`;
         }
       });
     });
