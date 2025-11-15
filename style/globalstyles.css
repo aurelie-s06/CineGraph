@@ -244,5 +244,9 @@ footer a:hover {
   .couronne-compo {
     max-width: 500px;
   }
+
+  .soundtrack-section, .podium-section {
+    height: fit-content;
+  }
 }
 
