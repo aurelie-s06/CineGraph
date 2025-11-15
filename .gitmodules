@@ -1,0 +1,3 @@
+[submodule "CineGraph"]
+    path = CineGraph
+    url = https://github.com/Ryry-06/CineGraph.git
