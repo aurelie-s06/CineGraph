@@ -1,0 +1,248 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+@font-face {
+    font-family: "Trial VAR";
+    src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
+}
+
+/* CORPS DE PAGE */
+
+body {
+  
+    margin: 0;
+   
+--cinema-width: 100vw;
+--cinema-height: calc(var(--cinema-width) * 0.5625);
+
+  background-image:
+    /* 1. Dégradé rouge depuis le bas */
+    linear-gradient(to top, #640C19 40%, transparent 80%),
+
+    /* 2. Dégradé d'opacité pour cinema (fondu vers le haut) */
+    linear-gradient(to top, rgba(0, 0, 0, 0.75)60%, rgb(0, 0, 0)),
+
+    /* 3. Image cinéma */
+    url("/images/cinema.webp"),
+
+    /* 4. Image background en haut */
+    url("/images/background.jpg");
+
+  background-size:
+    100% 45%,  /* dégradé rouge */
+    var(--cinema-width) var(--cinema-height),   /* dégradé cinema */
+    var(--cinema-width) var(--cinema-height),   /* image cinema */
+    contain;      /* background haut */
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+
+  background-position:
+    bottom center, /* dégradé rouge */
+    center 75%,  /* dégradé cinéma — à AJUSTER */
+    center 75%,  /* image cinéma — même position */
+    top center;    /* image top */
+
+  background-blend-mode:
+    normal,
+    normal,  /* mélange dégradé cinema + image cinema */
+    normal,
+    normal;
+
+    background-color: black;
+    font-family: 'poppins', sans-serif;
+}
+
+section,
+footer {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    height: 100vh;
+    margin-bottom: 30vh;
+}
+
+footer hr {
+  width: 100%;
+  border: solid 0.5px rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+}
+
+
+/* STYLES DE TITRES */
+
+h1 {
+    font-family: 'Mea Culpa', cursive;
+}
+h2,
+h3, h4 {
+    font-family: 'Trial VAR';
+    margin: 0;
+    margin-bottom: 15px;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 2rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);    
+    background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
+    background-clip: text;
+    letter-spacing: 1px;
+
+}
+h2, h4 {
+    color: #FFD700;
+}
+
+p {
+    max-width: 600px;
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* Titre principal */
+
+.titre {
+    
+  opacity: 0;
+  font-size: 7rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  animation: titleFade 2s ease-out forwards, goldShine 4s linear infinite;
+  background: linear-gradient(45deg, #ffd700 45%, #fff8d4 55%, #ffd700);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  padding: 10px;
+}
+
+/* ----- Animations ----- */
+
+@keyframes titleFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    filter: blur(5px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+    filter: blur(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes goldShine {
+  0% {
+    background-position: 0%;
+  }
+40% {
+    
+    background-position: 200%;
+  }
+  100% {
+    
+    background-position: 200%;
+  }
+}
+
+.main-title {
+  position: relative;
+}
+
+.clap {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 27%;
+  z-index: 2;
+  opacity: 0;
+  animation: float 5s ease-in-out infinite, fadeIn 1.5s ease forwards;
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.5));
+  overflow: hidden;
+  opacity: 0;
+}
+
+.clap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    padding: 10px 0 50px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 0;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (width<950px) {
+  .podium-section, .soundtrack-section{
+    flex-direction: column;
+  }
+  .podium-section>div, .soundtrack-section>div {
+    width: 90%;
+    max-width: 600px;
+  }
+  .couronne-compo {
+    max-width: 500px;
+  }
+}
+

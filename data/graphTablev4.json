@@ -1,0 +1,280 @@
+[
+  {
+    "genre": "Comedy",
+    "decades": [
+      {
+        "decade": "1920",
+        "value": 33.3333
+      },
+      {
+        "decade": "1930",
+        "value": 51.8304
+      },
+      {
+        "decade": "1940",
+        "value": 16.6787
+      },
+      {
+        "decade": "1950",
+        "value": 28.3385
+      },
+      {
+        "decade": "1960",
+        "value": 31.1552
+      },
+      {
+        "decade": "1970",
+        "value": 34.072
+      },
+      {
+        "decade": "1980",
+        "value": 49.4317
+      },
+      {
+        "decade": "1990",
+        "value": 29.74
+      },
+      {
+        "decade": "2000",
+        "value": 41.3528
+      },
+      {
+        "decade": "2010",
+        "value": 56.1532
+      },
+      {
+        "decade": "2020",
+        "value": 5.5556
+      }
+    ]
+  },
+  {
+    "genre": "Romance",
+    "decades": [
+      {
+        "decade": "1930",
+        "value": 51.8304
+      },
+      {
+        "decade": "1940",
+        "value": 17.7204
+      },
+      {
+        "decade": "1950",
+        "value": 28.2469
+      },
+      {
+        "decade": "1960",
+        "value": 25.2341
+      },
+      {
+        "decade": "1970",
+        "value": 30.3175
+      },
+      {
+        "decade": "1980",
+        "value": 30.4878
+      },
+      {
+        "decade": "1990",
+        "value": 33.2585
+      },
+      {
+        "decade": "2000",
+        "value": 38.7338
+      },
+      {
+        "decade": "2010",
+        "value": 28.931
+      }
+    ]
+  },
+  {
+    "genre": "Action",
+    "decades": [
+      {
+        "decade": "1930",
+        "value": 19.0527
+      },
+      {
+        "decade": "1940",
+        "value": 4.1368
+      },
+      {
+        "decade": "1950",
+        "value": 4.7619
+      },
+      {
+        "decade": "1960",
+        "value": 16.5137
+      },
+      {
+        "decade": "1970",
+        "value": 20.5739
+      },
+      {
+        "decade": "1980",
+        "value": 28.2258
+      },
+      {
+        "decade": "1990",
+        "value": 15.1389
+      },
+      {
+        "decade": "2000",
+        "value": 17.197
+      },
+      {
+        "decade": "2010",
+        "value": 27.9377
+      },
+      {
+        "decade": "2020",
+        "value": 5.5556
+      }
+    ]
+  },
+  {
+    "genre": "Adventure",
+    "decades": [
+      {
+        "decade": "1920",
+        "value": 33.3333
+      },
+      {
+        "decade": "1930",
+        "value": 19.0347
+      },
+      {
+        "decade": "1940",
+        "value": 10.3659
+      },
+      {
+        "decade": "1950",
+        "value": 23.6068
+      },
+      {
+        "decade": "1960",
+        "value": 21.0386
+      },
+      {
+        "decade": "1970",
+        "value": 23.138
+      },
+      {
+        "decade": "1980",
+        "value": 27.6703
+      },
+      {
+        "decade": "1990",
+        "value": 26.4067
+      },
+      {
+        "decade": "2000",
+        "value": 34.6861
+      },
+      {
+        "decade": "2010",
+        "value": 47.6347
+      },
+      {
+        "decade": "2020",
+        "value": 5.5556
+      }
+    ]
+  },
+  {
+    "genre": "Drama",
+    "decades": [
+      {
+        "decade": "1920",
+        "value": 33.3333
+      },
+      {
+        "decade": "1930",
+        "value": 22.2008
+      },
+      {
+        "decade": "1940",
+        "value": 15.2898
+      },
+      {
+        "decade": "1950",
+        "value": 39.63
+      },
+      {
+        "decade": "1960",
+        "value": 30.3928
+      },
+      {
+        "decade": "1970",
+        "value": 36.6361
+      },
+      {
+        "decade": "1980",
+        "value": 38.6696
+      },
+      {
+        "decade": "1990",
+        "value": 39.2308
+      },
+      {
+        "decade": "2000",
+        "value": 39.6861
+      },
+      {
+        "decade": "2010",
+        "value": 57.8199
+      },
+      {
+        "decade": "2020",
+        "value": 50
+      }
+    ]
+  },
+  {
+    "genre": "Animation",
+    "decades": [
+      {
+        "decade": "1930",
+        "value": 2.963
+      },
+      {
+        "decade": "1940",
+        "value": 8.4291
+      },
+      {
+        "decade": "1950",
+        "value": 6.8697
+      },
+      {
+        "decade": "1960",
+        "value": 6.6082
+      },
+      {
+        "decade": "1970",
+        "value": 8.2784
+      },
+      {
+        "decade": "1980",
+        "value": 6.6667
+      },
+      {
+        "decade": "1990",
+        "value": 22.24
+      },
+      {
+        "decade": "2000",
+        "value": 29.9242
+      },
+      {
+        "decade": "2010",
+        "value": 40.968
+      },
+      {
+        "decade": "2020",
+        "value": 5.5556
+      }
+    ]
+  }
+]

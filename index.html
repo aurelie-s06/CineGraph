@@ -4,41 +4,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="globalstyles.css" />
+  <link rel="stylesheet" href="style/styles.css" />
+  <link rel="stylesheet" href="style/globalstyles.css" />
+  <link rel="stylesheet" href="style/section1styles.css" />
+  <link rel="stylesheet" href="style/section3styles.css" />
+  <link rel="stylesheet" href="style/section2styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
   <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet" />
   <title>CineGraph</title>
 </head>
 
 <body class="body">
-  <main>
-    <div class="lang-select" id="langSelect">
-      <button class="lang-btn" id="langBtn">EN <span>▾</span></button>
-      <div class="lang-menu" id="traduire">
-        <button data-lang="en" value="en">EN</button>
-        <button data-lang="fr" value="fr">FR</button>
-      </div>
+  <div class="lang-select" id="langSelect">
+    <button class="lang-btn" id="langBtn">EN <span>▾</span></button>
+    <div class="lang-menu" id="traduire">
+      <button data-lang="en" value="en">EN</button>
+      <button data-lang="fr" value="fr">FR</button>
     </div>
-    <div class="main">
-      <img src="images/accent.png" alt="" class="clap" />
-      <h1 class="titre">CineGraph</h1>
-      <div class="scroll-down" aria-label="Découvrir la suite">
-        <span class="arrow" aria-hidden="true"></span>
-      </div>
-    </div>
-    <!-- Podium -->
-    <iframe src="section2.html" style="width: 100%; height: 100vh; border: none" id="section2-iframe"></iframe>
-    <!-- Genres musiques -->
-    <iframe src="musiques-films.html" id="musiques-films-iframe"></iframe>
-  </main>
+  </div>
 
+  <!-- ===== TITRE ===== -->
+
+  <section class="main-title">
+    <img src="images/accent.png" alt="" class="clap" />
+    <h1 class="titre">CineGraph</h1>
+    <div class="scroll-down" aria-label="Découvrir la suite">
+      <span class="arrow" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 1 : GRAPHIQUE ===== -->
+
+  <section class="graph-section" id="graph-section">
+    <div class="graphique">
+      <canvas id="oscarsChart" width="700" height="500"></canvas>
+    </div>
+    <div class="chart-text">
+      <h2 class="chart-title" id="titre2-graph">
+        When music hits the big screen
+      </h2>
+      <p class="chart-sous-text" id="titre2-soustitre-graph">
+        Which genres shine at the Oscars ?
+      </p>
+      <p class="chart-description" id="paragraph-graph">
+        This graph illustrates the distribution of film genres nominated in
+        the Oscar music categories. It highlights trends over the years and
+        allows us to observe the evolution of the film styles promoted by
+        the Academy. We can thus identify which genres are gaining
+        popularity, which are fading away, and how the musical landscape of
+        cinema is changing over time.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2 : PODIUM ===== -->
+
+  <section class="podium-section">
+    <div class="podium-text">
+      <h2 class="podium-title" id="titre2-podium">
+        They make the best film music
+      </h2>
+      <p class="podium-description" id="paragraph-podium">
+        Discover the podium of the three composers most nominated for
+        Oscars. True legends of film music, they have shaped the history of
+        cinema with soundtracks that stand the test of time. Their melodies
+        heighten emotions, bring images to life and leave a lasting
+        impression on viewers' imaginations. Through their works, they prove
+        that music is the soul of the seventh art.
+      </p>
+      <div class="couronne-compo">
+        <div class="light1" id="light1"></div>
+        <div class="light2" id="light2"></div>
+        <div class="light3" id="light3"></div>
+        <img class="podium-img" src="images/podium-full.png" alt="" />
+      </div>
+    </div>
+    <!-- Partie droite : Slider -->
+    <div class="slider">
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left">&#10094;</button>
+        <div class="carousel"></div>
+        <button class="carousel-btn right">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3 : LES MUSIQUES DE FILM -->
+
+  <section class="soundtrack-section">
+    <div class="sts-info">
+      <iframe id="st-iframe" src="" title="Rick Astley - Never Gonna Give You Up" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+      <div class="contents">
+        <h3>
+          <span id="st-title">TITRE</span> -
+          <span id="st-singer">Artiste</span>
+        </h3>
+        <p>
+          <span id="st-film-title">Titre du film</span> -
+          <span id="st-film-director">Réalisateur</span> (<span id="st-film-date">Date de sortie</span>)
+        </p>
+        <em>vendu à environ
+          <span id="st-sold">nombre de ventes</span> millions
+          d'exemplaires.</em>
+        <hr />
+        <p id="st-description">description du film</p>
+        <div class="boutons">
+          <a href="" id="music-link" target="_blank" title="Écouter sur spotify (Nouvel onglet)"><img
+              src="images/logo-spotify-blanc.png" alt="" /><span class="sr-only">lien spotify</span></a>
+          <a href="" id="film-link" title="En savoir plus sur le film - Allociné (Nouvel onglet)" target="_blank"><img
+              src="images/lien-externe (1).png" alt="" />Voir le film</a>
+        </div>
+      </div>
+    </div>
+    <div class="sts-list">
+      <h2 id="titre2-music">We know them by heart</h2>
+      <p id="paragraph-music">
+        Discover the top 10 best-selling film soundtracks in history.
+      </p>
+      <ol>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+
+  <footer>
+    <a href="mentionslegales.html" id="mentionslegales">Legal Notices</a>
+    <br />
+    <a href="credits.html" id="credits">Credits</a>
+    <hr>
+    <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+
+  <script src="script/section3script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="javascript.js"></script>
+  <script src="script/javascript.js"></script>
+  <script src="script/section1script.js"></script>
+  <script src="script/section2script.js"></script>
   <script>
     /* Fleche */
     const scrollBtn = document.querySelector(".scroll-down");
     scrollBtn.addEventListener("click", () => {
-      const section2 = document.getElementById("section2-iframe");
+      const section2 = document.getElementById("graph-section");
       if (section2) {
         section2.scrollIntoView({ behavior: "smooth" });
       }
@@ -57,11 +174,45 @@
         const lang = btn.dataset.lang.toUpperCase();
         langBtn.innerHTML = `${lang} <span>▾</span>`;
         langSelect.classList.remove("open");
-
-        const section2Iframe = document.getElementById("section2-iframe");
-        section2Iframe.contentWindow.postMessage({ lang }, "*");
+        if (lang === "EN" || lang === "FR") {
+          updateLanguage(lang.toLowerCase());
+        }
       });
     });
+
+    function updateLanguage(lang) {
+      fetch("data/contenuLangue.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const t = data[lang][0];
+
+          /* Traduction section 1  */
+          document.getElementById("titre2-graph").textContent =
+            t["titre2-graph"];
+          document.getElementById("titre2-soustitre-graph").textContent =
+            t["titre2-soustitre-graph"];
+          document.getElementById("paragraph-graph").textContent =
+            t["paragraph-graph"];
+
+          /* Traduction section 2 */
+          document.getElementById("titre2-podium").textContent =
+            t["titre2-podium"];
+          document.getElementById("paragraph-podium").textContent =
+            t["paragraph-podium"];
+
+          /* Traduction section 3 */
+          document.getElementById("titre2-music").textContent =
+            t["titre2-music"];
+          document.getElementById("paragraph-music").textContent =
+            t["paragraph-music"];
+
+          /* Traduction footer */
+          document.getElementById("mentionslegales").textContent =
+            t["mentionslegales"];
+          document.getElementById("credits").textContent = t["credits"];
+          document.getElementById("piedpage").textContent = t["piedpage"];
+        });
+    }
   </script>
 </body>
 
