@@ -17,11 +17,6 @@
     white-space: nowrap !important;
 }
 
-@font-face {
-    font-family: "Trial VAR";
-    src: url("/fonts/CX80-0-Trial-VAR.ttf") format("truetype");
-}
-
 /* CORPS DE PAGE */
 .masque {
   
@@ -109,9 +104,10 @@ h1 {
 }
 h2,
 h3, h4 {
-    font-family: 'Trial VAR';
+    font-family: 'Anton SC';
     margin: 0;
     margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 h3 {
   font-size: 1.5rem;
@@ -222,6 +218,83 @@ p {
       rgba(255, 255, 255, 0) 100%);
   transform: skewX(-20deg);
   animation: shine 3s ease-in-out infinite;
+}
+
+/* liens */
+
+.source-button {
+  margin-left: 8px;
+  font-style: italic;
+  font-size: 0.8em;
+  color: white;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.source-button:hover {
+  opacity: 1;
+}
+
+/* Flèche */
+
+.scroll-down {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 4;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  animation: fadeIn 1.6s ease forwards 1.8s;
+}
+
+.scroll-down .arrow {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+  margin: 0 auto;
+  box-sizing: border-box;
+  opacity: 0.95;
+  animation: bounce 2s infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
 }
 
 /* ===== BARRE DE SCROLL ==== */

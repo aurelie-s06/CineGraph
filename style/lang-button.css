@@ -1,0 +1,59 @@
+/* ===== Sélecteur de langue ===== */
+.lang-select {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid #555;
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  border-color: #ffd700;
+  color: #ffd700;
+}
+
+.lang-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  min-width: 100px;
+}
+
+.lang-menu button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.lang-menu button:hover {
+  background: #222;
+  color: #ffd700;
+}
+
+.lang-select.open .lang-menu {
+  display: flex;
+}

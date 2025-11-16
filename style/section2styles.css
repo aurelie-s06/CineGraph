@@ -1,7 +1,6 @@
 /* ----- Podium ----- */
 
-.podium-title {
-}
+.podium-title {}
 
 .podium-description {
     margin-top: 20px;
@@ -124,7 +123,7 @@
 }
 
 .image-compo {
-    width: 30%;
+    width: 35%;
     border-radius: 10px;
 }
 
@@ -160,6 +159,7 @@
     opacity: 0.5;
     transition: all 0.3s;
 }
+
 .btn-play:hover {
     opacity: 1;
 }
@@ -238,168 +238,18 @@
     opacity: 1;
 }
 
-
-
-
-/* test  */
-
-/* .couronne-compo {
-    flex: 1;
-    position: relative;
-    height: 60%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.podium {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    z-index: 1;
-}
-
-.container-premier,
-.container-deuxieme,
-.container-troisieme {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 5;
-}
-
-.container-premier {
-    position: absolute;
-    left: 12px;
-    top: 70px;
-}
-
-.couronne1 {
-    width: 35%;
-}
-
-.premier {
-    position: absolute;
-    top: 37.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-}
-
-.container-deuxieme {
-    position: absolute;
-    left: 40px;
-    top: 130px;
-}
-
-.couronne2 {
-    width: 160px;
-}
-
-.deuxieme {
-    position: absolute;
-    top: 37.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.3rem;
-}
-
-.container-troisieme {
-    position: absolute;
-    left: 353px;
-    top: 140px;
-}
-
-.couronne3 {
-    width: 160px;
-}
-
-.troisieme {
-    position: absolute;
-    top: 37.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.1rem;
-} */
-
 .podium {
     width: 100%;
 }
 
-/* .couronne1, .couronne2, .couronne3 {
-    width: 100%;
-} */
 .couronne-compo {
     position: relative;
     margin: auto;
 }
 
-/* .couronne-compo div {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    align-items: end;
-    transform: translateY(10%);
-}
-.couronne-compo div div {
-    position: relative;
-    width: fit-content;
-}
-.couronne-compo img {
-    
-    border: solid red;
-}
-.couronne-compo .compositeurs {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -80%);
-    color: #FFD700;
-    font-weight: bold;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
-    z-index: 3;
-    text-align: center;
-}
-.couronne-compo .container-premier {
-    margin-bottom: 50px;
-} */
-
 .podium-img {
     width: 100%;
 }
-
-/* === Projecteur éteint (base) === */
-/* .container-premier::before,
-.container-deuxieme::before,
-.container-troisieme::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    transform: translateX(-50%) scaleY(0.8);
-    width: 150px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.25);
-    opacity: 0;
-    pointer-events: none;
-    filter: blur(3px);
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-    transition: opacity 0.8s ease, transform 1s ease;
-    z-index: -1;
-}
-
-/* === Projecteur allumé === */
-/* .container-premier.active::before,
-.container-deuxieme.active::before,
-.container-troisieme.active::before {
-    opacity: 1;
-    transform: translateX(-50%) scaleY(1);
-} */
 
 .light0,
 .light1,

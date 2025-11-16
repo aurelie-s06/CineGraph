@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3 class="nom-compositeur">${info.Prénom} ${info.Nom
         } <span class="fi fi-${info.Pays_d_origine}"></span></h3>
             <p class="description-compo"></p>
+            <a class="source-button" href="credits.html#2" >Crédits photo</a>
           </div>
         </div>
 
@@ -93,6 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
           // description
           const descEl = slide.querySelector(".description-compo");
           descEl.textContent = info.Description[0][lang];
+
+          //bouton source 
+          const sourcebutton = slide.querySelector(".source-button");
+          sourcebutton.textContent = `${textes["source-photo"]}`;
 
           // titre h4 musique
           const h4Music = slide.querySelector(".titre4-slider-music");

@@ -1,352 +1,236 @@
 <!DOCTYPE html>
 <html lang="EN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CineGraph</title>
-  </head>
 
-  <body>
-    <div class="lang-select" id="langSelect">
-      <button class="lang-btn" id="langBtn">FR <span>▾</span></button>
-      <div class="lang-menu" id="traduire">
-        <button data-lang="fr" value="fr">FR</button>
-        <button data-lang="en" value="en">EN</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Notice | CINEGRAPH</title>
+  <link rel="stylesheet" href="style/lang-button.css">
+  <link rel="stylesheet" href="style/pages.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/flavicon.png">
+</head>
+
+<body>
+  <div class="lang-select" id="langSelect">
+    <button class="lang-btn" id="langBtn">FR <span>▾</span></button>
+    <div class="lang-menu" id="traduire">
+      <button data-lang="fr" value="fr">FR</button>
+      <button data-lang="en" value="en">EN</button>
     </div>
-    <h1><a href="index.html">Mentions légales</a></h1>
+  </div>
+  <h1>Mentions légales</h1>
 
-    <section id="presentation">
-      <h2 data-i18n="presentationTitle">Présentation du projet</h2>
-      <p data-i18n="presentationText">
-        CineGraph est un projet universitaire collaboratif axé sur la data
-        visualisation permettant de découvrir des informations variées sur les
-        musiques de films (genres, popularité, etc.) via des graphiques
-        interactifs. Basé sur la collecte de données via des API comme OMDb, le
-        projet combine développement web et design UX/UI pour offrir une
-        expérience fluide et intuitive.
-      </p>
-    </section>
+  <section id="presentation">
+    <h2 data-i18n="presentationTitle">Présentation du projet</h2>
+    <p data-i18n="presentationText">
+      CineGraph est un projet universitaire collaboratif axé sur la data
+      visualisation permettant de découvrir des informations variées sur les
+      musiques de films (genres, popularité, etc.) via des graphiques
+      interactifs. Basé sur la collecte de données via des API comme OMDb, le
+      projet combine développement web et design UX/UI pour offrir une
+      expérience fluide et intuitive.
+    </p>
+  </section>
 
-    <section id="editeur">
-      <h2 data-i18n="editeurTitle">Éditeur</h2>
-      <p data-i18n="editeurText">
-        Université Gustave Eiffel<br />
-        5 bd Descartes, 77420 Champs-sur-Marne<br />
-        +33 01 60 95 75 00<br />
-        SIRET : 130 026 123 00013<br />
-        Code APE : 85.42Z<br />
-        Forme juridique : EPSCP (développer acronyme)
-      </p>
+  <section id="editeur">
+    <h2 data-i18n="editeurTitle">Éditeur</h2>
+    <p data-i18n="editeurText">
+      Université Gustave Eiffel<br />
+      5 bd Descartes, 77420 Champs-sur-Marne<br />
+      +33 01 60 95 75 00<br />
+      SIRET : 130 026 123 00013<br />
+      Code APE : 85.42Z<br />
+      Forme juridique : EPSCP (développer acronyme)
+    </p>
 
-      <h3 data-i18n="directeurTitle" id="directeur">
-        Directeur de la publication
-      </h3>
-      <p data-i18n="directeurTexte">Gilles Roussel</p>
+    <h3 data-i18n="directeurTitle" id="directeur">
+      Directeur de la publication
+    </h3>
+    <p data-i18n="directeurTexte">Gilles Roussel</p>
 
-      <h3 data-i18n="DpoTitle" id="Dpo">
-        Responsable de la protection des données (DPO):
-      </h3>
-      <p data-i18n="DpoText">
-        Nom : Véronique Juge<br />
-        Adresse : 5 bd Descartes, 77420 Champs-sur-Marne Contact :
-        protectiondesdonnees-dpo@univ-eiffel.fr
-      </p>
+    <h3 data-i18n="DpoTitle" id="Dpo">
+      Responsable de la protection des données (DPO):
+    </h3>
+    <p data-i18n="DpoText">
+      Nom : Véronique Juge<br />
+      Adresse : 5 bd Descartes, 77420 Champs-sur-Marne Contact :
+      protectiondesdonnees-dpo@univ-eiffel.fr
+    </p>
 
-      <h3 data-i18n="hebergeurTitle" id="herbergeur">Hébergeur</h3>
-      <p data-i18n="hebergeurText">
-        Nom : GitHub <br />
-        Adresse : PRIUS BERNHARDPLEIN 200 PAYS BAS PAYS-BAS <br />
-        GitHub conserve les données tant que nécessaire pour fournir ses
-        services, respecter les obligations légales ou résoudre des litiges. Les
-        dépôts publics sont conservés indéfiniment, sauf suppression, tandis que
-        les dépôts privés sont protégés. Les utilisateurs peuvent demander la
-        suppression ou modification de leurs données.
-      </p>
+    <h3 data-i18n="hebergeurTitle" id="herbergeur">Hébergeur</h3>
+    <p data-i18n="hebergeurText">
+      Nom : GitHub <br />
+      Adresse : PRIUS BERNHARDPLEIN 200 PAYS BAS PAYS-BAS <br />
+      GitHub conserve les données tant que nécessaire pour fournir ses
+      services, respecter les obligations légales ou résoudre des litiges. Les
+      dépôts publics sont conservés indéfiniment, sauf suppression, tandis que
+      les dépôts privés sont protégés. Les utilisateurs peuvent demander la
+      suppression ou modification de leurs données.
+    </p>
+  </section>
 
-      <section id="contact">
-        <h2 data-i18n="contactTitle">Collaborateurs - contact</h2>
-        <p data-i18n="contactText">
-          Vous pouvez contacter les membres de l'équipe :
-        </p>
+  <section id="contact">
+    <h2 data-i18n="contactTitle">Collaborateurs - contact</h2>
+    <p data-i18n="contactText">
+      Vous pouvez contacter les membres de l'équipe :
+    </p>
 
-        <p>
-          <strong>Marie PITRE</strong><br />
-          Création graphique et maquettage<br />
-          <a href="mailto:marie.pitre@edu.univ-eiffel.fr"
-            >marie.pitre@edu.univ-eiffel.fr</a
-          >
-        </p>
+    <p>
+      <strong>Marie PITRE</strong><br />
+      Création graphique et maquettage<br />
+      <a href="mailto:marie.pitre@edu.univ-eiffel.fr">marie.pitre@edu.univ-eiffel.fr</a>
+    </p>
 
-        <p>
-          <strong>Aurélie SIROT</strong><br />
-          Développement web back-end<br />
-          <a href="mailto:aurelie.sirot@edu.univ-eiffel.fr"
-            >aurelie.sirot@edu.univ-eiffel.fr</a
-          >
-        </p>
+    <p>
+      <strong>Aurélie SIROT</strong><br />
+      Développement web back-end<br />
+      <a href="mailto:aurelie.sirot@edu.univ-eiffel.fr">aurelie.sirot@edu.univ-eiffel.fr</a>
+    </p>
 
-        <p>
-          <strong>Timothy VERDUN</strong><br />
-          Développement web front-end<br />
-          <a href="mailto:timothy.verdun@edu.univ-eiffel.fr"
-            >timothy.verdun@edu.univ-eiffel.fr</a
-          >
-        </p>
-      </section>
-    </section>
-    <section id="data">
-      <h2 data-i18n="dataTitle">Collecte des données personnelles</h2>
-      <p data-i18n="dataText">
-        CineGraph respecte le Règlement Général sur la Protection des Données
-        (RGPD). Aucune donnée personnelle n'est collectée par le site. Pour
-        toute question ou demande concernant vos données personnelles, veuillez
-        contacter notre DPO à l’adresse suivante :
-        <a href="mailto:protectiondesdonnees-dpo@univ-eiffel.fr"
-          >protectiondesdonnees-dpo@univ-eiffel.fr</a
-        >.
-      </p>
-    </section>
+    <p>
+      <strong>Timothy VERDUN</strong><br />
+      Développement web front-end<br />
+      <a href="mailto:timothy.verdun@edu.univ-eiffel.fr">timothy.verdun@edu.univ-eiffel.fr</a>
+    </p>
+  </section>
+  </section>
+  <section id="data">
+    <h2 data-i18n="dataTitle">Collecte des données personnelles</h2>
+    <p data-i18n="dataText">
+      CineGraph respecte le Règlement Général sur la Protection des Données
+      (RGPD). Aucune donnée personnelle n'est collectée par le site. Pour
+      toute question ou demande concernant vos données personnelles, veuillez
+      contacter notre DPO à l’adresse suivante :
+      <a href="mailto:protectiondesdonnees-dpo@univ-eiffel.fr">protectiondesdonnees-dpo@univ-eiffel.fr</a>.
+    </p>
+  </section>
 
-    <section id="property">
-      <h2 data-i18n="propertyTitle">Propriété intellectuelle</h2>
-      <p data-i18n="propertyText">
-        Le contenu HTML, PHP, CSS et Javascript du site Web est la propriété de
-        l’équipe CINEGRAPH. La réutilisation et la modification du code sont
-        autorisées sous réserve de citation de l'auteur. Toutes les images de
-        type logo sont la propriété de l’équipe CINEGRAPH. Elles sont protégées
-        par les droits d’auteur ; toute reproduction ou modification est
-        interdite. Vous pouvez consulter le détail des crédits et sources
-        utilisées sur la page 
-        <a href="source.html">Sources - crédits</a>.
-      </p>
-    </section>
+  <section id="property">
+    <h2 data-i18n="propertyTitle">Propriété intellectuelle</h2>
+    <p data-i18n="propertyText">
+      Le contenu HTML, PHP, CSS et Javascript du site Web est la propriété de
+      l’équipe CINEGRAPH. La réutilisation et la modification du code sont
+      autorisées sous réserve de citation de l'auteur. Toutes les images de
+      type logo sont la propriété de l’équipe CINEGRAPH. Elles sont protégées
+      par les droits d’auteur ; toute reproduction ou modification est
+      interdite. Vous pouvez consulter le détail des crédits et sources
+      utilisées sur la page 
+      <a href="source.html">Sources - crédits</a>.
+    </p>
+  </section>
 
+  <!-- ===== FOOTER ===== -->
+  <footer>
     <a href="index.html">Retour au site</a>
+    <br />
+    <a href="credits.html" id="credits">Sources - Credits</a>
+    <hr>
+    <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
+  </footer>
 
-    <script>
-      const translations = {
-        en: {
-          title: "Legal Notice",
-          presentationTitle: "Project Overview",
-          presentationText:
-            "CineGraph is a collaborative university project focused on data visualization that allows users to explore various information about film music (genres, popularity, etc.) through interactive graphics. Based on data collected via APIs such as OMDb, the project combines web development and UX/UI design to offer a smooth and intuitive experience.",
-          editeurTitle: "Publisher",
-          editeurText:
-            "Gustave Eiffel University 5 bd Descartes, 77420 Champs-sur-Marne +33 01 60 95 75 00 SIRET: 130 026 123 00013 APE Code: 85.42Z Legal form: EPSCP",
-          directeurTitle: "Publisher:",
-          directeurTexte: "Gilles Roussel",
-          DpoTitle: "Data Protection Officer (DPO):",
-          DpoText:
-            "Name:  Véronique Juge Address: 5 Descartes Boulevard, 77420 Champs-sur-Marne Contact: protectiondesdonnees-dpo@univ-eiffel.fr",
-          hebergeurTitle: "Hosting provider",
-          hebergeurText:
-            "Name: GitHub Address: PRIUS BERNHARDPLEIN 200, NETHERLANDS GitHub retains data as long as necessary to provide its services, comply with legal obligations, or resolve disputes. Public repositories are stored indefinitely unless deleted, while private repositories are protected. Users can request the deletion or modification of their data.",
-          dataTitle: "Personal Data Collection",
-          dataText:
-            "CineGraph complies with the General Data Protection Regulation (GDPR). No personal data is collected by the site. For any questions or requests concerning your personal data, please contact our DPO at the following address: protectiondesdonnees-dpo@univ-eiffel.fr",
-          propertyTitle: "Intellectual Property",
-          propertyText:
-            "The HTML, PHP, CSS, and Javascript content of this website is the property of the CINEGRAPH team. Reuse and modification of the code are permitted provided that the author is credited. All logo images are the property of the CINEGRAPH team. They are protected by copyright; any reproduction or modification is prohibited.",
-          contactTitle: "Contributors - Contact",
-          contactText: "You can contact the team members:",
-        },
+  <script>
+    const translations = {
+      en: {
+        title: "Legal Notice",
+        presentationTitle: "Project Overview",
+        presentationText:
+          "CineGraph is a collaborative university project focused on data visualization that allows users to explore various information about film music (genres, popularity, etc.) through interactive graphics. Based on data collected via APIs such as OMDb, the project combines web development and UX/UI design to offer a smooth and intuitive experience.",
+        editeurTitle: "Publisher",
+        editeurText:
+          "Gustave Eiffel University 5 bd Descartes, 77420 Champs-sur-Marne +33 01 60 95 75 00 SIRET: 130 026 123 00013 APE Code: 85.42Z Legal form: EPSCP",
+        directeurTitle: "Publisher:",
+        directeurTexte: "Gilles Roussel",
+        DpoTitle: "Data Protection Officer (DPO):",
+        DpoText:
+          "Name:  Véronique Juge Address: 5 Descartes Boulevard, 77420 Champs-sur-Marne Contact: protectiondesdonnees-dpo@univ-eiffel.fr",
+        hebergeurTitle: "Hosting provider",
+        hebergeurText:
+          "Name: GitHub Address: PRIUS BERNHARDPLEIN 200, NETHERLANDS GitHub retains data as long as necessary to provide its services, comply with legal obligations, or resolve disputes. Public repositories are stored indefinitely unless deleted, while private repositories are protected. Users can request the deletion or modification of their data.",
+        dataTitle: "Personal Data Collection",
+        dataText:
+          "CineGraph complies with the General Data Protection Regulation (GDPR). No personal data is collected by the site. For any questions or requests concerning your personal data, please contact our DPO at the following address: protectiondesdonnees-dpo@univ-eiffel.fr",
+        propertyTitle: "Intellectual Property",
+        propertyText:
+          "The HTML, PHP, CSS, and Javascript content of this website is the property of the CINEGRAPH team. Reuse and modification of the code are permitted provided that the author is credited. All logo images are the property of the CINEGRAPH team. They are protected by copyright; any reproduction or modification is prohibited.",
+        contactTitle: "Contributors - Contact",
+        contactText: "You can contact the team members:",
+      },
 
-        fr: {
-          title: "Mentions légales",
-          presentationTitle: "Présentation du projet",
-          presentationText:
-            "CineGraph est un projet universitaire collaboratif axé sur la data visualisation permettant de découvrir des informations variées sur les musiques de films (genres, popularité, etc.) via des graphiques interactifs. Basé sur la collecte de données via des API comme OMDb, le projet combine développement web et design UX/UI pour offrir une expérience fluide et intuitive.",
-          editeurTitle: "Éditeur",
-          editeurText:
-            "Université Gustave Eiffel<br>5 bd Descartes, 77420 Champs-sur-Marne<br>+33 01 60 95 75 00<br>SIRET : 130 026 123 00013<br>Code APE : 85.42Z<br>Forme juridique : EPSCP",
-          directeurTitle: "Directeur de la publication :",
-          directeurTexte: "Gilles Roussel",
-          DpoTitle: "Responsable de la protection des donnéess (DPO) :",
-          DpoText:
-            "Nom : Véronique Juge Adresse : 5 bd Descartes, 77420 Champs-sur-Marne Contact : protectiondesdonnees-dpo@univ-eiffel.fr",
-          hebergeurTitle: "Hébergeur",
-          hebergeurText:
-            "Nom : GitHub Adresse : PRIUS BERNHARDPLEIN 200 PAYS BAS PAYS-BAS GitHub conserve les données tant que nécessaire pour fournir ses services, respecter les obligations légales ou résoudre des litiges. Les dépôts publics sont conservés indéfiniment, sauf suppression, tandis que les dépôts privés sont protégés. Les utilisateurs peuvent demander la suppression ou modification de leurs données.",
-          dataTitle: "Collecte des données personnelles",
-          dataText:
-            "CineGraph respecte le Règlement Général sur la Protection des Données (RGPD). Aucune donnée personnelle n'est collectée par le site. Pour toute question ou demande concernant vos données personnelles, veuillez contacter notre DPO à l’adresse suivante : protectiondesdonnees-dpo@univ-eiffel.fr",
-          propertyTitle: "Propriété intellectuelle",
-          propertyText:
-            "Le contenu HTML, PHP, CSS et Javascript du site Web est la propriété de l’équipe CINEGRAPH. La réutilisation et la modification du code sont autorisées sous réserve de citation de l'auteur. Toutes les images de type logo sont la propriété de l’équipe CINEGRAPH. Elles sont protégées par les droits d’auteur ; toute reproduction ou modification est interdite.",
-          contactTitle: "Collaborateurs - contact",
-          contactText: "Vous pouvez contacter les membres de l’équipe :",
-        },
-      };
+      fr: {
+        title: "Mentions légales",
+        presentationTitle: "Présentation du projet",
+        presentationText:
+          "CineGraph est un projet universitaire collaboratif axé sur la data visualisation permettant de découvrir des informations variées sur les musiques de films (genres, popularité, etc.) via des graphiques interactifs. Basé sur la collecte de données via des API comme OMDb, le projet combine développement web et design UX/UI pour offrir une expérience fluide et intuitive.",
+        editeurTitle: "Éditeur",
+        editeurText:
+          "Université Gustave Eiffel<br>5 bd Descartes, 77420 Champs-sur-Marne<br>+33 01 60 95 75 00<br>SIRET : 130 026 123 00013<br>Code APE : 85.42Z<br>Forme juridique : EPSCP",
+        directeurTitle: "Directeur de la publication :",
+        directeurTexte: "Gilles Roussel",
+        DpoTitle: "Responsable de la protection des donnéess (DPO) :",
+        DpoText:
+          "Nom : Véronique Juge Adresse : 5 bd Descartes, 77420 Champs-sur-Marne Contact : protectiondesdonnees-dpo@univ-eiffel.fr",
+        hebergeurTitle: "Hébergeur",
+        hebergeurText:
+          "Nom : GitHub Adresse : PRIUS BERNHARDPLEIN 200 PAYS BAS PAYS-BAS GitHub conserve les données tant que nécessaire pour fournir ses services, respecter les obligations légales ou résoudre des litiges. Les dépôts publics sont conservés indéfiniment, sauf suppression, tandis que les dépôts privés sont protégés. Les utilisateurs peuvent demander la suppression ou modification de leurs données.",
+        dataTitle: "Collecte des données personnelles",
+        dataText:
+          "CineGraph respecte le Règlement Général sur la Protection des Données (RGPD). Aucune donnée personnelle n'est collectée par le site. Pour toute question ou demande concernant vos données personnelles, veuillez contacter notre DPO à l’adresse suivante : protectiondesdonnees-dpo@univ-eiffel.fr",
+        propertyTitle: "Propriété intellectuelle",
+        propertyText:
+          "Le contenu HTML, PHP, CSS et Javascript du site Web est la propriété de l’équipe CINEGRAPH. La réutilisation et la modification du code sont autorisées sous réserve de citation de l'auteur. Toutes les images de type logo sont la propriété de l’équipe CINEGRAPH. Elles sont protégées par les droits d’auteur ; toute reproduction ou modification est interdite.",
+        contactTitle: "Collaborateurs - contact",
+        contactText: "Vous pouvez contacter les membres de l’équipe :",
+      },
+    };
 
-      // ===== Sélecteur de langue =====
-      const langSelect = document.getElementById("langSelect");
-      const langBtn = document.getElementById("langBtn");
+    // ===== Sélecteur de langue =====
+    const langSelect = document.getElementById("langSelect");
+    const langBtn = document.getElementById("langBtn");
 
-      // Ouvrir / fermer le menu
-      langBtn.addEventListener("click", () => {
-        langSelect.classList.toggle("open");
+    // Ouvrir / fermer le menu
+    langBtn.addEventListener("click", () => {
+      langSelect.classList.toggle("open");
+    });
+
+    // Changer la langue en cliquant sur une option
+    document.querySelectorAll("#traduire button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang; // "fr" ou "en"
+
+        // Mettre à jour le bouton principal
+        langBtn.innerHTML = btn.textContent + " <span>▾</span>";
+
+        // Appliquer la traduction
+        updateUILanguage(lang);
+
+        // Fermer le menu
+        langSelect.classList.remove("open");
       });
+    });
 
-      // Changer la langue en cliquant sur une option
-      document.querySelectorAll("#traduire button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const lang = btn.dataset.lang; // "fr" ou "en"
+    // Fonction pour mettre à jour le contenu selon la langue
+    function updateUILanguage(lang) {
+      // Sauvegarder la langue choisie
+      localStorage.setItem("lang", lang);
 
-          // Mettre à jour le bouton principal
-          langBtn.innerHTML = btn.textContent + " <span>▾</span>";
+      const data = translations[lang] || translations["fr"];
 
-          // Appliquer la traduction
-          updateUILanguage(lang);
-
-          // Fermer le menu
-          langSelect.classList.remove("open");
-        });
+      // Parcourir tous les éléments à traduire
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (data[key]) el.innerHTML = data[key];
       });
+    }
 
-      // Fonction pour mettre à jour le contenu selon la langue
-      function updateUILanguage(lang) {
-        // Sauvegarder la langue choisie
-        localStorage.setItem("lang", lang);
+    // Charger la langue choisie au chargement
+    const savedLang = localStorage.getItem("lang") || "fr";
+    langBtn.innerHTML = savedLang.toUpperCase() + " <span>▾</span>";
+    updateUILanguage(savedLang);
+  </script>
 
-        const data = translations[lang] || translations["fr"];
+</body>
 
-        // Parcourir tous les éléments à traduire
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-          const key = el.getAttribute("data-i18n");
-          if (data[key]) el.innerHTML = data[key];
-        });
-      }
-
-      // Charger la langue choisie au chargement
-      const savedLang = localStorage.getItem("lang") || "fr";
-      langBtn.innerHTML = savedLang.toUpperCase() + " <span>▾</span>";
-      updateUILanguage(savedLang);
-    </script>
-
-    <style>
-      body {
-        background-color: #640c19;
-        color: white;
-        font-family: "Poppins", sans-serif;
-        padding: 80px 120px;
-        line-height: 1.8;
-        letter-spacing: 0.4px;
-        transition: all 0.3s ease;
-      }
-
-      h1 {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 50px;
-        text-transform: uppercase;
-        border-bottom: 2px solid #ffffff;
-        display: inline-block;
-        padding-bottom: 10px;
-      }
-
-      h1 a {
-        color: #ffffff;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      h1 a:hover {
-        color: #ffcccc;
-      }
-
-      h2 {
-        font-size: 22px;
-        font-weight: 700;
-        margin-top: 60px;
-        margin-bottom: 20px;
-        color: #f6d758;
-      }
-      h3 {
-        font-size: 20px;
-        font-weight: 700;
-        display: block;
-        margin-left: 20px;
-      }
-      a {
-        color: #ffcccc;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      a:hover {
-        color: #ffffff;
-      }
-
-      p {
-        margin-bottom: 20px;
-        font-size: 17px;
-        max-width: 950px;
-      }
-
-      section {
-        margin-bottom: 70px;
-      }
-
-      .lang-select {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 100;
-        cursor: pointer;
-      }
-
-      .lang-btn {
-        background-color: #f6d758;
-        color: #231c0c;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        font-weight: bold;
-      }
-
-      .lang-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #640c19;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .lang-menu button {
-        background: transparent;
-        color: white;
-        padding: 8px 12px;
-        border: none;
-        text-align: left;
-        width: 100%;
-      }
-
-      .lang-select.open .lang-menu {
-        display: flex;
-      }
-
-      @media (max-width: 768px) {
-        body {
-          padding: 40px 25px;
-        }
-
-        p {
-          font-size: 16px;
-        }
-
-        h1 {
-          font-size: 26px;
-        }
-
-        h2 {
-          font-size: 20px;
-        }
-      }
-    </style>
-  </body>
 </html>
