@@ -152,14 +152,6 @@
     color: #f6d758;
 }
 
-.sts-list ol::-webkit-scrollbar-track {
+.sts-list ol::-webkit-scrollbar {
     background: transparent;
-    margin: 14px;
-    border-radius: 10px;
-}
-
-.sts-list ol::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
-    padding: 10px;
 }

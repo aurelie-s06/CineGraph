@@ -23,10 +23,20 @@
 }
 
 /* CORPS DE PAGE */
-
+.masque {
+  
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+}
 body {
   
     margin: 0;
+    overflow-y: hidden;
+
+}
+.body {
+
    
 --cinema-width: 100vw;
 --cinema-height: calc(var(--cinema-width) * 0.5625);
@@ -70,6 +80,7 @@ body {
 
     background-color: black;
     font-family: 'poppins', sans-serif;
+
 }
 
 section,
@@ -81,6 +92,7 @@ footer {
 section {
     height: 100vh;
     margin-bottom: 30vh;
+    scroll-snap-align: start;
 }
 
 footer hr {
@@ -211,6 +223,27 @@ p {
   transform: skewX(-20deg);
   animation: shine 3s ease-in-out infinite;
 }
+
+/* ===== BARRE DE SCROLL ==== */
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    background: black;
+    width: 8px;
+}
+
+/* Fond de la scrollbar (track) */
+::-webkit-scrollbar-track {
+    margin: 15px;
+}
+
+/* Barre (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+
+
 
 /* ----- FOOTER ----- */
 

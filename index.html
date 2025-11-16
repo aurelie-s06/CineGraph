@@ -26,154 +26,147 @@
     <title>CineGraph</title>
   </head>
 
-  <body class="body">
-    <div class="lang-select" id="langSelect">
-      <button class="lang-btn" id="langBtn">EN <span>▾</span></button>
-      <div class="lang-menu" id="traduire">
-        <button data-lang="en" value="en">EN</button>
-        <button data-lang="fr" value="fr">FR</button>
-      </div>
-    </div>
-
-    <!-- ===== TITRE ===== -->
-
-    <section class="main-title">
-      <img src="images/accent.png" alt="" class="clap" />
-      <h1 class="titre">CineGraph</h1>
-      <div class="scroll-down" aria-label="Découvrir la suite">
-        <span class="arrow" aria-hidden="true"></span>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 1 : GRAPHIQUE ===== -->
-
-    <section class="graph-section" id="graph-section">
-      <div class="graphique">
-        <canvas id="oscarsChart" width="700" height="500"></canvas>
-      </div>
-      <div class="chart-text">
-        <h2 class="chart-title" id="titre2-graph">
-          When music hits the big screen
-        </h2>
-        <p class="chart-sous-text" id="titre2-soustitre-graph">
-          Which genres shine at the Oscars ?
-        </p>
-        <p class="chart-description" id="paragraph-graph">
-          This graph illustrates the distribution of film genres nominated in
-          the Oscar music categories. It highlights trends over the years and
-          allows us to observe the evolution of the film styles promoted by the
-          Academy. We can thus identify which genres are gaining popularity,
-          which are fading away, and how the musical landscape of cinema is
-          changing over time.
-        </p>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 2 : PODIUM ===== -->
-
-    <section class="podium-section">
-      <div class="podium-text">
-        <h2 class="podium-title" id="titre2-podium">
-          They make the best film music
-        </h2>
-        <p class="podium-description" id="paragraph-podium">
-          Discover the podium of the three composers most nominated for Oscars.
-          True legends of film music, they have shaped the history of cinema
-          with soundtracks that stand the test of time. Their melodies heighten
-          emotions, bring images to life and leave a lasting impression on
-          viewers' imaginations. Through their works, they prove that music is
-          the soul of the seventh art.
-        </p>
-        <div class="couronne-compo">
-          <div class="light1" id="light1" data-slide="3"></div>
-          <div class="light2" id="light2" data-slide="1"></div>
-          <div class="light3" id="light3" data-slide="2"></div>
-          <img class="podium-img" src="images/podium-full.png" alt="" />
+  <body>
+    <div class="masque">
+      <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn">EN <span>▾</span></button>
+        <div class="lang-menu" id="traduire">
+          <button data-lang="en" value="en">EN</button>
+          <button data-lang="fr" value="fr">FR</button>
         </div>
       </div>
-      <!-- Partie droite : Slider -->
-      <div class="slider">
-        <div class="carousel-wrapper">
-          <button class="carousel-btn left">&#10094;</button>
-          <div class="carousel"></div>
-          <button class="carousel-btn right">&#10095;</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 3 : LES MUSIQUES DE FILM -->
-
-    <section class="soundtrack-section">
-      <div class="sts-info">
-        <iframe
-          id="st-iframe"
-          src=""
-          title="Rick Astley - Never Gonna Give You Up"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        >
-        </iframe>
-
-        <div class="contents">
-          <h3>
-            <span id="st-title">TITRE</span> -
-            <span id="st-singer">Artiste</span>
-          </h3>
-          <p>
-            <span id="st-film-title">Titre du film</span> -
-            <span id="st-film-director">Réalisateur</span> (<span
-              id="st-film-date"
-              >Date de sortie</span
-            >)
-          </p>
-          <em id="ventes"
-            >Sold approximately
-            <span id="st-sold">number of sales</span> million copies</em
-          >
-          <hr />
-          <p id="st-description">description du film</p>
-          <div class="boutons">
-            <a
-              href=""
-              id="music-link"
-              target="_blank"
-              title="Écouter sur spotify (Nouvel onglet)"
-              ><img src="images/logo-spotify-blanc.png" alt="" /><span
-                class="sr-only"
-                >lien spotify</span
-              ></a
-            >
-            <a
-              href=""
-              id="film-link"
-              title="En savoir plus sur le film - Allociné (Nouvel onglet)"
-              target="_blank"
-              ><img src="images/lien-externe (1).png" alt="" />Voir le film</a
-            >
+      <!-- ===== TITRE ===== -->
+      <main class="body">
+        <section class="main-title">
+          <img src="images/accent.png" alt="" class="clap" />
+          <h1 class="titre">CineGraph</h1>
+          <div class="scroll-down" aria-label="Découvrir la suite">
+            <span class="arrow" aria-hidden="true"></span>
           </div>
-        </div>
-      </div>
-      <div class="sts-list">
-        <h2 id="titre2-music">We know them by heart</h2>
-        <p id="paragraph-music">
-          Discover the top 10 best-selling film soundtracks in history.
-        </p>
-        <ol>
-          <!-- Filled by JS -->
-        </ol>
-      </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-
-    <footer>
-      <a href="mentions-legal.html" id="mentionslegales">Legal Notices</a>
-      <br />
-      <a href="credits.html" id="credits">Credits</a>
-      <hr>
-      <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
-    </footer>
+        </section>
+        <!-- ===== SECTION 1 : GRAPHIQUE ===== -->
+        <section class="graph-section" id="graph-section">
+          <div class="graphique">
+            <canvas id="oscarsChart" width="700" height="500"></canvas>
+          </div>
+          <div class="chart-text">
+            <h2 class="chart-title" id="titre2-graph">
+              When music hits the big screen
+            </h2>
+            <p class="chart-sous-text" id="titre2-soustitre-graph">
+              Which genres shine at the Oscars ?
+            </p>
+            <p class="chart-description" id="paragraph-graph">
+              This graph illustrates the distribution of film genres nominated in
+              the Oscar music categories. It highlights trends over the years and
+              allows us to observe the evolution of the film styles promoted by the
+              Academy. We can thus identify which genres are gaining popularity,
+              which are fading away, and how the musical landscape of cinema is
+              changing over time.
+            </p>
+          </div>
+        </section>
+        <!-- ===== SECTION 2 : PODIUM ===== -->
+        <section class="podium-section">
+          <div class="podium-text">
+            <h2 class="podium-title" id="titre2-podium">
+              They make the best film music
+            </h2>
+            <p class="podium-description" id="paragraph-podium">
+              Discover the podium of the three composers most nominated for Oscars.
+              True legends of film music, they have shaped the history of cinema
+              with soundtracks that stand the test of time. Their melodies heighten
+              emotions, bring images to life and leave a lasting impression on
+              viewers' imaginations. Through their works, they prove that music is
+              the soul of the seventh art.
+            </p>
+            <div class="couronne-compo">
+              <div class="light1" id="light1" data-slide="3"></div>
+              <div class="light2" id="light2" data-slide="1"></div>
+              <div class="light3" id="light3" data-slide="2"></div>
+              <img class="podium-img" src="images/podium-full.png" alt="" />
+            </div>
+          </div>
+          <!-- Partie droite : Slider -->
+          <div class="slider">
+            <div class="carousel-wrapper">
+              <button class="carousel-btn left">&#10094;</button>
+              <div class="carousel"></div>
+              <button class="carousel-btn right">&#10095;</button>
+            </div>
+          </div>
+        </section>
+        <!-- ===== SECTION 3 : LES MUSIQUES DE FILM -->
+        <section class="soundtrack-section">
+          <div class="sts-info">
+            <iframe
+              id="st-iframe"
+              src=""
+              title="Rick Astley - Never Gonna Give You Up"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+            <div class="contents">
+              <h3>
+                <span id="st-title">TITRE</span> -
+                <span id="st-singer">Artiste</span>
+              </h3>
+              <p>
+                <span id="st-film-title">Titre du film</span> -
+                <span id="st-film-director">Réalisateur</span> (<span
+                  id="st-film-date"
+                  >Date de sortie</span
+                >)
+              </p>
+              <em id="ventes"
+                >Sold approximately
+                <span id="st-sold">number of sales</span> million copies</em
+              >
+              <hr />
+              <p id="st-description">description du film</p>
+              <div class="boutons">
+                <a
+                  href=""
+                  id="music-link"
+                  target="_blank"
+                  title="Écouter sur spotify (Nouvel onglet)"
+                  ><img src="images/logo-spotify-blanc.png" alt="" /><span
+                    class="sr-only"
+                    >lien spotify</span
+                  ></a
+                >
+                <a
+                  href=""
+                  id="film-link"
+                  title="En savoir plus sur le film - Allociné (Nouvel onglet)"
+                  target="_blank"
+                  ><img src="images/lien-externe (1).png" alt="" />Voir le film</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="sts-list">
+            <h2 id="titre2-music">We know them by heart</h2>
+            <p id="paragraph-music">
+              Discover the top 10 best-selling film soundtracks in history.
+            </p>
+            <ol>
+              <!-- Filled by JS -->
+            </ol>
+          </div>
+        </section>
+        <!-- ===== FOOTER ===== -->
+        <footer>
+          <a href="mentions-legal.html" id="mentionslegales">Legal Notices</a>
+          <br />
+          <a href="credits.html" id="credits">Credits</a>
+          <hr>
+          <p class="piedpage" id="piedpage">2025 - CINEGRAPH All rights reserved</p>
+        </footer>
+      </main>
+    </div>
 
     <!-- ===== SCRIPTS ===== -->
 
