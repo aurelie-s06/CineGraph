@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="text-film">
                   <h5></h5>
                   <p>${nom.Oscar}</p>
-                  <a href="${nom.Lien}" class="icone_lien"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="${nom.Lien}" class="icone_lien" title="Voir la page Allociné (Nouvel Onglet)" target="blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
               </div>
             `
@@ -150,31 +150,36 @@ document.addEventListener("DOMContentLoaded", () => {
       updateNavNames(currentIndex);
     }
 
-    btnLeft.onclick = () => showSlide(currentIndex - 1);
-    btnRight.onclick = () => showSlide(currentIndex + 1);
-    showSlide(currentIndex);
+    // ----- Navigation et lien interactif avec le podium ----- //
 
-    // ----- lien interactif avec le podium ----- //
+    const lights = document.querySelectorAll('#light0, #light1, #light2');
 
-    const lights = document.querySelectorAll('#light1, #light2, #light3');
+    function activeLight(newIndex) {
 
-    function activeLight(light) {
+      
+      const slides = document.querySelectorAll(".slide");
+      if (!slides.length) return;
+      if (newIndex < 0) newIndex = slides.length - 1;
+      if (newIndex >= slides.length) newIndex = 0;
 
       lights.forEach(l => l.classList.remove('active'));
-
+      let light = document.getElementById('light'+newIndex)
       light.classList.add('active');
 
-      const slide = light.dataset.slide;
-      showSlide(slide);
+      showSlide(newIndex);
 
     }
+
     lights.forEach(light => {
       light.addEventListener('click', () => {
-        activeLight(light)
+        activeLight(light.dataset.slide)
       });
     });
 
-    activeLight(document.getElementById('light1'))
+    btnLeft.onclick = () => activeLight(currentIndex - 1);
+    btnRight.onclick = () => activeLight(currentIndex + 1);
+
+    activeLight(0)
 
   }
 
