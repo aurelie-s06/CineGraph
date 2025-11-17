@@ -1,40 +1,42 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .sr-only {
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    -webkit-clip-path: inset(50%) !important;
-    clip-path: inset(50%) !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
-    white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
 
 /* CORPS DE PAGE */
 .masque {
-  
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y proximity;
+
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
 }
+
 body {
-  
-    margin: 0;
-    overflow-y: hidden;
+
+  margin: 0;
+  overflow-y: hidden;
 
 }
+
 .body {
 
-   
---cinema-width: 100vw;
---cinema-height: calc(var(--cinema-width) * 0.5625);
+
+  --cinema-width: 100vw;
+  --cinema-height: calc(var(--cinema-width) * 0.5625);
 
   background-image:
     /* 1. Dégradé rouge depuis le bas */
@@ -50,10 +52,14 @@ body {
     url("/images/background.jpg");
 
   background-size:
-    100% 45%,  /* dégradé rouge */
-    var(--cinema-width) var(--cinema-height),   /* dégradé cinema */
-    var(--cinema-width) var(--cinema-height),   /* image cinema */
-    contain;      /* background haut */
+    100% 45%,
+    /* dégradé rouge */
+    var(--cinema-width) var(--cinema-height),
+    /* dégradé cinema */
+    var(--cinema-width) var(--cinema-height),
+    /* image cinema */
+    contain;
+  /* background haut */
 
   background-repeat:
     no-repeat,
@@ -62,32 +68,37 @@ body {
     no-repeat;
 
   background-position:
-    bottom center, /* dégradé rouge */
-    center 75%,  /* dégradé cinéma — à AJUSTER */
-    center 75%,  /* image cinéma — même position */
-    top center;    /* image top */
+    bottom center,
+    /* dégradé rouge */
+    center 75%,
+    /* dégradé cinéma — à AJUSTER */
+    center 75%,
+    /* image cinéma — même position */
+    top center;
+  /* image top */
 
   background-blend-mode:
     normal,
-    normal,  /* mélange dégradé cinema + image cinema */
+    normal,
+    /* mélange dégradé cinema + image cinema */
     normal,
     normal;
 
-    background-color: black;
-    font-family: 'poppins', sans-serif;
+  background-color: black;
+  font-family: 'poppins', sans-serif;
 
 }
 
 section,
 footer {
-    max-width: 1200px;
-    margin: auto;
+  max-width: 1200px;
+  margin: auto;
 }
 
 section {
-    height: 100vh;
-    margin-bottom: 30vh;
-    scroll-snap-align: start;
+  height: 100vh;
+  margin-bottom: 30vh;
+  scroll-snap-align: start;
 }
 
 footer hr {
@@ -100,41 +111,56 @@ footer hr {
 /* STYLES DE TITRES */
 
 h1 {
-    font-family: 'Mea Culpa', cursive;
+  font-family: 'Mea Culpa', cursive;
 }
+
 h2,
-h3, h4 {
-    font-family: 'Anton SC';
-    margin: 0;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
+h3,
+h4 {
+  font-family: 'Anton SC';
+  margin: 0;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
 }
+
 h3 {
   font-size: 1.5rem;
 }
+
+h3,
+h4 {
+  color: #F6D758;
+}
+
 h2 {
   font-size: 2rem;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);    
-    background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
-    background-clip: text;
-    letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(90deg, #ffd700, #fff2b2, #ffd700);
+  background-clip: text;
+  letter-spacing: 1px;
+  color: transparent;
 
-}
-h2, h4 {
-    color: #FFD700;
 }
 
 p {
-    max-width: 600px;
-    color: white;
-    margin: 0;
-    margin-bottom: 10px;
+  max-width: 600px;
+  color: white;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.chart-sous-text {
+  font-style: italic;
+  font-weight: bold;
+  color: #F6D758;
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 /* Titre principal */
 
 .titre {
-    
+
   opacity: 0;
   font-size: 7rem;
   position: absolute;
@@ -177,12 +203,14 @@ p {
   0% {
     background-position: 0%;
   }
-40% {
-    
+
+  40% {
+
     background-position: 200%;
   }
+
   100% {
-    
+
     background-position: 200%;
   }
 }
@@ -289,9 +317,12 @@ p {
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(-45deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(-45deg);
   }
@@ -300,19 +331,19 @@ p {
 /* ===== BARRE DE SCROLL ==== */
 /* Largeur de la scrollbar */
 ::-webkit-scrollbar {
-    background: black;
-    width: 8px;
+  background: black;
+  width: 8px;
 }
 
 /* Fond de la scrollbar (track) */
 ::-webkit-scrollbar-track {
-    margin: 15px;
+  margin: 15px;
 }
 
 /* Barre (thumb) */
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 
@@ -321,38 +352,51 @@ p {
 /* ----- FOOTER ----- */
 
 footer {
-    padding: 10px 0 50px 0;
+  padding: 10px 0 50px 0;
 }
 
 footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 5px 0;
-    display: inline-block;
-    margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 0;
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ===== RESPONSIVE ===== */
 
 @media (width<950px) {
-  .podium-section, .soundtrack-section{
-    flex-direction: column;
+
+  .podium-section,
+  .soundtrack-section,
+  .graph-section {
+    flex-direction: column !important;
   }
-  .podium-section>div, .soundtrack-section>div {
+
+  .graph-section, .soundtrack-section {
+    flex-flow: column-reverse !important;
+  }
+
+  .podium-section>div,
+  .soundtrack-section>div,
+  .graph-section>div {
     width: 90%;
     max-width: 600px;
   }
+
   .couronne-compo {
     max-width: 500px;
   }
 
-  .soundtrack-section, .podium-section {
+  .soundtrack-section,
+  .podium-section,
+  .graph-section {
     height: fit-content;
   }
-}
 
+}
