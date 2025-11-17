@@ -116,7 +116,7 @@
                 <span id="st-singer">Artiste</span>
               </h3>
               <p>
-                From : 
+                <span id="section3-subtitle">From :</span> 
                 <span id="st-film-title">Titre du film</span> -
                 <span id="st-film-director">Réalisateur</span> (<span
                   id="st-film-date"
@@ -143,9 +143,9 @@
                 <a
                   href=""
                   id="film-link"
-                  title="En savoir plus sur le film - Allociné (Nouvel onglet)"
+                  title="More about the film - Allocine (New window)"
                   target="_blank"
-                  ><img src="images/lien-externe (1).png" alt="" />Voir le film</a
+                  ><img src="images/lien-externe (1).png" alt="" /><span id="film-link-content">About the film</span></a
                 >
               </div>
             </div>
@@ -228,8 +228,14 @@
             /* Traduction section 3 */
             document.getElementById("titre2-music").textContent =
               t["titre2-music"];
+            document.getElementById("section3-subtitle").textContent =
+              t["section3-subtitle"];
             document.getElementById("paragraph-music").textContent =
               t["paragraph-music"];
+            document.getElementById("film-link-content").textContent =
+              t["film-link-content"];
+            document.getElementById("film-link-content").title =
+              t["film-link-title"];
 
             /* Traduction footer */
             document.getElementById("mentionslegales").textContent =

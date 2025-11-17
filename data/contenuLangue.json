@@ -10,6 +10,9 @@
             "titre4-slider-music": "The theme music for",
             "titre4-slider-film": "Some films with",
             "titre2-music": "We know them by heart",
+            "section3-subtitle" : "From : ",
+            "film-link-content" : "About the film",
+            "film-link-title" : "More about the film - Allocine (New window)",
             "paragraph-music": "Discover the top 10 best-selling film soundtracks in history.",
             "ventes": {
                 "before": "Sold approximately",
@@ -31,6 +34,9 @@
             "titre4-slider-music": "La musique phare de",
             "titre4-slider-film": "Quelques films avec",
             "titre2-music": "On les connait par coeur",
+            "section3-subtitle" : "De : ",
+            "film-link-content" : "Voir le film",
+            "film-link-title" : "En savoir plus sur le film - Allociné (Nouvel onglet)",
             "paragraph-music": "Découvrez le top 10 des bandes originales de films les plus vendues de l'histoire.",
             "ventes": {
                 "before": "Vendu à environ",
