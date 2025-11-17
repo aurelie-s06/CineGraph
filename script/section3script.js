@@ -1,6 +1,6 @@
 let contenulangue = {};
 
-fetch("data/contenulangue.json")
+fetch("data/contenuLangue.json")
   .then((res) => res.json())
   .then((data) => {
     contenulangue = data;
