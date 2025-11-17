@@ -46,10 +46,10 @@ body {
     linear-gradient(to top, rgba(0, 0, 0, 0.75)60%, rgb(0, 0, 0)),
 
     /* 3. Image cinéma */
-    url("/images/cinema.webp"),
+    url("images/cinema.webp"),
 
     /* 4. Image background en haut */
-    url("/images/background.jpg");
+    url("images/background.jpg");
 
   background-size:
     100% 45%,
