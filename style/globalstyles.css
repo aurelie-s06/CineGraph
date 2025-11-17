@@ -170,7 +170,7 @@ p {
   z-index: 2;
   color: #FFD700;
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-  animation: titleFade 2s ease-out forwards, goldShine 4s linear infinite;
+  animation: titleFade 2s ease-out forwards, goldShine 4s 1.75s linear infinite;
   background: linear-gradient(45deg, #ffd700 45%, #fff8d4 55%, #ffd700);
   background-clip: text;
   -webkit-text-fill-color: transparent;

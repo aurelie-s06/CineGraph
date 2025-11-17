@@ -1,33 +1,48 @@
-
 let oscarsChart = null;
 
 let contenuLangue = {
-  "fr":
-  {
-    "x": "Décénnie",
-    "y": "Proportion parmis les films nommés (%)"
+  fr: {
+    x: "Décennie",
+    y: "Proportion parmi les films nommés (%)"
+  },
+  en: {
+    x: "Decade",
+    y: "Proportion among the nominated films (%)"
   }
-  ,
-  "en":
-  {
-    "x": "Decade",
-    "y": "Proportion among the nominated films (%)"
-  }
+};
 
-}
-let currentLang = "en"
+let traductionGenres = {
+  fr: {
+    "Drama": "Drame",
+    "Comedy": "Comédie",
+    "Action": "Action",
+    "Romance": "Romance",
+    "Adventure": "Aventure",
+    "Biography": "Biographie"
+    // ajoute ici tous tes genres
+  },
+  en: {
+    "Drama": "Drama",
+    "Comedy": "Comedy",
+    "Action": "Action",
+    "Romance": "Romance",
+    "Adventure": "Adventure",
+    "Biography": "Biography"
+  }
+};
+
+let currentLang = "en";
 
 function setGraph() {
   fetch("data/GraphFinal.json")
     .then((response) => response.json())
     .then((data) => {
       const allDecades = [
-        ...new Set(data.flatMap((g) => g.decades.map((d) => d.decade))),
+        ...new Set(data.flatMap((g) => g.decades.map((d) => d.decade)))
       ].sort();
 
-      if (oscarsChart) {
-        oscarsChart.destroy();
-      }
+      // Détruire le graphique précédent si il existe
+      if (oscarsChart) oscarsChart.destroy();
 
       const colors = [
         "rgba(255, 99, 132, 0.7)",
@@ -36,7 +51,7 @@ function setGraph() {
         "rgba(75, 192, 192, 0.7)",
         "rgba(153, 102, 255, 0.7)",
         "rgba(255, 159, 64, 0.7)",
-        "rgba(199, 199, 199, 0.7)",
+        "rgba(199, 199, 199, 0.7)"
       ];
 
       const datasets = data.map((genreData, index) => {
@@ -48,7 +63,7 @@ function setGraph() {
         const color = colors[index % colors.length];
 
         return {
-          label: genreData.genre,
+          label: traductionGenres[currentLang][genreData.genre] || genreData.genre,
           data: values,
           borderColor: color,
           backgroundColor: color.replace("0.7", "0.2"),
@@ -56,7 +71,7 @@ function setGraph() {
           tension: 0.4,
           pointRadius: 5,
           pointHoverRadius: 8,
-          pointBackgroundColor: color,
+          pointBackgroundColor: color
         };
       });
 
@@ -66,16 +81,12 @@ function setGraph() {
         type: "line",
         data: {
           labels: allDecades,
-          datasets: datasets,
+          datasets: datasets
         },
         options: {
           responsive: true,
-          interaction: {
-            mode: "nearest",
-            intersect: false,
-          },
+          interaction: { mode: "nearest", intersect: false },
           plugins: {
-            // ----- Légende -----
             legend: {
               position: "bottom",
               align: "center",
@@ -85,12 +96,12 @@ function setGraph() {
                   size: 13,
                   weight: "bold",
                   family: "Poppins, sans-serif",
-                  style: "normal",
+                  style: "normal"
                 },
                 usePointStyle: true,
                 pointStyle: "circle",
                 boxWidth: 15,
-                padding: 15,
+                padding: 15
               },
               onHover: (event, legendItem, legend) => {
                 event.native.target.style.cursor = "pointer";
@@ -101,13 +112,9 @@ function setGraph() {
               onClick: (e, legendItem, legend) => {
                 const index = legendItem.datasetIndex;
                 const chartInstance = legend.chart;
-                const meta = chartInstance.getDatasetMeta(index);
 
                 const allHiddenExceptSelected = chartInstance.data.datasets.every(
-                  (d, i) => {
-                    if (i === index) return true;
-                    return chartInstance.getDatasetMeta(i).hidden === true;
-                  }
+                  (d, i) => i === index || chartInstance.getDatasetMeta(i).hidden === true
                 );
 
                 if (allHiddenExceptSelected) {
@@ -121,7 +128,7 @@ function setGraph() {
                 }
 
                 chartInstance.update();
-              },
+              }
             },
             tooltip: {
               enabled: true,
@@ -132,14 +139,14 @@ function setGraph() {
                 size: 11,
                 weight: "bold",
                 family: "Poppins, sans-serif",
-                style: "normal",
+                style: "normal"
               },
               callbacks: {
                 label: function (context) {
                   return context.dataset.label + ": " + context.raw.toFixed(1) + "%";
                 }
               }
-            },
+            }
           },
           scales: {
             y: {
@@ -147,53 +154,37 @@ function setGraph() {
                 display: true,
                 text: contenuLangue[currentLang].y,
                 color: "#FFFFFF",
-                font: {
-                  size: 15,
-                  weight: "bold",
-                  family: "Poppins, sans-serif",
-                  style: "normal",
-                },
+                font: { size: 15, weight: "bold", family: "Poppins, sans-serif", style: "normal" }
               },
               ticks: { color: "#FFFFFF" },
-              grid: {
-                color: "rgba(255,255,255,0.2)",
-                borderColor: "#FFFFFF",
-                lineWidth: 1,
-              },
+              grid: { color: "rgba(255,255,255,0.2)", borderColor: "#FFFFFF", lineWidth: 1 }
             },
             x: {
               title: {
                 display: true,
                 text: contenuLangue[currentLang].x,
                 color: "#FFFFFF",
-                font: {
-                  size: 15,
-                  weight: "bold",
-                  family: "Poppins, sans-serif",
-                  style: "normal",
-                },
+                font: { size: 15, weight: "bold", family: "Poppins, sans-serif", style: "normal" }
               },
               ticks: { color: "#FFFFFF" },
-              grid: {
-                color: "rgba(255,255,255,0.2)",
-                borderColor: "#FFFFFF",
-                lineWidth: 1,
-              },
-            },
-          },
-        },
+              grid: { color: "rgba(255,255,255,0.2)", borderColor: "#FFFFFF", lineWidth: 1 }
+            }
+          }
+        }
       });
     });
 }
 
-//premier appel
-setGraph(currentLang)
+// Premier appel
+setGraph();
 
+// Changement de langue
 document.querySelectorAll("#traduire button").forEach((btn) => {
   btn.addEventListener("click", () => {
     const lang = btn.dataset.lang;
+    currentLang = lang;
     langBtn.innerHTML = btn.textContent + ' <span>▾</span>';
-    setGraph(lang);
+    setGraph();
     langSelect.classList.remove("open");
   });
 });
