@@ -9,7 +9,7 @@ fetch("data/contenulangue.json")
 fetch("data/music_film.json")
   .then((response) => response.json())
   .then((allsts) => {
-    console.log(allsts);
+    //console.log(allsts);
     let currentLang = "en";
 
     const sts_listdiv = document.querySelector(".sts-list ol");
@@ -68,7 +68,7 @@ fetch("data/music_film.json")
 
     function displaystInfo(id) {
       let index = id.replace("st", "") - 1;
-      console.log(index);
+      //console.log(index);
       document.getElementById("st-iframe").src = allsts[index].yt_link;
       document.getElementById("st-title").innerText = allsts[index].music_title;
       document.getElementById("st-singer").innerText =

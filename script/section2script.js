@@ -1,4 +1,4 @@
-let currentLang = "en";
+
 let composers = [];
 let currentIndex = 0;
 let currentAudio = new Audio();
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   function createCarousel() {
+    let currentLang = "en";
     carousel.innerHTML = "";
 
     composers.forEach((composer) => {
