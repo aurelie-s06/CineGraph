@@ -172,6 +172,17 @@ summary {
   background-color: #801010;
 }
 
+.icone_lien {
+    width: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
 @media (max-width: 768px) {
   body {
     margin: 20px;
