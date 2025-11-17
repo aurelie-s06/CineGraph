@@ -10,7 +10,7 @@ fetch("data/music_film.json")
   .then((response) => response.json())
   .then((allsts) => {
     console.log(allsts);
-    let currentLang = localStorage.getItem("lang") || "en";
+    let currentLang = "en";
 
     const sts_listdiv = document.querySelector(".sts-list ol");
     const sts_infodiv = document.querySelector(".sts-info");
